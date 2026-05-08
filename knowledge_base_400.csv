@@ -1,0 +1,401 @@
+course_name,difficulty,prerequisite,preference,year_of_study,department
+Mathematics 1 (Calculus),Hard,Intro to Basic and Applied Sciences,Math,2,Basic and Applied Sciences
+Mathematics 2 (Integration),Hard,Intro to Basic and Applied Sciences,Math,4,Basic and Applied Sciences
+Mathematics 3 (Differential Equations),Hard,Intro to Basic and Applied Sciences,Math,4,Basic and Applied Sciences
+Physics 1 (Mechanics),Medium,Intro to Basic and Applied Sciences,Physics,2,Basic and Applied Sciences
+Physics 2 (Electricity),Hard,None,Physics,3,Basic and Applied Sciences
+Engineering Chemistry,Medium,Intro to Basic and Applied Sciences,Chemistry,2,Basic and Applied Sciences
+Engineering Mechanics 1,Medium,Intro to Basic and Applied Sciences,Physics,2,Basic and Applied Sciences
+Engineering Mechanics 2,Hard,None,Physics,3,Basic and Applied Sciences
+Introduction to Computer Engineering,Easy,None,Hardware/Software,4,CSE
+Computer Programming (C/C++),Medium,Intro to CSE,Programming,4,CSE
+Object-Oriented Programming,Medium,None,Programming,4,CSE
+Data Structures and Algorithms,Hard,Intro to CSE,Programming,2,CSE
+Artificial Intelligence,Hard,Intro to CSE,AI,4,CSE
+Electrical Circuits 1,Medium,Intro to EE,Circuits,2,EE
+Electrical Circuits 2,Hard,None,Circuits,4,EE
+Digital Electronics,Medium,Intro to EE,Electronics,4,EE
+Engineering Thermodynamics,Hard,None,Thermal,4,ME
+Fluid Mechanics,Hard,Intro to ME,Fluids,2,ME
+Machine Design 1,Medium,Intro to ME,Design,2,ME
+Structural Analysis 1,Medium,None,Structures,1,CE
+Surveying,Medium,Intro to CE,Field Work,4,CE
+Production Engineering,Medium,Intro to PE,Manufacturing,2,PE
+Operations Research,Hard,Intro to PE,Optimization,2,PE
+Architectural Design 1,Hard,Intro to Architecture,Design,1,Architecture
+History of Architecture,Medium,Intro to Architecture,History,4,Architecture
+Technical Report Writing,Easy,Intro to Humanities,Soft Skills,3,Humanities
+Engineering Economy,Medium,None,Management,3,Humanities
+Advanced Web Development,Easy,Programming 1,Management,4,CSE
+Experimental Electrical Power,Easy,Programming 1,Practical,5,EE
+Computational Solid Mechanics 3,Easy,Programming 1,Management,1,ME
+Principles of Material Science,Easy,Intro to PE,Management,3,PE
+Fundamentals of Properties of Materials 1,Easy,Calculus,Software,1,CE
+Experimental Interior Design 2,Medium,None,Math,1,Architecture
+Principles of Thermodynamics of Materials 3,Hard,Intro to Basic and Applied Sciences,Software,1,Basic and Applied Sciences
+Entrepreneurship 2,Medium,Physics,Math,1,Humanities
+Principles of Compiler Design,Easy,Physics,Practical,3,CSE
+Power Electronics 2,Easy,Intro to EE,Practical,1,EE
+Fundamentals of Nanotechnology 1,Easy,Calculus,Theory,3,ME
+Applied Quality Control 2,Medium,Calculus,Design,5,PE
+Experimental Geotechnical Engineering 3,Medium,Intro to CE,Software,2,CE
+Experimental Parametric Design 1,Hard,Calculus,Management,1,Architecture
+Introduction to Biophysics,Medium,Calculus,Programming,5,Basic and Applied Sciences
+Contemporary Public Speaking 1,Easy,Calculus,Practical,2,Humanities
+Experimental Network Security 2,Medium,Intro to CSE,Management,5,CSE
+Contemporary VLSI Design 3,Medium,Calculus,Research,1,EE
+Refrigeration and Air Conditioning 1,Hard,Calculus,Field Work,5,ME
+Operations Management 1,Medium,Physics,Field Work,3,PE
+Fundamentals of Properties of Materials 2,Hard,Intro to CE,Programming,4,CE
+Introduction to Lighting Design 1,Hard,Physics,Research,4,Architecture
+Modern Physics 3,Hard,None,Field Work,3,Basic and Applied Sciences
+Experimental Public Speaking 2,Medium,None,Practical,5,Humanities
+Applied Software Engineering 3,Easy,Intro to CSE,Field Work,2,CSE
+Fundamentals of Radar Systems 2,Medium,Intro to EE,Field Work,3,EE
+Computational Tribology 3,Hard,Intro to ME,Research,2,ME
+Contemporary Reliability Engineering,Hard,None,Math,3,PE
+Principles of Foundation Engineering,Medium,Intro to CE,Design,5,CE
+Contemporary Urban Sociology 1,Medium,Calculus,Management,3,Architecture
+Fundamentals of Inorganic Chemistry 1,Easy,Calculus,Research,3,Basic and Applied Sciences
+Theoretical Engineering Law 2,Hard,None,Field Work,2,Humanities
+Theoretical Computer Networks 3,Medium,Physics,Field Work,2,CSE
+Contemporary Digital Signal Processing,Easy,Physics,Programming,4,EE
+Experimental Turbomachinery 1,Easy,None,Research,4,ME
+Theoretical Material Science,Hard,Physics,Hardware,1,PE
+Computational Construction Management 1,Hard,Programming 1,Theory,5,CE
+Fundamentals of Building Construction 3,Hard,None,Theory,5,Architecture
+Theoretical Numerical Analysis 2,Medium,Physics,Practical,3,Basic and Applied Sciences
+Theoretical Microeconomics 3,Hard,Physics,Programming,3,Humanities
+Introduction to Robotics,Medium,Physics,Programming,1,CSE
+Principles of Satellite Communications,Hard,Programming 1,Math,3,EE
+Principles of Composite Materials,Easy,Programming 1,Research,3,ME
+Systems Engineering 3,Easy,Programming 1,Software,5,PE
+Applied Environmental Impact 1,Hard,None,Design,4,CE
+Introduction to Landscape Architecture,Medium,Physics,Theory,4,Architecture
+Computational Topology 2,Medium,Programming 1,Hardware,2,Basic and Applied Sciences
+Computational Technical Communication 1,Easy,Physics,Math,4,Humanities
+Introduction to Big Data Analytics 1,Easy,Programming 1,Math,3,CSE
+Principles of Smart Grids 3,Medium,None,Hardware,1,EE
+Computational Fracture Mechanics 3,Easy,Physics,Design,2,ME
+Theoretical Project Management 2,Easy,None,Design,3,PE
+Advanced Soil Mechanics 3,Easy,Programming 1,Software,4,CE
+Theoretical Historic Preservation 2,Easy,Programming 1,Programming,4,Architecture
+Topology 3,Easy,Calculus,Management,4,Basic and Applied Sciences
+Applied Engineering Law 2,Hard,Intro to Humanities,Theory,4,Humanities
+Advanced Network Security 2,Hard,Programming 1,Software,3,CSE
+Applied Power Systems Protection 1,Medium,Calculus,Programming,2,EE
+Introduction to Aerospace Engineering,Medium,Calculus,Practical,2,ME
+Applied Operations Management 3,Hard,Calculus,Math,3,PE
+Theoretical Coastal Engineering,Medium,Calculus,Math,1,CE
+Principles of Environmental Control 2,Medium,None,Design,1,Architecture
+Advanced Calculus of Variations 2,Medium,None,Programming,1,Basic and Applied Sciences
+Computational Sociology 2,Easy,None,Research,5,Humanities
+Applied Cloud Computing,Hard,Calculus,Theory,4,CSE
+Computational Satellite Communications 2,Easy,Programming 1,Field Work,4,EE
+Advanced Advanced Manufacturing,Easy,Physics,Field Work,1,ME
+Principles of Facilities Planning 3,Hard,Programming 1,Field Work,3,PE
+Theoretical Steel Structures 3,Hard,None,Hardware,4,CE
+Advanced Interior Design,Easy,Intro to Architecture,Software,2,Architecture
+Experimental Astrophysics 1,Hard,Calculus,Programming,3,Basic and Applied Sciences
+Applied Parallel Processing 2,Easy,Intro to CSE,Practical,1,CSE
+Introduction to Smart Grids,Easy,Calculus,Field Work,5,EE
+Contemporary Acoustics 3,Medium,Physics,Research,1,ME
+Theoretical Facilities Planning 3,Easy,Physics,Research,3,PE
+Experimental Steel Structures 3,Hard,None,Hardware,1,CE
+Fundamentals of Urban Design,Hard,Physics,Software,3,Architecture
+Applied Biophysics 2,Medium,Intro to Basic and Applied Sciences,Field Work,2,Basic and Applied Sciences
+Computational Fundamentals of Management 3,Medium,Intro to Humanities,Research,2,Humanities
+Fundamentals of Quantum Computing 3,Easy,Intro to CSE,Math,1,CSE
+High Voltage Engineering 1,Easy,Calculus,Field Work,3,EE
+Experimental Solid Mechanics 3,Medium,Intro to ME,Field Work,1,ME
+Principles of Operations Management,Hard,Physics,Field Work,4,PE
+Fundamentals of Construction Management 2,Medium,Programming 1,Programming,3,CE
+Contemporary Parametric Design,Hard,Calculus,Math,4,Architecture
+Experimental Probability 3,Hard,Calculus,Hardware,4,Basic and Applied Sciences
+Sociology 2,Medium,None,Design,3,Humanities
+Principles of Formal Languages 3,Easy,None,Field Work,5,CSE
+Power Systems Protection 2,Hard,Intro to EE,Design,3,EE
+Principles of Acoustics 1,Hard,Calculus,Programming,1,ME
+Computational Project Management 2,Medium,None,Design,1,PE
+Wastewater Management 2,Hard,Calculus,Programming,3,CE
+Experimental Landscape Architecture 3,Easy,Programming 1,Programming,2,Architecture
+Fundamentals of Thermodynamics of Materials 2,Easy,Physics,Design,5,Basic and Applied Sciences
+Applied Microeconomics,Hard,Calculus,Design,4,Humanities
+Introduction to Human-Computer Interaction 1,Medium,Physics,Field Work,1,CSE
+Experimental Renewable Energy 3,Easy,Physics,Practical,3,EE
+Advanced Dynamics,Medium,Physics,Design,3,ME
+Introduction to Manufacturing Processes,Easy,Intro to PE,Field Work,2,PE
+Introduction to Steel Structures 1,Easy,Physics,Math,1,CE
+Contemporary Lighting Design 2,Easy,Calculus,Hardware,4,Architecture
+Advanced Thermodynamics of Materials,Hard,Intro to Basic and Applied Sciences,Practical,5,Basic and Applied Sciences
+Computational Algorithms,Easy,None,Research,3,CSE
+Principles of VLSI Design 3,Hard,Intro to EE,Research,5,EE
+Theoretical Acoustics,Easy,Calculus,Hardware,3,ME
+Contemporary Six Sigma,Medium,Calculus,Management,5,PE
+Theoretical Highway Engineering 3,Easy,Programming 1,Research,2,CE
+Computational Environmental Control 1,Medium,Programming 1,Math,3,Architecture
+Principles of Linear Algebra 1,Hard,Calculus,Management,2,Basic and Applied Sciences
+Entrepreneurship,Easy,Intro to Humanities,Math,2,Humanities
+Fundamentals of Natural Language Processing 3,Easy,Programming 1,Programming,2,CSE
+Principles of Electromagnetic Fields 1,Easy,Intro to EE,Research,3,EE
+Computational Composite Materials,Medium,Programming 1,Math,4,ME
+Experimental Manufacturing Processes 2,Hard,None,Programming,3,PE
+Advanced Tunnel Engineering 3,Medium,Physics,Design,1,CE
+Principles of Landscape Architecture 2,Medium,Calculus,Practical,1,Architecture
+Theoretical Topology,Medium,Physics,Research,2,Basic and Applied Sciences
+Contemporary Industrial Psychology 3,Easy,Intro to Humanities,Design,2,Humanities
+Fundamentals of Formal Languages 2,Hard,Programming 1,Management,2,CSE
+VLSI Design 3,Medium,Programming 1,Theory,5,EE
+Computational Dynamics 1,Hard,Calculus,Design,5,ME
+Applied Material Science 2,Easy,Physics,Hardware,5,PE
+Introduction to Construction Management,Easy,Physics,Hardware,2,CE
+Computational Urban Planning 1,Hard,Calculus,Research,2,Architecture
+Applied Statistics 2,Medium,Programming 1,Field Work,3,Basic and Applied Sciences
+Introduction to Microeconomics,Easy,None,Research,5,Humanities
+Computer Architecture 3,Medium,Physics,Programming,1,CSE
+Introduction to Automatic Control,Hard,Programming 1,Practical,5,EE
+Fundamentals of Kinematics 3,Easy,Intro to ME,Math,3,ME
+Experimental Material Science 2,Easy,Intro to PE,Hardware,3,PE
+Experimental Bridge Engineering 3,Medium,Physics,Theory,4,CE
+Principles of Urban Sociology 3,Medium,Programming 1,Math,3,Architecture
+Theoretical Statistics 3,Easy,Intro to Basic and Applied Sciences,Practical,3,Basic and Applied Sciences
+Applied Professional Ethics 1,Easy,None,Math,1,Humanities
+Introduction to Formal Languages 1,Hard,Programming 1,Management,4,CSE
+Principles of Signals and Systems,Medium,Programming 1,Management,5,EE
+Computational Composite Materials 1,Medium,Physics,Practical,2,ME
+Applied Reliability Engineering 1,Medium,None,Software,4,PE
+Principles of Tunnel Engineering 3,Easy,Intro to CE,Design,2,CE
+Computational Environmental Control 2,Medium,None,Programming,2,Architecture
+Computational Topology 1,Easy,Physics,Research,5,Basic and Applied Sciences
+Advanced Organizational Behavior 3,Medium,Calculus,Math,2,Humanities
+Computational Network Security 2,Easy,Physics,Hardware,5,CSE
+Computational Satellite Communications,Easy,Intro to EE,Theory,1,EE
+Fundamentals of Solid Mechanics 2,Easy,Intro to ME,Field Work,4,ME
+Introduction to Industrial Robotics 1,Easy,Calculus,Programming,4,PE
+Contemporary Pavement Design,Easy,Calculus,Software,2,CE
+Parametric Design 1,Medium,Physics,Practical,2,Architecture
+Contemporary Astrophysics,Medium,Calculus,Field Work,4,Basic and Applied Sciences
+Contemporary Macroeconomics 1,Medium,Calculus,Programming,2,Humanities
+Theoretical Microprocessors 2,Easy,Physics,Field Work,2,CSE
+Theoretical Optical Communications 2,Easy,Physics,Programming,5,EE
+Advanced Automotive Engineering,Easy,Physics,Practical,5,ME
+Fundamentals of Operations Management,Hard,None,Field Work,2,PE
+Theoretical GIS 2,Easy,None,Management,2,CE
+Fundamentals of Architectural Acoustics 1,Medium,Calculus,Software,1,Architecture
+Quantum Mechanics 2,Easy,Programming 1,Research,1,Basic and Applied Sciences
+Principles of Industrial Psychology 1,Hard,None,Hardware,5,Humanities
+Fundamentals of Software Testing,Easy,Physics,Practical,5,CSE
+Theoretical Electrical Machines 3,Easy,Calculus,Practical,2,EE
+Principles of Acoustics,Medium,Programming 1,Math,5,ME
+Fundamentals of Quality Control 1,Easy,Programming 1,Practical,4,PE
+Contemporary Geotechnical Engineering,Easy,Programming 1,Programming,1,CE
+Architectural Acoustics 1,Easy,Physics,Field Work,5,Architecture
+Experimental Inorganic Chemistry 2,Easy,Physics,Field Work,3,Basic and Applied Sciences
+Fundamentals of Microeconomics 2,Medium,Calculus,Research,3,Humanities
+Fundamentals of Operating Systems 2,Medium,Calculus,Programming,2,CSE
+Principles of Biomedical Instrumentation,Medium,Programming 1,Management,3,EE
+Energy Conversion 2,Medium,Programming 1,Management,1,ME
+Applied Ergonomics 1,Hard,Intro to PE,Practical,2,PE
+Fundamentals of Highway Engineering,Hard,None,Practical,4,CE
+Principles of Lighting Design 3,Easy,Physics,Programming,3,Architecture
+Principles of Modern Physics,Hard,None,Programming,3,Basic and Applied Sciences
+Advanced Philosophy of Science 2,Hard,Physics,Practical,2,Humanities
+Fundamentals of Virtual Reality 2,Hard,Programming 1,Math,4,CSE
+Applied Control Systems 3,Easy,None,Management,3,EE
+Theoretical Acoustics 1,Easy,None,Field Work,5,ME
+Applied Ergonomics 2,Medium,Calculus,Software,3,PE
+Computational Bridge Engineering 1,Hard,Physics,Practical,4,CE
+Principles of Housing Development 1,Easy,Programming 1,Field Work,2,Architecture
+Experimental Tensor Analysis 3,Medium,Calculus,Math,1,Basic and Applied Sciences
+Applied Entrepreneurship 3,Easy,Physics,Field Work,5,Humanities
+Theoretical Mobile App Development 2,Hard,Intro to CSE,Programming,5,CSE
+Principles of Electrical Power,Easy,None,Research,2,EE
+Advanced Mechatronics,Medium,Physics,Software,4,ME
+Quality Control,Hard,Physics,Design,5,PE
+Introduction to Wastewater Management,Medium,Physics,Software,1,CE
+Introduction to Urban Planning,Hard,Calculus,Hardware,2,Architecture
+Principles of Probability 2,Hard,None,Practical,5,Basic and Applied Sciences
+Experimental Human Rights,Medium,Intro to Humanities,Research,4,Humanities
+Computational Software Testing 3,Medium,None,Field Work,4,CSE
+Fundamentals of Electromagnetic Fields 3,Medium,Calculus,Management,5,EE
+Computational Internal Combustion Engines,Medium,Intro to ME,Programming,2,ME
+Principles of Computer Integrated Manufacturing 2,Easy,Physics,Hardware,3,PE
+Computational Hydrology 1,Easy,Programming 1,Software,5,CE
+Contemporary Thermodynamics of Materials,Medium,Programming 1,Math,1,Basic and Applied Sciences
+Technical Communication 2,Easy,Intro to Humanities,Hardware,4,Humanities
+Natural Language Processing 2,Easy,None,Field Work,4,CSE
+Principles of Microwave Engineering 2,Medium,None,Programming,2,EE
+Experimental Industrial Management 3,Easy,Programming 1,Research,2,PE
+Contemporary Highway Engineering 3,Easy,Calculus,Field Work,2,CE
+Introduction to Parametric Design 1,Medium,None,Software,2,Architecture
+Applied Quantum Mechanics 2,Medium,Intro to Basic and Applied Sciences,Research,2,Basic and Applied Sciences
+Introduction to Business Communication,Medium,Intro to Humanities,Theory,5,Humanities
+Principles of Computer Vision 2,Easy,Calculus,Research,5,CSE
+Introduction to Electronic Devices,Easy,Calculus,Programming,1,EE
+Advanced Composite Materials,Medium,Programming 1,Field Work,2,ME
+Fundamentals of Reliability Engineering,Hard,Programming 1,Software,2,PE
+Fundamentals of Environmental Impact 2,Medium,Physics,Hardware,3,CE
+Applied Parametric Design 2,Easy,Physics,Programming,1,Architecture
+Contemporary Abstract Algebra,Easy,Programming 1,Theory,4,Basic and Applied Sciences
+Applied Business Communication 1,Hard,Physics,Field Work,3,Humanities
+Advanced Parallel Processing 3,Easy,Physics,Practical,4,CSE
+Principles of Renewable Energy 2,Medium,None,Management,4,EE
+Introduction to Acoustics,Easy,Programming 1,Programming,1,ME
+Applied Material Science 1,Easy,Physics,Management,3,PE
+Transportation Engineering 2,Easy,None,Theory,1,CE
+Computational Urban Sociology,Medium,Intro to Architecture,Field Work,4,Architecture
+Abstract Algebra 1,Medium,Intro to Basic and Applied Sciences,Management,2,Basic and Applied Sciences
+Principles of Professional Ethics 1,Medium,Intro to Humanities,Programming,1,Humanities
+Principles of Virtual Reality 1,Easy,None,Practical,2,CSE
+Fundamentals of Microelectronics 3,Medium,None,Research,5,EE
+Fundamentals of Fracture Mechanics 1,Hard,Calculus,Research,2,ME
+Computational Construction Management 2,Easy,Programming 1,Management,5,CE
+Applied Lighting Design 1,Hard,Calculus,Field Work,5,Architecture
+Computational Business Communication,Easy,Intro to Humanities,Hardware,5,Humanities
+Introduction to Network Security,Medium,Calculus,Theory,1,CSE
+Computational Renewable Energy,Hard,Calculus,Math,2,EE
+Introduction to Solid Mechanics,Hard,Physics,Practical,3,ME
+Contemporary Lean Manufacturing 2,Hard,Physics,Field Work,5,PE
+Wastewater Management,Medium,Physics,Math,5,CE
+Advanced Building Information Modeling 2,Hard,None,Programming,3,Architecture
+Experimental Human Rights 2,Hard,Calculus,Math,1,Humanities
+Advanced Machine Learning,Medium,None,Theory,4,CSE
+Experimental Microwave Engineering 1,Easy,Calculus,Practical,3,EE
+Computational Tribology,Medium,Calculus,Theory,3,ME
+Fundamentals of Six Sigma,Easy,Intro to PE,Math,5,PE
+Principles of Soil Mechanics 2,Medium,Intro to CE,Math,3,CE
+Contemporary Historic Preservation 1,Medium,Intro to Architecture,Math,4,Architecture
+Applied Modern Physics 3,Medium,Physics,Research,4,Basic and Applied Sciences
+Principles of Organizational Behavior 3,Medium,Intro to Humanities,Programming,5,Humanities
+Advanced Digital Logic,Medium,Programming 1,Math,1,CSE
+Advanced Biomedical Instrumentation,Hard,None,Software,3,EE
+Robotics and Automation 1,Hard,Programming 1,Hardware,2,ME
+Principles of Quality Control 2,Easy,None,Programming,5,PE
+Soil Mechanics 2,Hard,Programming 1,Research,4,CE
+Experimental Urban Design,Hard,None,Management,3,Architecture
+Computational Public Speaking 3,Hard,Programming 1,Hardware,3,Humanities
+Contemporary Network Security 3,Medium,Intro to CSE,Practical,3,CSE
+Contemporary Radar Systems,Medium,None,Programming,3,EE
+Internal Combustion Engines 3,Medium,Programming 1,Software,4,ME
+Contemporary Manufacturing Processes 1,Medium,Physics,Design,4,PE
+Contemporary Coastal Engineering 3,Medium,Calculus,Management,5,CE
+Experimental Sustainable Architecture 1,Medium,None,Theory,5,Architecture
+Advanced Topology 3,Hard,Calculus,Practical,5,Basic and Applied Sciences
+Principles of Industrial Psychology 2,Medium,None,Software,5,Humanities
+Theoretical Information Retrieval,Hard,Calculus,Theory,1,CSE
+Advanced Antenna Theory 3,Medium,Calculus,Programming,5,EE
+Principles of Computational Fluid Dynamics 3,Hard,Programming 1,Research,4,ME
+Industrial Management 1,Hard,Physics,Hardware,2,PE
+Applied GIS,Hard,None,Theory,5,CE
+Theoretical Environmental Control 2,Medium,Physics,Theory,2,Architecture
+Introduction to Numerical Analysis,Easy,Calculus,Management,2,Basic and Applied Sciences
+Fundamentals of Philosophy of Science 1,Hard,Programming 1,Research,3,Humanities
+Contemporary Software Testing,Medium,Physics,Software,2,CSE
+Introduction to Power Systems Protection,Easy,Intro to EE,Hardware,5,EE
+Contemporary Automotive Engineering 3,Medium,Physics,Math,1,ME
+Principles of Manufacturing Processes 1,Medium,None,Management,5,PE
+Applied Steel Structures 3,Medium,Physics,Hardware,5,CE
+Experimental Abstract Algebra,Easy,Calculus,Software,3,Basic and Applied Sciences
+Introduction to Organizational Behavior,Medium,Calculus,Practical,2,Humanities
+Principles of Human-Computer Interaction,Easy,Intro to CSE,Math,5,CSE
+Principles of Electronic Devices 3,Hard,Programming 1,Field Work,1,EE
+Introduction to Turbomachinery,Easy,Physics,Theory,5,ME
+Contemporary Industrial Management 2,Easy,Intro to PE,Practical,5,PE
+Computational GIS,Easy,None,Field Work,1,CE
+Fundamentals of Environmental Control,Hard,Calculus,Management,1,Architecture
+Public Speaking,Easy,None,Field Work,2,Humanities
+Contemporary Digital Logic 2,Hard,Programming 1,Management,1,CSE
+Fundamentals of Aerospace Engineering,Easy,None,Hardware,3,ME
+Introduction to Ergonomics,Hard,Physics,Practical,4,PE
+Theoretical Construction Management 3,Medium,Programming 1,Programming,1,CE
+Advanced Building Construction,Hard,Programming 1,Software,3,Architecture
+Statistics 3,Medium,Physics,Management,5,Basic and Applied Sciences
+Industrial Psychology,Hard,Intro to Humanities,Research,3,Humanities
+Fundamentals of Blockchain Technology 2,Easy,Intro to CSE,Theory,4,CSE
+Experimental Biomedical Instrumentation 2,Medium,None,Research,2,EE
+Fundamentals of Fracture Mechanics,Easy,None,Programming,1,ME
+Computational Industrial Management,Medium,Physics,Management,3,PE
+Principles of Geotechnical Engineering 3,Easy,None,Hardware,2,CE
+Principles of Historic Preservation,Hard,Physics,Programming,1,Architecture
+Principles of Linear Algebra 3,Medium,Programming 1,Software,3,Basic and Applied Sciences
+Theoretical Philosophy of Science 2,Medium,Programming 1,Programming,3,Humanities
+Experimental Digital Signal Processing 1,Hard,None,Theory,1,EE
+Solid Mechanics 1,Easy,None,Theory,1,ME
+Theoretical Computer Integrated Manufacturing 3,Easy,Programming 1,Field Work,5,PE
+GIS 2,Medium,Intro to CE,Theory,5,CE
+Fundamentals of Building Construction 1,Easy,Physics,Theory,3,Architecture
+Computational Abstract Algebra 3,Hard,Programming 1,Theory,3,Basic and Applied Sciences
+Introduction to Sociology,Easy,Calculus,Practical,3,Humanities
+Computational Microprocessors,Medium,Calculus,Software,2,CSE
+Advanced Signals and Systems 2,Easy,Calculus,Design,2,EE
+Tribology 1,Easy,Calculus,Field Work,3,ME
+Introduction to Material Science 1,Easy,Physics,Software,5,PE
+Principles of Bridge Engineering 1,Easy,Programming 1,Theory,1,CE
+Contemporary Urban Design 3,Hard,Intro to Architecture,Hardware,1,Architecture
+Contemporary Organic Chemistry 2,Easy,Physics,Management,4,Basic and Applied Sciences
+Contemporary Entrepreneurship 3,Medium,Programming 1,Hardware,2,Humanities
+Principles of Blockchain Technology 3,Medium,Programming 1,Programming,3,CSE
+Advanced Control Systems 2,Easy,None,Programming,1,EE
+Fundamentals of HVAC Systems 2,Hard,Physics,Software,3,ME
+Applied Tunnel Engineering 2,Easy,Programming 1,Theory,3,CE
+Sustainable Architecture 2,Medium,Physics,Practical,5,Architecture
+Contemporary Discrete Mathematics,Medium,None,Design,3,Basic and Applied Sciences
+Contemporary Distributed Systems,Medium,Programming 1,Management,5,CSE
+Theoretical Electrical Power,Easy,Programming 1,Hardware,2,EE
+Contemporary Refrigeration and Air Conditioning 1,Hard,Physics,Field Work,3,ME
+Experimental Reliability Engineering 2,Easy,Intro to PE,Management,4,PE
+Experimental Foundation Engineering 3,Hard,Intro to CE,Math,5,CE
+Introduction to Environmental Control,Medium,Programming 1,Design,1,Architecture
+Experimental Biophysics 1,Easy,Physics,Theory,4,Basic and Applied Sciences
+Public Speaking 1,Hard,Physics,Design,1,Humanities
+Introduction to Data Mining,Medium,Calculus,Field Work,5,CSE
+Computational VLSI Design 3,Hard,Physics,Research,4,EE
+Theoretical Finite Element Analysis,Easy,Physics,Programming,1,ME
+Introduction to Systems Engineering 1,Hard,None,Hardware,4,PE
+Advanced Advanced Steel Design 3,Medium,Intro to CE,Hardware,3,CE
+Fundamentals of Digital Fabrication 2,Medium,Calculus,Programming,4,Architecture
+Advanced Modern Physics,Medium,Intro to Basic and Applied Sciences,Math,2,Basic and Applied Sciences
+Advanced Human Rights,Easy,Intro to Humanities,Math,1,Humanities
+Applied Distributed Systems,Hard,Intro to CSE,Programming,4,CSE
+Theoretical Signals and Systems 1,Hard,Physics,Hardware,4,EE
+Fundamentals of Robotics and Automation 3,Easy,Physics,Design,1,ME
+Fundamentals of Quality Control 2,Hard,Intro to PE,Practical,1,PE
+Principles of Traffic Engineering 3,Medium,Physics,Field Work,4,CE
+Theoretical Building Information Modeling 3,Medium,Calculus,Research,3,Architecture
+Contemporary Optics 2,Medium,Intro to Basic and Applied Sciences,Practical,3,Basic and Applied Sciences
+Contemporary Engineering Law,Hard,Physics,Management,1,Humanities
+Contemporary Formal Languages,Medium,Physics,Math,2,CSE
+Renewable Energy 2,Easy,Programming 1,Research,2,EE
+Experimental Mechatronics 2,Medium,Programming 1,Design,1,ME
+Principles of Industrial Robotics 2,Medium,Intro to PE,Practical,3,PE
+Coastal Engineering,Medium,Intro to CE,Management,5,CE
+Contemporary Urban Sociology 2,Hard,Physics,Math,4,Architecture
+Principles of Linear Algebra,Medium,Calculus,Management,2,Basic and Applied Sciences
+Contemporary Data Mining 2,Medium,None,Math,5,CSE
+Electromagnetic Fields 3,Hard,None,Design,5,EE
+Finite Element Analysis 1,Easy,Intro to ME,Math,1,ME
+Computational Manufacturing Processes,Hard,Physics,Design,3,PE
+Fundamentals of Properties of Materials 3,Medium,Intro to CE,Management,5,CE
+Theoretical Building Construction 3,Medium,Physics,Design,3,Architecture
+Contemporary Quantum Mechanics 2,Medium,None,Field Work,2,Basic and Applied Sciences
+Experimental Technical Communication 2,Easy,Programming 1,Hardware,3,Humanities
+Advanced Information Retrieval,Easy,Intro to CSE,Practical,3,CSE
+Industrial Automation 1,Hard,Physics,Management,3,EE
+Introduction to Refrigeration and Air Conditioning 1,Hard,Physics,Management,5,ME
+Experimental Facilities Planning,Medium,Calculus,Research,1,PE
+Fundamentals of GIS 1,Medium,Programming 1,Field Work,3,CE
+Contemporary Urban Planning,Easy,Programming 1,Theory,2,Architecture
+Introduction to Discrete Mathematics,Easy,Intro to Basic and Applied Sciences,Math,4,Basic and Applied Sciences
+Entrepreneurship 1,Medium,None,Programming,1,Humanities
+Contemporary Internet of Things 3,Medium,None,Programming,1,CSE
+Introduction to Digital Signal Processing 1,Medium,Intro to EE,Management,4,EE
+Principles of CAD/CAM 2,Medium,None,Practical,5,ME
+Fundamentals of Manufacturing Processes 1,Medium,Calculus,Practical,1,PE
+Advanced Bridge Engineering,Hard,Intro to CE,Practical,1,CE
+Building Construction,Hard,None,Programming,5,Architecture
+Theoretical Statistics,Easy,None,Management,5,Basic and Applied Sciences
+Computational Organizational Behavior,Hard,Programming 1,Hardware,4,Humanities
+Computational Cloud Computing 2,Hard,Intro to CSE,Math,3,CSE
+Theoretical Biomedical Instrumentation 3,Easy,Calculus,Practical,4,EE
+Advanced Heat and Mass Transfer 3,Easy,Intro to ME,Software,1,ME
+Computer Integrated Manufacturing,Hard,None,Practical,4,PE
