@@ -1,0 +1,23 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Backend for a smart study advisor system"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "django>=5.2.14",
+    "langchain>=1.2.18",
+    "langchain-community>=0.4.1",
+    "langchain-groq>=1.1.2",
+    "pydantic>=2.13.4",
+    "pyswip>=0.3.3",
+]
+
+[project.urls]
+Repository = "https://github.com/Rapkt/Mix-paradigms"
+
+[dependency-groups]
+dev = ["ruff>=0.15.12"]
+
+[tool.ruff.lint]
+extend-select = ["PL", "UP", "PERF", "RUF"]
