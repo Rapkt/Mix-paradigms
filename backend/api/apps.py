@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class PrologConfig(AppConfig):
+class ApiConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "prolog"
+    name = "api"
