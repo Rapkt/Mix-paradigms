@@ -7,24 +7,21 @@ from langchain.agents.middleware import (
 from langchain.tools import BaseTool
 from langchain_groq import ChatGroq
 
-from api.ai.tools.get_available_courses import get_available_courses
-
 from .models import (
     RecommendCoursesContext,
-    RecommendCoursesRequest,
     RecommendCoursesResponse,
 )
 
-SYSTEM_PROMPT = """You are a smart study advisor.
-            You MUST call the lookup_course_logic tool before recommending anything.
-            After getting tool results, explain your reasoning clearly and 
-            list the specific course IDs you recommend and why.
+SYSTEM_PROMPT = """You are a smart study advisor that recommend courses to take.
+            You must call the get_available_courses tool before recommending anything.
+            After getting tool results, you must only recommend courses from that list, 
+            explain your reasoning clearly and list the specific courses you recommend and why.
             """
 
 
 def initialize_agent(tools: list[BaseTool]):
     model = ChatGroq(
-        model="llama-3.3-70b-versatile",
+        model="qwen/qwen3-32b",
         temperature=0.5,
     )
 
@@ -49,27 +46,3 @@ def initialize_agent(tools: list[BaseTool]):
     )
 
     return agent
-
-
-def recommend_courses(request: RecommendCoursesRequest) -> RecommendCoursesResponse:
-    context = RecommendCoursesContext(
-        department=request.department,
-        academic_year=request.academic_year,
-        completed_courses=request.completed_courses,
-    )
-
-    agent = initialize_agent(tools=[get_available_courses])
-
-    response = agent.invoke(
-        {
-            "messages": [
-                {
-                    "role": "user",
-                    "content": f"Recommend courses I should take based on my following interests: {request.interests}",
-                }
-            ]
-        },
-        context=context,
-    )
-
-    return response["structured_response"]

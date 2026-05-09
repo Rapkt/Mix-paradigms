@@ -19,8 +19,8 @@ courses_df = pd.read_csv(courses_csv_path)
 @tool
 def get_available_courses(runtime: ToolRuntime[RecommendCoursesContext]) -> list[str]:
     """
-    This tool is used to get the available courses for a specific department and academic year.
-    The tool will return a list of courses that are available for the user to take based on their department, and completed courses.
+    This tool is used to get the available courses for a user. It takes no arguments.
+    The tool will return a list of courses that are available for the user to take.
     """
 
     department = runtime.context.department
