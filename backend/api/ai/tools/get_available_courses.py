@@ -1,4 +1,3 @@
-from typing import cast
 from langchain.tools import ToolRuntime, tool
 import pandas as pd
 from os import environ
@@ -27,12 +26,13 @@ def get_available_courses(runtime: ToolRuntime[RecommendCoursesContext]) -> list
     department = runtime.context.department
     completed_courses = runtime.context.completed_courses
 
-    department_courses = cast(
-        pd.DataFrame, courses_df[courses_df["department"] == department]
-    )
+    in_department = courses_df["department"] == department
+    not_completed = ~courses_df["course_name"].isin(completed_courses)
+    no_prerequisite = courses_df["prerequisite"] == "None"
+    prerequisite_completed = courses_df["prerequisite"].isin(completed_courses)
 
-    available_courses = department_courses[
-        ~department_courses["course_name"].isin(completed_courses)
+    available_courses = courses_df[
+        in_department & not_completed & (no_prerequisite | prerequisite_completed)
     ]
 
     return available_courses["course_name"].tolist()
