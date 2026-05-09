@@ -9,6 +9,7 @@ dependencies = [
     "langchain>=1.2.18",
     "langchain-community>=0.4.1",
     "langchain-groq>=1.1.2",
+    "pandas>=3.0.2",
     "pydantic>=2.13.4",
     "pyswip>=0.3.3",
 ]
