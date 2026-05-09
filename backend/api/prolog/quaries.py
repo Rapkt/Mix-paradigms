@@ -18,8 +18,10 @@ Prolog.asserta("""recomendCourseByPreference(Dep, Studied, Curryear, Prefs) :-
                department(C, Dep). """)
 
 def recomendCourses(department: str, studiedCourses: list[str], currentYear: int, preferences: list[str]):
-    
-    
+    based_on_prefenrence=  set(map(lambda e:e["X"],set(Prolog.query(f"recommend_based_on_preference({department},{preferences},X)",))))
+    based_on_prerequisites = set(map(lambda e:e["X"],set(Prolog.query(f"recommend_based_on_prerequisite({department},{studiedCourses},X)",))))
+    based_on_year_of_study = set(map(lambda e:e["X"],set(Prolog.query(f"recommend_based_on_year_of_study({department},{currentYear},X)",))))
+    based_on_prerequisites = set(map(lambda e:e["X"],set(Prolog.query(f"recommend_based_on_difficulty({department},{difficulty},X)",))))
     return None
 
 

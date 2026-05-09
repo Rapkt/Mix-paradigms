@@ -1,19 +1,20 @@
 :- include('Knowledge_base.pl').
 
-recommend_based_on_preference(user_department,user_preference):
-    department(X,user_department),
-    preference(X,user_preference).
+recommend_based_on_preference(User_department,User_preferences,Course):-
+    department(Course,User_department),
+    preference(Course,Preference),
+    member(Preference,User_preferences).
 
-recommend_based_on_prerequisite(user_department,user_prerequisites):
-    department(X,user_department),
-    prerequisite(X,Y),
-    member(Y,user_prerequisites).
+recommend_based_on_prerequisite(User_department,User_prerequisites,Course):-
+    department(Course,User_department),
+    prerequisite(Course,Y),
+    member(Y,User_prerequisites).
 
-recommend_based_on_year_of_study(user_department,user_year_of_study):
-        department(X,user_department),
-        year_of_study(X,user_year_of_study),
+recommend_based_on_year_of_study(User_department,User_year_of_study,Course):-
+        department(Course,User_department),
+        year_of_study(Course,User_year_of_study),
 
-recommend_based_on_difficulty(user_department,user_difficulty):
-    department(X,user_department),
-    difficulty(X,user_difficulty).
+recommend_based_on_difficulty(User_department,User_difficulty,Course):-
+    department(Course,User_department),
+    difficulty(Course,User_difficulty).
 
