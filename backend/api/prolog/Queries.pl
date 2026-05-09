@@ -1,4 +1,4 @@
-:- include('Knowledge_base.pl').
+:- include('knowledge_base.pl').
 
 recommend_based_on_preference(User_department,User_preferences,Course):-
     department(Course,User_department),
@@ -12,9 +12,10 @@ recommend_based_on_prerequisite(User_department,User_prerequisites,Course):-
 
 recommend_based_on_year_of_study(User_department,User_year_of_study,Course):-
         department(Course,User_department),
-        year_of_study(Course,User_year_of_study),
+        year_of_study(Course,User_year_of_study).
 
 recommend_based_on_difficulty(User_department,User_difficulty,Course):-
     department(Course,User_department),
     difficulty(Course,User_difficulty).
+
 
