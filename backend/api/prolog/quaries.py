@@ -1,5 +1,5 @@
 from pyswip import Prolog
-
+from api.prolog.models import recommended_course_respond,recommended_course_request
 Prolog.consult("knowledge_base.pl", relative_to=__file__) # must be at top level before to avoid redefinitions
 
 # get a list of size 10 of courses
@@ -59,40 +59,61 @@ Prolog.asserta("""course_data(Id,Name,Dept,Difficulty,Year, Pre):-
 """
 
 
-def recomendCourses(department: str, studiedCourses: list[str], currentYear: int, preferences: list[str], difficulty):
-    based_on_prefenrence=  list(map(lambda e:e["X"],list(Prolog.query(f"recommend_based_on_preference({department},{preferences},X)"))))
+def recomendCourses(backend_request:recommended_course_request)-> tuple[recommended_course_respond]:
+    department: str = backend_request.student_major
+    studiedCourses: list[str] = backend_request.completed_courses
+    currentYear: int = backend_request.currentYear
+    preferences: list[str] = backend_request.requested_courses
+    difficulty: str = "_"
+    based_on_prefenrence=  list(map(lambda e:e["X"],list(Prolog.query(f"recommend_based_on_preference('{department}',{preferences},X)"))))
     based_on_prefenrence = set(based_on_prefenrence)
-    based_on_prerequisites = list(map(lambda e:e["X"],Prolog.query(f"recommend_based_on_prerequisite({department},{studiedCourses},X)")))
+    based_on_prerequisites = list(map(lambda e:e["X"],Prolog.query(f"recommend_based_on_prerequisite('{department}',{studiedCourses},X)")))
     based_on_prerequisites = set(based_on_prerequisites)
     
-    based_on_year_of_study = list(map(lambda e:e["X"],Prolog.query(f"recommend_based_on_year_of_study({department},'{currentYear}',X)")))
+    based_on_year_of_study = list(map(lambda e:e["X"],Prolog.query(f"recommend_based_on_year_of_study('{department}','{currentYear}',X)")))
     based_on_year_of_study = set(based_on_year_of_study)
     based_on_prerequisites = set(based_on_prerequisites)
     
-    easy = list(map(lambda e:e["X"],Prolog.query(f"recommend_based_on_difficulty({department},'Easy',X)")))
+    easy = list(map(lambda e:e["X"],Prolog.query(f"recommend_based_on_difficulty('{department}','Easy',X)")))
     easy = set(easy)
-    med = list(map(lambda e:e["X"],Prolog.query(f"recommend_based_on_difficulty({department},'Medium',X)")))
+    med = list(map(lambda e:e["X"],Prolog.query(f"recommend_based_on_difficulty('{department}','Medium',X)")))
     med = set(med)
-    hard = list(map(lambda e:e["X"],Prolog.query(f"recommend_based_on_difficulty({department},'Hard',X)")))
+    hard = list(map(lambda e:e["X"],Prolog.query(f"recommend_based_on_difficulty('{department}','Hard',X)")))
     hard = set(hard)
-    
+
     prefered = based_on_prerequisites & based_on_prefenrence
     
     not_prefered_but_easy = (based_on_prerequisites & easy) - prefered
     not_prefered_but_med = (based_on_prerequisites & med) - prefered
-    not_prefered_but_hard = (based_on_prerequisites & med) - prefered
-    print(prefered)
-    print("-------------")
-    return {
-        "prefered": list(map(lambda c: list(Prolog.query(f"course_data(Id,'{c}',Dept,Difficulty,Year, Pre)")),prefered))
-    }
+    not_prefered_but_hard = (based_on_prerequisites & hard) - prefered
     
-    # print(based_on_prefenrence)
-    # print(len(based_on_prerequisites))
-    print(based_on_prefenrence & easy & based_on_prerequisites & based_on_year_of_study)
-    return None
+    def get_details(c:str):
+        object = list(Prolog.query(f"course_data(Id,'{c}',Dept,Difficulty,Year, Pre)"))[0]
+        object["course_name"] = c
+        object.update({"Id":object["Dept"] +"-"+ object["Id"] })
+        # print(object)
+        course = recommended_course_respond(
+            department= object["Dept"],
+            course_name= object["course_name"],
+            preference= object["Pre"],
+            year = object["Year"],
+            difficulty= object["Difficulty"],
+            id = object["Id"] 
+        )
+        return course
+    prefered_courses = list(map(get_details,prefered))
+    not_prefered_but_easy_courses = list(map(get_details,not_prefered_but_easy))
+    not_prefered_but_med_courses = list(map(get_details,not_prefered_but_med))
+    not_prefered_but_hard_courses = list(map(get_details,not_prefered_but_hard))
+    # print(prefered_courses,not_prefered_but_easy_courses,not_prefered_but_med_courses,not_prefered_but_hard_courses)
+    return {
+        "prefered": prefered_courses,
+        "not_prefered_easy" : not_prefered_but_easy_courses,
+        "not_prefered_med" : not_prefered_but_med_courses,
+        "not_prefered_hard" : not_prefered_but_hard_courses
+    }
 
-print(recomendCourses("CSE", [], 1, ["Software"], "Easy"))
+# print(recomendCourses("CSE", [], 1, ["Software"], "Easy"))
 
 
 """ 
