@@ -389,7 +389,7 @@ prefs = [
     "Research",
 ]
 difficulties = ["Easy", "Medium", "Hard"]
-
+i = 0
 generated_courses = []
 used_names = set()
 
@@ -399,6 +399,7 @@ for c in core_courses:
     used_names.add(c_name)
     generated_courses.append(
         {
+            "id": i,
             "course_name": c_name,
             "difficulty": c["difficulty"],
             "prerequisite": "None"
@@ -411,6 +412,7 @@ for c in core_courses:
             "department": c["department"],
         }
     )
+    i+=1
 
 # Procedurally generate the rest up to 400
 while len(generated_courses) < OUTPUT_COURSES_COUNT:
@@ -435,6 +437,7 @@ while len(generated_courses) < OUTPUT_COURSES_COUNT:
             used_names.add(course_name)
             generated_courses.append(
                 {
+                    "id": i,
                     "course_name": course_name,
                     "difficulty": random.choice(difficulties),
                     "prerequisite": random.choice(
@@ -451,6 +454,7 @@ while len(generated_courses) < OUTPUT_COURSES_COUNT:
                     "department": dept,
                 }
             )
+            i += 1
 
 df_400 = pd.DataFrame(generated_courses)
 
