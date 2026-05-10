@@ -1,8 +1,15 @@
+from os import environ
+
 from pyswip import Prolog
-from api.prolog.models import recommended_course_respond, recommended_course_request
+
+from ..schemas import RecommendCoursesRequest, Course
+
+knowledge_base_pl_path = environ.get("KNOWLEDGE_BASE_PL_PATH")
+if knowledge_base_pl_path is None:
+    raise ValueError("KNOWLEDGE_BASE_PL_PATH environment variable is not set.")
 
 Prolog.consult(
-    "knowledge_base.pl", relative_to=__file__
+    knowledge_base_pl_path
 )  # must be at top level before to avoid redefinitions
 
 # get a list of size 10 of courses
@@ -62,13 +69,13 @@ Prolog.asserta("""course_data(Id,Name,Dept,Difficulty,Year, Pre):-
 """
 
 
-def recomendCourses(
-    backend_request: recommended_course_request,
-):
-    department: str = backend_request.student_major
-    studiedCourses: list[str] = backend_request.completed_courses
-    currentYear: int = backend_request.currentYear
-    preferences: list[str] = backend_request.requested_courses
+def recommend_courses(
+    request: RecommendCoursesRequest,
+) -> dict[str, list[Course]]:
+    department: str = request.department
+    studiedCourses: list[str] = request.completed_courses
+    currentYear: int = request.academic_year
+    preferences: list[str] = request.preferences
     # difficulty: str = "_"
     based_on_prefenrence = list(
         map(
@@ -137,7 +144,7 @@ def recomendCourses(
         object["course_name"] = c
         object.update({"Id": object["Dept"] + "-" + object["Id"]})
         # print(object)
-        course = recommended_course_respond(
+        course = Course(
             department=object["Dept"],
             course_name=object["course_name"],
             preference=object["Pre"],
