@@ -4,6 +4,7 @@ export interface Course {
   major: string;
   difficulty: string;
   year: number;
+  preference: string;
 }
 export interface StudentPreferences {
   major: string;

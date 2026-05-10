@@ -35,5 +35,6 @@ export const DUMMY_COURSES = parsedData.map(
     major: row.department,
     difficulty: row.difficulty,
     year: parseInt(row.year_of_study) || 1,
+    preference: row.preference,
   }),
 );

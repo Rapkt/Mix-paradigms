@@ -1,17 +1,11 @@
-import {
-  Text,
-  Pressable,
-  View,
-  Button,
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-} from "react-native";
+import { Text, Pressable, View, StyleSheet, SafeAreaView } from "react-native";
 import { useState } from "react";
 import Majors from "./components/wizard/Majors";
+import Summary from "./components/wizard/Summary";
 import TakenCourses from "./components/wizard/TakenCourses";
-import DesiredCourses from "./components/wizard/Desired";
-import Recommendation from "./components/wizard/Recommendation";
+import DesiredCourses from "./components/wizard/Desired"; // Make sure this matches your filename!
+import EngineChoice from "./components/wizard/EngineChoice";
+import AIPrompt from "./components/wizard/aiprompt"; // Make sure the casing matches your file!
 
 export default function Index() {
   const [step, setStep] = useState<number>(1);
@@ -19,25 +13,37 @@ export default function Index() {
   const [takenCourses, setTakenCourses] = useState<string[]>([]);
   const [desiredCourses, setDesiredCourses] = useState<string[]>([]);
   const [currentYear, setCurrentYear] = useState<number>(1);
+
+  const [engineChoice, setEngineChoice] = useState<"prolog" | "ai" | "">("");
+  const [aiPrompt, setAiPrompt] = useState<string>("");
+
   const handleNextStep = () => {
     setStep(step + 1);
   };
+
   const handlePreviousStep = () => {
     if (step > 1) setStep(step - 1);
   };
+
+  // This function checks if the user is allowed to proceed
+  const canGoNext = () => {
+    if (step === 1 && major === "") return false;
+    if (step === 3 && engineChoice === "") return false;
+    return true;
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View
         style={[{ justifyContent: "center", display: "flex" }, styles.header]}
       >
-        <Text
-          style={[styles.title, { justifyContent: "center", display: "flex" }]}
-        >
+        <Text style={[styles.title, { textAlign: "center" }]}>
           Smart Study Advisor
         </Text>
       </View>
+
       <View style={styles.content}>
-        {/* Step 1: Major Selection */}
+        {/* Step 1: Major & Year Selection */}
         {step === 1 && (
           <Majors
             major={major}
@@ -48,6 +54,8 @@ export default function Index() {
             setCurrentYear={setCurrentYear}
           />
         )}
+
+        {/* Step 2: Taken Courses */}
         {step === 2 && (
           <TakenCourses
             major={major}
@@ -56,7 +64,17 @@ export default function Index() {
             currentYear={currentYear}
           />
         )}
+
+        {/* Step 3: Engine Choice */}
         {step === 3 && (
+          <EngineChoice
+            engineChoice={engineChoice}
+            setEngineChoice={setEngineChoice}
+          />
+        )}
+
+        {/* STEP 4: The Branch (Prolog OR AI) */}
+        {step === 4 && engineChoice === "prolog" && (
           <DesiredCourses
             major={major}
             takenCourses={takenCourses}
@@ -65,40 +83,46 @@ export default function Index() {
             currentYear={currentYear}
           />
         )}
-        {step === 4 && (
-          <Recommendation
+
+        {step === 4 && engineChoice === "ai" && (
+          <AIPrompt aiPrompt={aiPrompt} setAiPrompt={setAiPrompt} />
+        )}
+
+        {/* STEP 5: Final Summary */}
+        {step === 5 && (
+          <Summary
             major={major}
+            currentYear={currentYear}
             takenCourses={takenCourses}
             desiredCourses={desiredCourses}
-            currentYear={currentYear}
+            engineChoice={engineChoice}
+            aiPrompt={aiPrompt}
           />
         )}
       </View>
+
       {/* Navigation Footer */}
       <View style={styles.footer}>
+        {/* Back Button */}
         {step > 1 ? (
           <Pressable
             onPress={handlePreviousStep}
             style={({ hovered, pressed }) => [
               styles.navButton,
               styles.navButtonSecondary,
-              hovered && styles.navButtonHovered, // Turns darker gray on web hover
-              pressed && styles.navButtonPressed, // Fades slightly when clicked
+              hovered && styles.navButtonHovered,
+              pressed && styles.navButtonPressed,
             ]}
           >
             <Text style={styles.navButtonTextSecondary}>Back</Text>
           </Pressable>
         ) : (
-          <View /> /* This empty view acts as a placeholder to push "Next" to the right */
+          <View /> /* Spacer to push Next button to the right */
         )}
-        {step < 4 &&
-          (step === 1 && major === "" ? (
-            /* The Invisible Clone: Holds the exact space so the page doesn't jump! */
-            <View style={[styles.navButton, { opacity: 0 }]}>
-              <Text style={styles.navButtonTextPrimary}>Next</Text>
-            </View>
-          ) : (
-            /* The Real Button */
+
+        {/* Next Button */}
+        {step < 5 &&
+          (canGoNext() ? (
             <Pressable
               onPress={handleNextStep}
               style={({ hovered, pressed }) => [
@@ -110,11 +134,17 @@ export default function Index() {
             >
               <Text style={styles.navButtonTextPrimary}>Next</Text>
             </Pressable>
+          ) : (
+            /* Invisible button to hold space when they haven't made a choice yet */
+            <View style={[styles.navButton, { opacity: 0 }]}>
+              <Text style={styles.navButtonTextPrimary}>Next</Text>
+            </View>
           ))}
       </View>
     </SafeAreaView>
   );
 }
+
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#fff" },
   header: {
@@ -124,7 +154,6 @@ const styles = StyleSheet.create({
     borderColor: "#eee",
   },
   title: { fontSize: 24, fontWeight: "bold" },
-  subtitle: { fontSize: 16, color: "#666", marginTop: 5 },
   content: { flex: 1, padding: 20 },
   footer: {
     flexDirection: "row",

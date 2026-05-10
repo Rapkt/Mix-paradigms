@@ -13,59 +13,134 @@ import { getRecommendations } from "../services/api";
 
 export default function ResultsScreen() {
   const router = useRouter();
-
-  // Grab the data we passed from Step 4
   const { requestData, isAI } = useLocalSearchParams();
 
   const [loading, setLoading] = useState(true);
-  const [recommendedCourses, setRecommendedCourses] = useState<any[]>([]);
+
+  // Change this to hold whatever object the API returns
+  const [resultData, setResultData] = useState<any>(null);
 
   useEffect(() => {
     const fetchResults = async () => {
       if (requestData && isAI) {
         const payload = JSON.parse(requestData as string);
-        const results = await getRecommendations(payload, isAI === "true");
+        const isAIEngine = isAI === "true";
 
-        setRecommendedCourses(results as any[]);
+        const results = await getRecommendations(payload, isAIEngine);
+
+        setResultData(results);
         setLoading(false);
       }
     };
 
     fetchResults();
   }, [requestData, isAI]);
+
+  // Reusable helper component to render a course card
+  const CourseCard = ({ course }: { course: any }) => (
+    <View style={styles.courseCard}>
+      <View style={{ flex: 1 }}>
+        <Text style={styles.courseId}>{course.id}</Text>
+        <Text style={styles.courseName}>{course.name}</Text>
+        {course.preference && (
+          <Text style={styles.courseFocus}>Focus: {course.preference}</Text>
+        )}
+      </View>
+      <View style={styles.badge}>
+        <Text style={styles.badgeText}>{course.difficulty}</Text>
+      </View>
+    </View>
+  );
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Your Study Plan</Text>
-        <Text style={styles.subtitle}>Powered by Prolog</Text>
+        <Text style={styles.subtitle}>
+          Powered by {isAI === "true" ? "AI Advisor 🤖" : "Prolog Engine ⚙️"}
+        </Text>
       </View>
 
       <View style={styles.content}>
         {loading ? (
-          // The Loading State
           <View style={styles.centerBox}>
-            <ActivityIndicator size="large" color="#007AFF" />
-            <Text style={styles.loadingText}>Analyzing prerequisites...</Text>
-            <Text style={styles.loadingSubtext}>
-              Querying Prolog inference engine
+            <ActivityIndicator
+              size="large"
+              color={isAI === "true" ? "#5856D6" : "#34C759"}
+            />
+            <Text style={styles.loadingText}>
+              {isAI === "true"
+                ? "Consulting AI Advisor..."
+                : "Querying Prolog Engine..."}
             </Text>
           </View>
         ) : (
-          // The Results State
           <ScrollView showsVerticalScrollIndicator={false}>
-            <Text style={styles.resultHeader}>Recommended For You:</Text>
+            {/* ========================================== */}
+            {/* AI ENGINE LAYOUT                           */}
+            {/* ========================================== */}
+            {isAI === "true" && resultData && (
+              <View>
+                <View style={styles.aiReasoningBox}>
+                  <Text style={styles.aiReasoningTitle}>AI Reasoning:</Text>
+                  <Text style={styles.aiReasoningText}>
+                    {resultData.reasoning}
+                  </Text>
+                </View>
 
-            {recommendedCourses.map((course, index) => (
-              <View key={index} style={styles.courseCard}>
-                <View>
-                  <Text style={styles.courseId}>{course.id}</Text>
-                  <Text style={styles.courseName}>{course.name}</Text>
-                </View>
-                <View style={styles.badge}>
-                  <Text style={styles.badgeText}>{course.difficulty}</Text>
-                </View>
+                <Text style={styles.resultHeader}>Recommended Courses:</Text>
+                {resultData.courses?.map((course: any, idx: number) => (
+                  <CourseCard key={`ai-${idx}`} course={course} />
+                ))}
               </View>
-            ))}
+            )}
+
+            {/* ========================================== */}
+            {/* PROLOG ENGINE LAYOUT                       */}
+            {/* ========================================== */}
+            {isAI === "false" && resultData && (
+              <View>
+                {resultData.preference?.length > 0 && (
+                  <View style={styles.section}>
+                    <Text style={[styles.resultHeader, { color: "#007AFF" }]}>
+                      ★ Matches Your Interests
+                    </Text>
+                    {resultData.preference.map((course: any, idx: number) => (
+                      <CourseCard key={`pref-${idx}`} course={course} />
+                    ))}
+                  </View>
+                )}
+
+                {resultData.easy?.length > 0 && (
+                  <View style={styles.section}>
+                    <Text style={styles.resultHeader}>Light Load (Easy)</Text>
+                    {resultData.easy.map((course: any, idx: number) => (
+                      <CourseCard key={`easy-${idx}`} course={course} />
+                    ))}
+                  </View>
+                )}
+
+                {resultData.medium?.length > 0 && (
+                  <View style={styles.section}>
+                    <Text style={styles.resultHeader}>
+                      Balanced Load (Medium)
+                    </Text>
+                    {resultData.medium.map((course: any, idx: number) => (
+                      <CourseCard key={`med-${idx}`} course={course} />
+                    ))}
+                  </View>
+                )}
+
+                {resultData.hard?.length > 0 && (
+                  <View style={styles.section}>
+                    <Text style={styles.resultHeader}>Heavy Load (Hard)</Text>
+                    {resultData.hard.map((course: any, idx: number) => (
+                      <CourseCard key={`hard-${idx}`} course={course} />
+                    ))}
+                  </View>
+                )}
+              </View>
+            )}
 
             <Pressable
               style={styles.homeButton}
@@ -84,7 +159,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#fff" },
   header: {
     padding: 20,
-    backgroundColor: "#007AFF",
+    backgroundColor: "#111",
     borderBottomWidth: 1,
     borderColor: "#eee",
   },
@@ -99,14 +174,33 @@ const styles = StyleSheet.create({
     marginTop: 20,
     color: "#333",
   },
-  loadingSubtext: { fontSize: 14, color: "#666", marginTop: 5 },
 
+  section: { marginBottom: 20 },
   resultHeader: {
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 15,
     color: "#333",
   },
+
+  // AI Specific Styles
+  aiReasoningBox: {
+    backgroundColor: "#f0f0ff",
+    padding: 15,
+    borderRadius: 12,
+    marginBottom: 25,
+    borderWidth: 1,
+    borderColor: "#d0d0ff",
+  },
+  aiReasoningTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#5856D6",
+    marginBottom: 8,
+  },
+  aiReasoningText: { fontSize: 15, color: "#333", lineHeight: 22 },
+
+  // Course Card Styles
   courseCard: {
     padding: 15,
     backgroundColor: "#f8f9fa",
@@ -124,22 +218,20 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 4,
   },
-  courseName: {
-    fontSize: 18,
-    fontWeight: "600",
-    color: "#333",
-    maxWidth: "80%",
-  },
+  courseName: { fontSize: 18, fontWeight: "600", color: "#333" },
+  courseFocus: { fontSize: 13, color: "#888", marginTop: 4 },
   badge: {
     backgroundColor: "#e0e0e0",
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 15,
+    marginLeft: 10,
   },
   badgeText: { fontSize: 12, fontWeight: "bold", color: "#555" },
 
   homeButton: {
-    marginTop: 30,
+    marginTop: 20,
+    marginBottom: 40,
     backgroundColor: "#f0f0f0",
     paddingVertical: 15,
     borderRadius: 10,

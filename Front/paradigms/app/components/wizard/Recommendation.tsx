@@ -7,6 +7,7 @@ interface Step4Props {
   takenCourses: string[];
   desiredCourses: string[];
   currentYear: number;
+  engineChoise: "prolog" | "ai" | "";
 }
 
 export default function Recommendation({
@@ -14,6 +15,7 @@ export default function Recommendation({
   takenCourses,
   desiredCourses,
   currentYear,
+  engineChoise,
 }: Step4Props) {
   // Helper to get the full course name from an ID
   const getCourseName = (id: string) => {
@@ -50,6 +52,10 @@ export default function Recommendation({
           <Text style={styles.cardLabel}>Selected Major:</Text>
           <Text style={styles.cardValue}>{major}</Text>
         </View>
+        <View style={styles.summaryCard}>
+          <Text style={styles.cardLabel}>Selected Engine:</Text>
+          <Text style={styles.cardValue}>{engineChoise}</Text>
+        </View>
 
         {/* Taken Courses Summary */}
         <View style={styles.summaryCard}>
@@ -70,7 +76,7 @@ export default function Recommendation({
         {/* Desired Courses Summary */}
         <View style={styles.summaryCard}>
           <Text style={styles.cardLabel}>
-            Courses You Want to Take ({desiredCourses.length}):
+            Desired fileds ({desiredCourses.length}):
           </Text>
           {desiredCourses.length === 0 ? (
             <Text style={styles.emptyText}>None selected</Text>

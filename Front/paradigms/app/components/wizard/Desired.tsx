@@ -5,8 +5,8 @@ import { DUMMY_COURSES } from "../../../constants/courses";
 interface Step3Props {
   major: string;
   takenCourses: string[];
-  desiredCourses: string[];
-  setDesiredCourses: (courses: string[]) => void;
+  desiredCourses: string[]; // Note: This will now hold PREFERENCES (e.g., ["Math", "AI"])
+  setDesiredCourses: (preferences: string[]) => void;
   currentYear: number;
 }
 
@@ -19,7 +19,7 @@ export default function DesiredCourses({
 }: Step3Props) {
   const [activeTab, setActiveTab] = useState<number>(currentYear);
 
-  // 1. Get courses for the major AND filter out ones they already took!
+  // 1. Get courses for the major AND filter out ones they already took
   const availableMajorCourses = DUMMY_COURSES.filter(
     (c) => c.major === major && !takenCourses.includes(c.id),
   );
@@ -34,20 +34,26 @@ export default function DesiredCourses({
     (c) => c.year === activeTab,
   );
 
-  const toggleCourse = (courseId: string) => {
-    if (desiredCourses.includes(courseId)) {
-      setDesiredCourses(desiredCourses.filter((id) => id !== courseId));
+  // 4. NEW: Extract UNIQUE PREFERENCES from the displayed courses!
+  // We use Set() to remove duplicates, and filter(Boolean) to remove empty strings.
+  const uniquePreferences = Array.from(
+    new Set(displayedCourses.map((c) => c.preference)),
+  ).filter(Boolean);
+
+  const togglePreference = (pref: string) => {
+    if (desiredCourses.includes(pref)) {
+      setDesiredCourses(desiredCourses.filter((p) => p !== pref));
     } else {
-      setDesiredCourses([...desiredCourses, courseId]);
+      setDesiredCourses([...desiredCourses, pref]);
     }
   };
 
   return (
     <View style={{ flex: 1 }}>
       <View>
-        <Text style={styles.stepTitle}>What do you want to take next?</Text>
+        <Text style={styles.stepTitle}>What topics interest you next?</Text>
         <Text style={styles.subtitle}>
-          Total desired: {desiredCourses.length}
+          Selected interests: {desiredCourses.length}
         </Text>
       </View>
 
@@ -72,28 +78,23 @@ export default function DesiredCourses({
       </View>
 
       <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
-        {displayedCourses.length === 0 ? (
-          <Text
-            style={{
-              textAlign: "center",
-              marginTop: 20,
-              color: "#999",
-              fontStyle: "italic",
-            }}
-          >
-            No courses available for Year {activeTab}.
+        {uniquePreferences.length === 0 ? (
+          <Text style={styles.emptyText}>
+            No specific topics available for Year {activeTab}.
           </Text>
         ) : (
-          displayedCourses.map((course) => {
-            const isDesired = desiredCourses.includes(course.id);
+          uniquePreferences.map((pref) => {
+            // Check if this preference is currently selected
+            const isDesired = desiredCourses.includes(pref);
+
             return (
               <Pressable
-                key={course.id}
+                key={pref}
                 style={[
                   styles.courseCard,
                   isDesired && styles.courseCardDesired,
                 ]}
-                onPress={() => toggleCourse(course.id)}
+                onPress={() => togglePreference(pref)}
               >
                 <Text
                   style={[
@@ -101,15 +102,7 @@ export default function DesiredCourses({
                     isDesired && styles.courseTextSelected,
                   ]}
                 >
-                  {course.id}: {course.name}
-                </Text>
-                <Text
-                  style={[
-                    styles.courseDifficulty,
-                    isDesired && styles.courseTextSelected,
-                  ]}
-                >
-                  {course.difficulty}
+                  {pref}
                 </Text>
               </Pressable>
             );
@@ -123,6 +116,12 @@ export default function DesiredCourses({
 const styles = StyleSheet.create({
   stepTitle: { fontSize: 20, fontWeight: "600", marginBottom: 5 },
   subtitle: { fontSize: 14, color: "#666", marginBottom: 15 },
+  emptyText: {
+    textAlign: "center",
+    marginTop: 20,
+    color: "#999",
+    fontStyle: "italic",
+  },
 
   tabContainer: {
     flexDirection: "row",
@@ -151,11 +150,15 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#e0e0e0",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center", // Center the text since it's just one word now!
     alignItems: "center",
   },
-  courseCardDesired: { backgroundColor: "#FF9500", borderColor: "#FF9500" }, // Orange!
-  courseName: { fontSize: 16, fontWeight: "500", color: "#333", flex: 1 },
-  courseDifficulty: { fontSize: 14, color: "#666", marginLeft: 10 },
+  courseCardDesired: { backgroundColor: "#FF9500", borderColor: "#FF9500" },
+  courseName: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#333",
+    textAlign: "center",
+  },
   courseTextSelected: { color: "#fff" },
 });
