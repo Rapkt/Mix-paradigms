@@ -2,7 +2,7 @@ from langchain.tools import ToolRuntime, tool
 import pandas as pd
 from os import environ
 
-from api.ai.models import RecommendCoursesContext
+from .schemas import RecommendCoursesContext
 
 courses_csv_path = environ.get("COURSES_CSV_PATH")
 if courses_csv_path is None:

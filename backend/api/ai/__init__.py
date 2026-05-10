@@ -1,10 +1,12 @@
-from .tools.get_available_courses import get_available_courses
-from .agent import initialize_agent
-from .models import (
-    RecommendCoursesContext,
+from ..schemas import (
     RecommendCoursesRequest,
     RecommendCoursesResponse,
 )
+from .agent import initialize_agent
+from .schemas import (
+    RecommendCoursesContext,
+)
+from .tools import get_available_courses
 
 
 def recommend_courses(request: RecommendCoursesRequest) -> RecommendCoursesResponse:
@@ -21,7 +23,7 @@ def recommend_courses(request: RecommendCoursesRequest) -> RecommendCoursesRespo
             "messages": [
                 {
                     "role": "user",
-                    "content": f"Recommend courses I should take based on my following interests: {request.interests}",
+                    "content": f"Recommend courses I should take based on my following preferences: {request.preferences}",
                 }
             ]
         },

@@ -2,7 +2,7 @@ from django.http import HttpRequest, HttpResponse, HttpResponseNotAllowed
 from django.http.response import JsonResponse
 
 from . import ai
-from .ai.models import RecommendCoursesRequest
+from .schemas import RecommendCoursesRequest
 
 
 def ai_recommend_view(request: HttpRequest) -> HttpResponse:
