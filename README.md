@@ -30,7 +30,7 @@
 ## Features
 
 - Supports both AI-based and non-AI recommendation.
-- Personalize course recommendations based on your interests.
+- Personalize course recommendations based on your preferences.
 - Mobile application available for easy access.
 
 ## Building
@@ -78,6 +78,23 @@ uv run manage.py runserver
 Navigate to the frontend directory:
 
 ```bash
-cd Front
+cd Front/paradigms
 ```
 
+Install the dependencies using npm:
+
+```bash
+npm install
+```
+
+Run the frontend application:
+
+```bash
+npx expo start
+```
+
+## Design and Structure
+
+### Backend
+
+### Frontend
