@@ -45,3 +45,4 @@ class RecommendCoursesResponse(BaseModel):
     recommened_courses: list[str] = Field(
         description="The recommended courses for the user based on the input information.",
     )
+    reasoning: str = Field(description="The reasoning behind why you choose those courses,make it brief")

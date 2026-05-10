@@ -17,13 +17,13 @@ def recommend_courses(request: RecommendCoursesRequest) -> RecommendCoursesRespo
     )
 
     agent = initialize_agent(tools=[get_available_courses])
-
+    
     response = agent.invoke(
         {
             "messages": [
                 {
                     "role": "user",
-                    "content": f"Recommend courses I should take based on my following preferences: {request.preferences}",
+                    "content": f"Recommend courses I should take based on my following preferences: {request.preferences[0]}",
                 }
             ]
         },
@@ -31,5 +31,4 @@ def recommend_courses(request: RecommendCoursesRequest) -> RecommendCoursesRespo
     )
 
     print(response)
-
     return response["structured_response"]
