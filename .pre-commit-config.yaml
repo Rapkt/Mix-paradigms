@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/commit-check/commit-check
+    rev: v2.6.0
+    hooks:
+      - id: check-message
+      - id: check-branch
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.12
+    hooks:
+      - id: ruff-check
+        files: ^backend/
+        exclude: backend/manage.py
+      - id: ruff-format
+        files: ^backend/
