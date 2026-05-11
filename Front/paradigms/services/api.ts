@@ -1,4 +1,8 @@
 export const getRecommendations = async (payload: any, isAI: boolean) => {
+  console.log("payload: ");
+  console.log(payload);
+  
+  
   try {
     const URL = isAI
       ? "http://127.0.0.1:8000/api/ai/recommend/"

@@ -43,7 +43,7 @@ course('Logic Design Lab').
 course('Data Structures').
 course('Data Structures Lab').
 course('Object-Oriented Programming').
-course('Electric Circuits (CCE)').
+course('Electric Circuits (CSE)').
 course('Electronic Devices').
 course('Signals and Systems').
 course('Computer Architecture').
@@ -96,8 +96,8 @@ course('Human-Computer Interaction').
 course('Quantum Computing Basics').
 course('Advanced Software Engineering').
 course('Blockchain Technologies').
-course('Graduation Project 1 (CCE)').
-course('Graduation Project 2 (CCE)').
+course('Graduation Project 1 (CSE)').
+course('Graduation Project 2 (CSE)').
 course('Electrical Circuits 1').
 course('Electrical Circuits 2').
 course('Circuits Lab').
@@ -443,7 +443,7 @@ course_id('Logic Design Lab', '41').
 course_id('Data Structures', '42').
 course_id('Data Structures Lab', '43').
 course_id('Object-Oriented Programming', '44').
-course_id('Electric Circuits (CCE)', '45').
+course_id('Electric Circuits (CSE)', '45').
 course_id('Electronic Devices', '46').
 course_id('Signals and Systems', '47').
 course_id('Computer Architecture', '48').
@@ -496,8 +496,8 @@ course_id('Human-Computer Interaction', '94').
 course_id('Quantum Computing Basics', '95').
 course_id('Advanced Software Engineering', '96').
 course_id('Blockchain Technologies', '97').
-course_id('Graduation Project 1 (CCE)', '98').
-course_id('Graduation Project 2 (CCE)', '99').
+course_id('Graduation Project 1 (CSE)', '98').
+course_id('Graduation Project 2 (CSE)', '99').
 course_id('Electrical Circuits 1', '100').
 course_id('Electrical Circuits 2', '101').
 course_id('Circuits Lab', '102').
@@ -843,7 +843,7 @@ difficulty('Logic Design Lab', 'Easy').
 difficulty('Data Structures', 'Hard').
 difficulty('Data Structures Lab', 'Easy').
 difficulty('Object-Oriented Programming', 'Medium').
-difficulty('Electric Circuits (CCE)', 'Medium').
+difficulty('Electric Circuits (CSE)', 'Medium').
 difficulty('Electronic Devices', 'Hard').
 difficulty('Signals and Systems', 'Hard').
 difficulty('Computer Architecture', 'Hard').
@@ -896,8 +896,8 @@ difficulty('Human-Computer Interaction', 'Easy').
 difficulty('Quantum Computing Basics', 'Hard').
 difficulty('Advanced Software Engineering', 'Hard').
 difficulty('Blockchain Technologies', 'Medium').
-difficulty('Graduation Project 1 (CCE)', 'Hard').
-difficulty('Graduation Project 2 (CCE)', 'Hard').
+difficulty('Graduation Project 1 (CSE)', 'Hard').
+difficulty('Graduation Project 2 (CSE)', 'Hard').
 difficulty('Electrical Circuits 1', 'Medium').
 difficulty('Electrical Circuits 2', 'Hard').
 difficulty('Circuits Lab', 'Easy').
@@ -1243,8 +1243,8 @@ prerequisite('Logic Design Lab', 'Logic Design').
 prerequisite('Data Structures', 'Advanced Programming').
 prerequisite('Data Structures Lab', 'Data Structures').
 prerequisite('Object-Oriented Programming', 'Advanced Programming').
-prerequisite('Electric Circuits (CCE)', 'Physics 2 (Electricity)').
-prerequisite('Electronic Devices', 'Electric Circuits (CCE)').
+prerequisite('Electric Circuits (CSE)', 'Physics 2 (Electricity)').
+prerequisite('Electronic Devices', 'Electric Circuits (CSE)').
 prerequisite('Signals and Systems', 'Mathematics 3 (Differential Equations)').
 prerequisite('Computer Architecture', 'Logic Design').
 prerequisite('Computer Architecture Lab', 'Computer Architecture').
@@ -1296,8 +1296,8 @@ prerequisite('Human-Computer Interaction', 'Software Engineering').
 prerequisite('Quantum Computing Basics', 'Mathematics 7 (Linear Algebra)').
 prerequisite('Advanced Software Engineering', 'Software Engineering').
 prerequisite('Blockchain Technologies', 'Cryptography').
-prerequisite('Graduation Project 1 (CCE)', 'Software Engineering').
-prerequisite('Graduation Project 2 (CCE)', 'Graduation Project 1 (CCE)').
+prerequisite('Graduation Project 1 (CSE)', 'Software Engineering').
+prerequisite('Graduation Project 2 (CSE)', 'Graduation Project 1 (CSE)').
 prerequisite('Electrical Circuits 1', 'Physics 2 (Electricity)').
 prerequisite('Electrical Circuits 2', 'Electrical Circuits 1').
 prerequisite('Circuits Lab', 'Electrical Circuits 2').
@@ -1643,7 +1643,7 @@ preference('Logic Design Lab', 'Hardware').
 preference('Data Structures', 'Programming').
 preference('Data Structures Lab', 'Programming').
 preference('Object-Oriented Programming', 'Programming').
-preference('Electric Circuits (CCE)', 'Circuits').
+preference('Electric Circuits (CSE)', 'Circuits').
 preference('Electronic Devices', 'Electronics').
 preference('Signals and Systems', 'Math').
 preference('Computer Architecture', 'Hardware').
@@ -1696,8 +1696,8 @@ preference('Human-Computer Interaction', 'Software').
 preference('Quantum Computing Basics', 'Hardware').
 preference('Advanced Software Engineering', 'Software').
 preference('Blockchain Technologies', 'Security').
-preference('Graduation Project 1 (CCE)', 'Research').
-preference('Graduation Project 2 (CCE)', 'Research').
+preference('Graduation Project 1 (CSE)', 'Research').
+preference('Graduation Project 2 (CSE)', 'Research').
 preference('Electrical Circuits 1', 'Circuits').
 preference('Electrical Circuits 2', 'Circuits').
 preference('Circuits Lab', 'Circuits').
@@ -2043,7 +2043,7 @@ year_of_study('Logic Design Lab', '2').
 year_of_study('Data Structures', '2').
 year_of_study('Data Structures Lab', '2').
 year_of_study('Object-Oriented Programming', '2').
-year_of_study('Electric Circuits (CCE)', '2').
+year_of_study('Electric Circuits (CSE)', '2').
 year_of_study('Electronic Devices', '2').
 year_of_study('Signals and Systems', '2').
 year_of_study('Computer Architecture', '3').
@@ -2096,8 +2096,8 @@ year_of_study('Human-Computer Interaction', '4').
 year_of_study('Quantum Computing Basics', '5').
 year_of_study('Advanced Software Engineering', '5').
 year_of_study('Blockchain Technologies', '5').
-year_of_study('Graduation Project 1 (CCE)', '5').
-year_of_study('Graduation Project 2 (CCE)', '5').
+year_of_study('Graduation Project 1 (CSE)', '5').
+year_of_study('Graduation Project 2 (CSE)', '5').
 year_of_study('Electrical Circuits 1', '2').
 year_of_study('Electrical Circuits 2', '2').
 year_of_study('Circuits Lab', '2').
@@ -2438,66 +2438,66 @@ department('Communication Skills', 'Basic Sciences').
 department('Engineering Law and Contracts', 'Basic Sciences').
 department('History of Engineering', 'Basic Sciences').
 department('Innovation and Entrepreneurship', 'Basic Sciences').
-department('Logic Design', 'CCE').
-department('Logic Design Lab', 'CCE').
-department('Data Structures', 'CCE').
-department('Data Structures Lab', 'CCE').
-department('Object-Oriented Programming', 'CCE').
-department('Electric Circuits (CCE)', 'CCE').
-department('Electronic Devices', 'CCE').
-department('Signals and Systems', 'CCE').
-department('Computer Architecture', 'CCE').
-department('Computer Architecture Lab', 'CCE').
-department('Design and Analysis of Algorithms', 'CCE').
-department('Microprocessors', 'CCE').
-department('Microprocessors Lab', 'CCE').
-department('Database Systems', 'CCE').
-department('Database Systems Lab', 'CCE').
-department('Analog Communications', 'CCE').
-department('Electromagnetic Fields', 'CCE').
-department('Software Engineering', 'CCE').
-department('Digital Signal Processing', 'CCE').
-department('DSP Lab', 'CCE').
-department('Operating Systems', 'CCE').
-department('Computer Networks', 'CCE').
-department('Networks Lab', 'CCE').
-department('Digital Communications', 'CCE').
-department('Control Systems', 'CCE').
-department('VLSI Design', 'CCE').
-department('Information Theory', 'CCE').
-department('Microwave Engineering', 'CCE').
-department('Microwave Lab', 'CCE').
-department('Artificial Intelligence', 'CCE').
-department('AI Lab', 'CCE').
-department('Network Security', 'CCE').
-department('Mobile Communications', 'CCE').
-department('Embedded Systems', 'CCE').
-department('Embedded Systems Lab', 'CCE').
-department('Machine Learning', 'CCE').
-department('Optical Communications', 'CCE').
-department('Computer Vision', 'CCE').
-department('Cloud Computing', 'CCE').
-department('Internet of Things (IoT)', 'CCE').
-department('Cryptography', 'CCE').
-department('Compiler Design', 'CCE').
-department('Distributed Systems', 'CCE').
-department('Web Development', 'CCE').
-department('Natural Language Processing', 'CCE').
-department('Big Data Analytics', 'CCE').
-department('Wireless Sensor Networks', 'CCE').
-department('Satellite Communications', 'CCE').
-department('Radar Systems', 'CCE').
-department('Antenna Design', 'CCE').
-department('Digital IC Design', 'CCE').
-department('Mixed Signal IC Design', 'CCE').
-department('Hardware Verification', 'CCE').
-department('Bio-informatics', 'CCE').
-department('Human-Computer Interaction', 'CCE').
-department('Quantum Computing Basics', 'CCE').
-department('Advanced Software Engineering', 'CCE').
-department('Blockchain Technologies', 'CCE').
-department('Graduation Project 1 (CCE)', 'CCE').
-department('Graduation Project 2 (CCE)', 'CCE').
+department('Logic Design', 'CSE').
+department('Logic Design Lab', 'CSE').
+department('Data Structures', 'CSE').
+department('Data Structures Lab', 'CSE').
+department('Object-Oriented Programming', 'CSE').
+department('Electric Circuits (CSE)', 'CSE').
+department('Electronic Devices', 'CSE').
+department('Signals and Systems', 'CSE').
+department('Computer Architecture', 'CSE').
+department('Computer Architecture Lab', 'CSE').
+department('Design and Analysis of Algorithms', 'CSE').
+department('Microprocessors', 'CSE').
+department('Microprocessors Lab', 'CSE').
+department('Database Systems', 'CSE').
+department('Database Systems Lab', 'CSE').
+department('Analog Communications', 'CSE').
+department('Electromagnetic Fields', 'CSE').
+department('Software Engineering', 'CSE').
+department('Digital Signal Processing', 'CSE').
+department('DSP Lab', 'CSE').
+department('Operating Systems', 'CSE').
+department('Computer Networks', 'CSE').
+department('Networks Lab', 'CSE').
+department('Digital Communications', 'CSE').
+department('Control Systems', 'CSE').
+department('VLSI Design', 'CSE').
+department('Information Theory', 'CSE').
+department('Microwave Engineering', 'CSE').
+department('Microwave Lab', 'CSE').
+department('Artificial Intelligence', 'CSE').
+department('AI Lab', 'CSE').
+department('Network Security', 'CSE').
+department('Mobile Communications', 'CSE').
+department('Embedded Systems', 'CSE').
+department('Embedded Systems Lab', 'CSE').
+department('Machine Learning', 'CSE').
+department('Optical Communications', 'CSE').
+department('Computer Vision', 'CSE').
+department('Cloud Computing', 'CSE').
+department('Internet of Things (IoT)', 'CSE').
+department('Cryptography', 'CSE').
+department('Compiler Design', 'CSE').
+department('Distributed Systems', 'CSE').
+department('Web Development', 'CSE').
+department('Natural Language Processing', 'CSE').
+department('Big Data Analytics', 'CSE').
+department('Wireless Sensor Networks', 'CSE').
+department('Satellite Communications', 'CSE').
+department('Radar Systems', 'CSE').
+department('Antenna Design', 'CSE').
+department('Digital IC Design', 'CSE').
+department('Mixed Signal IC Design', 'CSE').
+department('Hardware Verification', 'CSE').
+department('Bio-informatics', 'CSE').
+department('Human-Computer Interaction', 'CSE').
+department('Quantum Computing Basics', 'CSE').
+department('Advanced Software Engineering', 'CSE').
+department('Blockchain Technologies', 'CSE').
+department('Graduation Project 1 (CSE)', 'CSE').
+department('Graduation Project 2 (CSE)', 'CSE').
 department('Electrical Circuits 1', 'EE').
 department('Electrical Circuits 2', 'EE').
 department('Circuits Lab', 'EE').

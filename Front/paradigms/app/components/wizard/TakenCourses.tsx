@@ -67,12 +67,12 @@ export default function TakenCourses({
       {/* THE FILTERED COURSE LIST */}
       <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
         {displayedCourses.map((course) => {
-          const isTaken = takenCourses.includes(course.id);
+          const isTaken = takenCourses.includes(course.name);
           return (
             <Pressable
               key={course.id}
               style={[styles.courseCard, isTaken && styles.courseCardSelected]}
-              onPress={() => toggleCourse(course.id)}
+              onPress={() => toggleCourse(course.name)}
             >
               <Text
                 style={[

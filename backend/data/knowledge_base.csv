@@ -39,66 +39,66 @@ id,course_name,difficulty,prerequisite,preference,year_of_study,department
 37,Engineering Law and Contracts,Medium,Engineering Ethics,Humanities,4,Basic Sciences
 38,History of Engineering,Easy,None,Humanities,2,Basic Sciences
 39,Innovation and Entrepreneurship,Medium,None,Management,4,Basic Sciences
-40,Logic Design,Medium,Physics 2 (Electricity),Hardware,2,CCE
-41,Logic Design Lab,Easy,Logic Design,Hardware,2,CCE
-42,Data Structures,Hard,Advanced Programming,Programming,2,CCE
-43,Data Structures Lab,Easy,Data Structures,Programming,2,CCE
-44,Object-Oriented Programming,Medium,Advanced Programming,Programming,2,CCE
-45,Electric Circuits (CCE),Medium,Physics 2 (Electricity),Circuits,2,CCE
-46,Electronic Devices,Hard,Electric Circuits (CCE),Electronics,2,CCE
-47,Signals and Systems,Hard,Mathematics 3 (Differential Equations),Math,2,CCE
-48,Computer Architecture,Hard,Logic Design,Hardware,3,CCE
-49,Computer Architecture Lab,Medium,Computer Architecture,Hardware,3,CCE
-50,Design and Analysis of Algorithms,Hard,Data Structures,Programming,3,CCE
-51,Microprocessors,Hard,Logic Design,Hardware,3,CCE
-52,Microprocessors Lab,Medium,Microprocessors,Hardware,3,CCE
-53,Database Systems,Medium,Data Structures,Software,3,CCE
-54,Database Systems Lab,Easy,Database Systems,Software,3,CCE
-55,Analog Communications,Medium,Signals and Systems,Communications,3,CCE
-56,Electromagnetic Fields,Hard,Physics 2 (Electricity),Physics,3,CCE
-57,Software Engineering,Medium,Object-Oriented Programming,Software,3,CCE
-58,Digital Signal Processing,Hard,Signals and Systems,Math,3,CCE
-59,DSP Lab,Medium,Digital Signal Processing,Math,3,CCE
-60,Operating Systems,Hard,Computer Architecture,Software,4,CCE
-61,Computer Networks,Medium,Operating Systems,Networking,4,CCE
-62,Networks Lab,Medium,Computer Networks,Networking,4,CCE
-63,Digital Communications,Hard,Analog Communications,Communications,4,CCE
-64,Control Systems,Hard,Signals and Systems,Systems,4,CCE
-65,VLSI Design,Hard,Electronic Devices,Hardware,4,CCE
-66,Information Theory,Medium,Mathematics 6 (Probability & Statistics),Math,4,CCE
-67,Microwave Engineering,Hard,Electromagnetic Fields,Physics,4,CCE
-68,Microwave Lab,Medium,Microwave Engineering,Physics,4,CCE
-69,Artificial Intelligence,Hard,Design and Analysis of Algorithms,AI,4,CCE
-70,AI Lab,Medium,Artificial Intelligence,AI,4,CCE
-71,Network Security,Medium,Computer Networks,Security,5,CCE
-72,Mobile Communications,Medium,Digital Communications,Communications,5,CCE
-73,Embedded Systems,Hard,Microprocessors,Hardware,5,CCE
-74,Embedded Systems Lab,Medium,Embedded Systems,Hardware,5,CCE
-75,Machine Learning,Hard,Artificial Intelligence,AI,5,CCE
-76,Optical Communications,Hard,Microwave Engineering,Communications,5,CCE
-77,Computer Vision,Hard,Digital Signal Processing,AI,5,CCE
-78,Cloud Computing,Medium,Computer Networks,Networking,5,CCE
-79,Internet of Things (IoT),Medium,Embedded Systems,Networking,5,CCE
-80,Cryptography,Hard,Network Security,Security,5,CCE
-81,Compiler Design,Hard,Data Structures,Software,4,CCE
-82,Distributed Systems,Hard,Operating Systems,Software,5,CCE
-83,Web Development,Medium,Database Systems,Software,4,CCE
-84,Natural Language Processing,Hard,Artificial Intelligence,AI,5,CCE
-85,Big Data Analytics,Medium,Database Systems,Software,5,CCE
-86,Wireless Sensor Networks,Hard,Computer Networks,Networking,5,CCE
-87,Satellite Communications,Hard,Analog Communications,Communications,5,CCE
-88,Radar Systems,Hard,Microwave Engineering,Physics,5,CCE
-89,Antenna Design,Hard,Electromagnetic Fields,Physics,4,CCE
-90,Digital IC Design,Hard,VLSI Design,Hardware,5,CCE
-91,Mixed Signal IC Design,Hard,VLSI Design,Hardware,5,CCE
-92,Hardware Verification,Hard,Computer Architecture,Hardware,5,CCE
-93,Bio-informatics,Medium,Design and Analysis of Algorithms,AI,5,CCE
-94,Human-Computer Interaction,Easy,Software Engineering,Software,4,CCE
-95,Quantum Computing Basics,Hard,Mathematics 7 (Linear Algebra),Hardware,5,CCE
-96,Advanced Software Engineering,Hard,Software Engineering,Software,5,CCE
-97,Blockchain Technologies,Medium,Cryptography,Security,5,CCE
-98,Graduation Project 1 (CCE),Hard,Software Engineering,Research,5,CCE
-99,Graduation Project 2 (CCE),Hard,Graduation Project 1 (CCE),Research,5,CCE
+40,Logic Design,Medium,Physics 2 (Electricity),Hardware,2,CSE
+41,Logic Design Lab,Easy,Logic Design,Hardware,2,CSE
+42,Data Structures,Hard,Advanced Programming,Programming,2,CSE
+43,Data Structures Lab,Easy,Data Structures,Programming,2,CSE
+44,Object-Oriented Programming,Medium,Advanced Programming,Programming,2,CSE
+45,Electric Circuits (CSE),Medium,Physics 2 (Electricity),Circuits,2,CSE
+46,Electronic Devices,Hard,Electric Circuits (CSE),Electronics,2,CSE
+47,Signals and Systems,Hard,Mathematics 3 (Differential Equations),Math,2,CSE
+48,Computer Architecture,Hard,Logic Design,Hardware,3,CSE
+49,Computer Architecture Lab,Medium,Computer Architecture,Hardware,3,CSE
+50,Design and Analysis of Algorithms,Hard,Data Structures,Programming,3,CSE
+51,Microprocessors,Hard,Logic Design,Hardware,3,CSE
+52,Microprocessors Lab,Medium,Microprocessors,Hardware,3,CSE
+53,Database Systems,Medium,Data Structures,Software,3,CSE
+54,Database Systems Lab,Easy,Database Systems,Software,3,CSE
+55,Analog Communications,Medium,Signals and Systems,Communications,3,CSE
+56,Electromagnetic Fields,Hard,Physics 2 (Electricity),Physics,3,CSE
+57,Software Engineering,Medium,Object-Oriented Programming,Software,3,CSE
+58,Digital Signal Processing,Hard,Signals and Systems,Math,3,CSE
+59,DSP Lab,Medium,Digital Signal Processing,Math,3,CSE
+60,Operating Systems,Hard,Computer Architecture,Software,4,CSE
+61,Computer Networks,Medium,Operating Systems,Networking,4,CSE
+62,Networks Lab,Medium,Computer Networks,Networking,4,CSE
+63,Digital Communications,Hard,Analog Communications,Communications,4,CSE
+64,Control Systems,Hard,Signals and Systems,Systems,4,CSE
+65,VLSI Design,Hard,Electronic Devices,Hardware,4,CSE
+66,Information Theory,Medium,Mathematics 6 (Probability & Statistics),Math,4,CSE
+67,Microwave Engineering,Hard,Electromagnetic Fields,Physics,4,CSE
+68,Microwave Lab,Medium,Microwave Engineering,Physics,4,CSE
+69,Artificial Intelligence,Hard,Design and Analysis of Algorithms,AI,4,CSE
+70,AI Lab,Medium,Artificial Intelligence,AI,4,CSE
+71,Network Security,Medium,Computer Networks,Security,5,CSE
+72,Mobile Communications,Medium,Digital Communications,Communications,5,CSE
+73,Embedded Systems,Hard,Microprocessors,Hardware,5,CSE
+74,Embedded Systems Lab,Medium,Embedded Systems,Hardware,5,CSE
+75,Machine Learning,Hard,Artificial Intelligence,AI,5,CSE
+76,Optical Communications,Hard,Microwave Engineering,Communications,5,CSE
+77,Computer Vision,Hard,Digital Signal Processing,AI,5,CSE
+78,Cloud Computing,Medium,Computer Networks,Networking,5,CSE
+79,Internet of Things (IoT),Medium,Embedded Systems,Networking,5,CSE
+80,Cryptography,Hard,Network Security,Security,5,CSE
+81,Compiler Design,Hard,Data Structures,Software,4,CSE
+82,Distributed Systems,Hard,Operating Systems,Software,5,CSE
+83,Web Development,Medium,Database Systems,Software,4,CSE
+84,Natural Language Processing,Hard,Artificial Intelligence,AI,5,CSE
+85,Big Data Analytics,Medium,Database Systems,Software,5,CSE
+86,Wireless Sensor Networks,Hard,Computer Networks,Networking,5,CSE
+87,Satellite Communications,Hard,Analog Communications,Communications,5,CSE
+88,Radar Systems,Hard,Microwave Engineering,Physics,5,CSE
+89,Antenna Design,Hard,Electromagnetic Fields,Physics,4,CSE
+90,Digital IC Design,Hard,VLSI Design,Hardware,5,CSE
+91,Mixed Signal IC Design,Hard,VLSI Design,Hardware,5,CSE
+92,Hardware Verification,Hard,Computer Architecture,Hardware,5,CSE
+93,Bio-informatics,Medium,Design and Analysis of Algorithms,AI,5,CSE
+94,Human-Computer Interaction,Easy,Software Engineering,Software,4,CSE
+95,Quantum Computing Basics,Hard,Mathematics 7 (Linear Algebra),Hardware,5,CSE
+96,Advanced Software Engineering,Hard,Software Engineering,Software,5,CSE
+97,Blockchain Technologies,Medium,Cryptography,Security,5,CSE
+98,Graduation Project 1 (CSE),Hard,Software Engineering,Research,5,CSE
+99,Graduation Project 2 (CSE),Hard,Graduation Project 1 (CSE),Research,5,CSE
 100,Electrical Circuits 1,Medium,Physics 2 (Electricity),Circuits,2,EE
 101,Electrical Circuits 2,Hard,Electrical Circuits 1,Circuits,2,EE
 102,Circuits Lab,Easy,Electrical Circuits 2,Circuits,2,EE

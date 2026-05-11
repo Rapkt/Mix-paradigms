@@ -5,7 +5,7 @@ from os import environ
 from dotenv import load_dotenv
 
 
-from ..schemas import RecommendCoursesRequest, Course
+from api.schemas import RecommendCoursesRequest, Course
 
 load_dotenv()
 knowledge_base_pl_path = environ.get("KNOWLEDGE_BASE_PL_PATH")
@@ -34,7 +34,7 @@ Prolog.assertz("""recommend_based_on_preference(User_department,User_preferences
     department(Course,User_department),
     preference(Course,Preference),
     member(Preference,User_preferences),
-    \+member(Course,User_courses)""")
+    \\+member(Course,User_courses)""")
 Prolog.asserta("""recommend_based_on_prerequisite(User_department,User_prerequisites,Course):-
     department(Course,User_department),
     (
@@ -44,19 +44,19 @@ Prolog.asserta("""recommend_based_on_prerequisite(User_department,User_prerequis
             ( prerequisite(Course,Y), member(Y,User_prerequisites) )
         )
         ; prerequisite(Course,'None')
-    ),\+member(Course,User_courses) 
+    ),\\+member(Course, User_prerequisites) 
     """)
 
 
 Prolog.asserta("""recommend_based_on_year_of_study(User_department,User_year_of_study,User_courses,Course):-
         department(Course,User_department),
         year_of_study(Course,User_year_of_study),
-        \+member(Course,User_courses)""")
+        \\+member(Course,User_courses)""")
 
 Prolog.asserta("""recommend_based_on_difficulty(User_department,User_difficulty,User_courses,Course):-
     department(Course,User_department),
     difficulty(Course,User_difficulty),
-    \+member(Course,User_courses)""")
+    \\+member(Course,User_courses)""")
 
 Prolog.asserta("""course_data(Id,Name,Dept,Difficulty,Year, Pre):-
     department(Name,Dept),
@@ -95,6 +95,8 @@ def recommend_courses(
         )
     )
     based_on_prefenrence = set(based_on_prefenrence)
+    print(based_on_prefenrence)
+    print(studiedCourses)
     based_on_prerequisites = list(
         map(
             lambda e: e["X"],
@@ -104,6 +106,7 @@ def recommend_courses(
         )
     )
     based_on_prerequisites = set(based_on_prerequisites)
+    print(based_on_prerequisites)
 
     based_on_year_of_study = list(
         map(
@@ -114,7 +117,7 @@ def recommend_courses(
         )
     )
     based_on_year_of_study = set(based_on_year_of_study)
-    based_on_prerequisites = set(based_on_prerequisites)
+    print(based_on_year_of_study)
 
     easy = list(
         map(
@@ -174,7 +177,7 @@ def recommend_courses(
     }
 
 
-# print(recomendCourses("CSE", [], 1, ["Software"], "Easy"))
+print(recommend_courses(RecommendCoursesRequest(department="CSE", academic_year=2, completed_courses=["Advanced Programming", "Data Structures"], preferences=["Programming", "Math"])))
 
 
 """ 
