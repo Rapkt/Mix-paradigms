@@ -40,6 +40,7 @@
 - [Python](https://www.python.org/downloads/)
 - [uv](https://docs.astral.sh/uv/getting-started/installation/)
 - [SWI-Prolog](https://www.swi-prolog.org/Download.html)
+- [Node.js](https://nodejs.org/en/download)
 
 Clone the repository:
 
@@ -61,6 +62,12 @@ Navigate to the backend directory:
 cd backend
 ```
 
+Copy .env.example as .env and replace the placeholders with your actual values:
+
+```bash
+cp .env.example .env
+```
+
 Install the dependencies using uv:
 
 ```bash
@@ -70,7 +77,7 @@ uv sync
 Run the backend server:
 
 ```bash
-uv run manage.py runserver
+uv run --env-file .env manage.py runserver
 ```
 
 ### Building Frontend
@@ -79,6 +86,12 @@ Navigate to the frontend directory:
 
 ```bash
 cd Front/paradigms
+```
+
+Copy .env.example as .env and replace the placeholders with your actual values:
+
+```bash
+cp .env.example .env
 ```
 
 Install the dependencies using npm:
