@@ -1,18 +1,23 @@
 import csv
 from os import environ
+from dotenv import load_dotenv
 
+load_dotenv()
 knowledge_base_pl_path = environ.get("KNOWLEDGE_BASE_PL_PATH")
+knowledge_base_csv_path = environ.get("KNOWLEDGE_BASE_CSV_PATH")
 if knowledge_base_pl_path is None:
     raise ValueError("KNOWLEDGE_BASE_PL_PATH environment variable is not set.")
+if knowledge_base_csv_path is None:
+    raise ValueError("KNOWLEDGE_BASE_CSV_PATH environment variable is not set.")
 
 courses = []
-with open(knowledge_base_pl_path, newline="") as file:
+with open(knowledge_base_csv_path, newline="") as file:
     read = csv.reader(file)
     courses = list(read)
 
 # structure of each course entry in courses:
 # ['Introduction to Computer Engineering', 'Easy', 'None', 'Hardware/Software', '4', 'CSE']
-with open("knowledge_base.pl", "w") as b:
+with open(knowledge_base_pl_path, "w") as b:
     # pardon my redunduncy tarek, try to concatinate the loops and you will see why :..(
     for c in courses:
         if c[1] == "course_name":
