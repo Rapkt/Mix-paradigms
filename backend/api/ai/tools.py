@@ -3,7 +3,7 @@ from os import environ
 import pandas as pd
 from langchain.tools import ToolRuntime, tool
 
-from .schemas import RecommendCoursesContext
+from .schemas import AIRecommendCoursesContext
 import logging
 
 logger = logging.getLogger(__name__)
@@ -21,7 +21,7 @@ courses_df = pd.read_csv(knowledge_base_csv_path)
 
 
 @tool
-def get_available_courses(runtime: ToolRuntime[RecommendCoursesContext]) -> list[str]:
+def get_available_courses(runtime: ToolRuntime[AIRecommendCoursesContext]) -> list[str]:
     """
     This tool is used to get the available courses for a user. It takes no arguments.
     The tool will return a list of courses that are available for the user to take.

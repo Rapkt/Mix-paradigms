@@ -38,12 +38,7 @@ def prolog_recommend_view(request: HttpRequest) -> HttpResponse:
 
             logger.info("Prolog recommendation response: %s", response)
 
-            return JsonResponse(
-                {
-                    key: [course.model_dump() for course in response[key]]
-                    for key in response
-                }
-            )
+            return JsonResponse(response.model_dump())
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
 

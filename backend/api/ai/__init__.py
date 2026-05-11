@@ -2,19 +2,19 @@ import logging
 
 from ..schemas import (
     RecommendCoursesRequest,
-    RecommendCoursesResponse,
 )
 from .agent import initialize_agent
 from .schemas import (
-    RecommendCoursesContext,
+    AIRecommendCoursesContext,
+    AIRecommendCoursesResponse,
 )
 from .tools import get_available_courses
 
 logger = logging.getLogger(__name__)
 
 
-def recommend_courses(request: RecommendCoursesRequest) -> RecommendCoursesResponse:
-    context = RecommendCoursesContext(
+def recommend_courses(request: RecommendCoursesRequest) -> AIRecommendCoursesResponse:
+    context = AIRecommendCoursesContext(
         department=request.department,
         academic_year=request.academic_year,
         completed_courses=request.completed_courses,

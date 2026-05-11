@@ -3,7 +3,8 @@ from os import environ
 
 from pyswip import Prolog
 
-from ..schemas import Course, RecommendCoursesRequest
+from ..schemas import RecommendCoursesRequest
+from .schemas import Course, PrologRecommendCoursesResponse
 
 logger = logging.getLogger(__name__)
 
@@ -77,7 +78,7 @@ Prolog.asserta("""course_data(Id,Name,Dept,Difficulty,Year, Pre):-
 
 def recommend_courses(
     request: RecommendCoursesRequest,
-) -> dict[str, list[Course]]:
+) -> PrologRecommendCoursesResponse:
     department: str = request.department
     studiedCourses: list[str] = request.completed_courses
     currentYear: int = request.academic_year
@@ -175,13 +176,13 @@ def recommend_courses(
     not_prefered_but_easy_courses = list(map(get_details, not_prefered_but_easy))
     not_prefered_but_med_courses = list(map(get_details, not_prefered_but_med))
     not_prefered_but_hard_courses = list(map(get_details, not_prefered_but_hard))
-    # print(prefered_courses,not_prefered_but_easy_courses,not_prefered_but_med_courses,not_prefered_but_hard_courses)
-    return {
-        "prefered": prefered_courses,
-        "not_prefered_easy": not_prefered_but_easy_courses,
-        "not_prefered_med": not_prefered_but_med_courses,
-        "not_prefered_hard": not_prefered_but_hard_courses,
-    }
+
+    return PrologRecommendCoursesResponse(
+        prefered=prefered_courses,
+        not_prefered_easy=not_prefered_but_easy_courses,
+        not_prefered_med=not_prefered_but_med_courses,
+        not_prefered_hard=not_prefered_but_hard_courses,
+    )
 
 
 """ 

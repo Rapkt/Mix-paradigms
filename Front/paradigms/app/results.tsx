@@ -82,7 +82,7 @@ export default function ResultsScreen() {
                 <View style={styles.aiReasoningBox}>
                   <Text style={styles.aiReasoningTitle}>AI Reasoning:</Text>
                   <Text style={styles.aiReasoningText}>
-                    {/* {resultData.reasoning} */}
+                  	{resultData.reasoning}
                   </Text>
                 </View>
 

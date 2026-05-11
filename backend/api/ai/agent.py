@@ -7,14 +7,15 @@ from langchain.agents.middleware import (
 from langchain.tools import BaseTool
 from langchain_groq import ChatGroq
 
-from ..schemas import (
-    RecommendCoursesResponse,
+from .schemas import (
+    AIRecommendCoursesContext,
+    AIRecommendCoursesResponse,
 )
-from .schemas import RecommendCoursesContext
 
 SYSTEM_PROMPT = """You are a smart study advisor that recommend courses to take.
             You must call the get_available_courses tool before recommending anything.
             After getting tool results, you must only recommend courses from that list.
+            Make sure to provide clear reasoning for your choices.
             """
 
 
@@ -40,8 +41,8 @@ def initialize_agent(tools: list[BaseTool]):
         tools=tools,
         system_prompt=SYSTEM_PROMPT,
         middleware=middleware,
-        response_format=RecommendCoursesResponse,
-        context_schema=RecommendCoursesContext,
+        response_format=AIRecommendCoursesResponse,
+        context_schema=AIRecommendCoursesContext,
     )
 
     return agent
