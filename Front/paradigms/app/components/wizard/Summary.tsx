@@ -29,13 +29,13 @@ export default function Summary({
   const handleSubmit = () => {
     // 1. Build a super clean payload based on their path!
     const payload = {
-      major: major,
-      current_year: currentYear,
+      department: major,
+      academic_year: currentYear,
       completed_courses: takenCourses,
       // If they chose Prolog, send the topics. If AI, send the prompt string!
       ...(engineChoice === "prolog"
-        ? { requested_topics: desiredCourses }
-        : { requested_topics: [aiPrompt] }),
+        ? { preferences: desiredCourses }
+        : { preferences: [aiPrompt] }),
     };
 
     // 2. Send it to the Results screen

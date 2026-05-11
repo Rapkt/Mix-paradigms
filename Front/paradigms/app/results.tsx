@@ -16,8 +16,6 @@ export default function ResultsScreen() {
   const { requestData, isAI } = useLocalSearchParams();
 
   const [loading, setLoading] = useState(true);
-
-  // Change this to hold whatever object the API returns
   const [resultData, setResultData] = useState<any>(null);
 
   useEffect(() => {
@@ -41,10 +39,10 @@ export default function ResultsScreen() {
     <View style={styles.courseCard}>
       <View style={{ flex: 1 }}>
         <Text style={styles.courseId}>{course.id}</Text>
-        <Text style={styles.courseName}>{course.name}</Text>
-        {course.preference && (
-          <Text style={styles.courseFocus}>Focus: {course.preference}</Text>
-        )}
+        {/* FIX #1: Tell it to use either the Django key (course_name) OR the mock key (name) */}
+        <Text style={styles.courseName}>
+          {course.course_name || course.name}
+        </Text>
       </View>
       <View style={styles.badge}>
         <Text style={styles.badgeText}>{course.difficulty}</Text>
@@ -84,14 +82,25 @@ export default function ResultsScreen() {
                 <View style={styles.aiReasoningBox}>
                   <Text style={styles.aiReasoningTitle}>AI Reasoning:</Text>
                   <Text style={styles.aiReasoningText}>
-                    {resultData.reasoning}
+                    {/* {resultData.reasoning} */}
                   </Text>
                 </View>
 
                 <Text style={styles.resultHeader}>Recommended Courses:</Text>
-                {resultData.courses?.map((course: any, idx: number) => (
-                  <CourseCard key={`ai-${idx}`} course={course} />
-                ))}
+                {/* Fallback to checking both spellings just in case! */}
+                {(
+                  resultData.recommened_courses ||
+                  resultData.recommended_courses
+                )?.map((courseName: string, idx: number) => {
+                  const formattedCourse = {
+                    id: `AI-${idx + 1}`,
+                    name: courseName,
+                    difficulty: "AI Pick",
+                  };
+                  return (
+                    <CourseCard key={`ai-${idx}`} course={formattedCourse} />
+                  );
+                })}
               </View>
             )}
 
@@ -100,43 +109,50 @@ export default function ResultsScreen() {
             {/* ========================================== */}
             {isAI === "false" && resultData && (
               <View>
-                {resultData.preference?.length > 0 && (
+                {resultData.prefered?.length > 0 && (
                   <View style={styles.section}>
                     <Text style={[styles.resultHeader, { color: "#007AFF" }]}>
                       ★ Matches Your Interests
                     </Text>
-                    {resultData.preference.map((course: any, idx: number) => (
+                    {resultData.prefered.map((course: any, idx: number) => (
                       <CourseCard key={`pref-${idx}`} course={course} />
                     ))}
                   </View>
                 )}
 
-                {resultData.easy?.length > 0 && (
+                {resultData.not_prefered_easy?.length > 0 && (
                   <View style={styles.section}>
                     <Text style={styles.resultHeader}>Light Load (Easy)</Text>
-                    {resultData.easy.map((course: any, idx: number) => (
-                      <CourseCard key={`easy-${idx}`} course={course} />
-                    ))}
+                    {/* FIX #3: Iterate over the exact key from the backend! */}
+                    {resultData.not_prefered_easy.map(
+                      (course: any, idx: number) => (
+                        <CourseCard key={`easy-${idx}`} course={course} />
+                      ),
+                    )}
                   </View>
                 )}
 
-                {resultData.medium?.length > 0 && (
+                {resultData.not_prefered_med?.length > 0 && (
                   <View style={styles.section}>
                     <Text style={styles.resultHeader}>
                       Balanced Load (Medium)
                     </Text>
-                    {resultData.medium.map((course: any, idx: number) => (
-                      <CourseCard key={`med-${idx}`} course={course} />
-                    ))}
+                    {resultData.not_prefered_med.map(
+                      (course: any, idx: number) => (
+                        <CourseCard key={`med-${idx}`} course={course} />
+                      ),
+                    )}
                   </View>
                 )}
 
-                {resultData.hard?.length > 0 && (
+                {resultData.not_prefered_hard?.length > 0 && (
                   <View style={styles.section}>
                     <Text style={styles.resultHeader}>Heavy Load (Hard)</Text>
-                    {resultData.hard.map((course: any, idx: number) => (
-                      <CourseCard key={`hard-${idx}`} course={course} />
-                    ))}
+                    {resultData.not_prefered_hard.map(
+                      (course: any, idx: number) => (
+                        <CourseCard key={`hard-${idx}`} course={course} />
+                      ),
+                    )}
                   </View>
                 )}
               </View>
@@ -183,7 +199,6 @@ const styles = StyleSheet.create({
     color: "#333",
   },
 
-  // AI Specific Styles
   aiReasoningBox: {
     backgroundColor: "#f0f0ff",
     padding: 15,
@@ -200,7 +215,6 @@ const styles = StyleSheet.create({
   },
   aiReasoningText: { fontSize: 15, color: "#333", lineHeight: 22 },
 
-  // Course Card Styles
   courseCard: {
     padding: 15,
     backgroundColor: "#f8f9fa",
