@@ -1,11 +1,31 @@
-import { View, Text, StyleSheet, TextInput } from "react-native";
-
+import { Keyboard, View, Text, StyleSheet, Button, TextInput } from "react-native";
+import { useEffect ,useState } from "react";
 interface AIPromptProps {
   aiPrompt: string;
   setAiPrompt: (text: string) => void;
 }
 
 export default function AIPrompt({ aiPrompt, setAiPrompt }: AIPromptProps) {
+
+  const [isKeyboardVisible , setIsKeyboardVisible] = useState(false);
+
+  useEffect(()=>{
+    const showSubscription = Keyboard.addListener('keyboardDidShow',handelKeyboardShow);
+    const hideSubscription = Keyboard.addListener('keyboardDidHide',handelKeyboardHide);
+  
+      return ()=>{
+        showSubscription.remove();
+        hideSubscription.remove();
+      };
+  },[]);
+
+  const handelKeyboardShow = () =>{
+    setIsKeyboardVisible(true);
+  };
+  const handelKeyboardHide = () => {
+    setIsKeyboardVisible(false);
+  };
+
   return (
     <View style={{ flex: 1 }}>
       <View>
@@ -15,7 +35,7 @@ export default function AIPrompt({ aiPrompt, setAiPrompt }: AIPromptProps) {
           Scientist, or I need easy electives this semester).
         </Text>
       </View>
-
+      {isKeyboardVisible && <Button title="Dismiss keyboard" onPress={Keyboard.dismiss} />}
       <TextInput
         style={styles.textInput}
         multiline={true}
