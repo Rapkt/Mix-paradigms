@@ -1,9 +1,8 @@
-from langchain.tools import ToolRuntime, tool
-import pandas as pd
 from os import environ
-from dotenv import load_dotenv
 
-load_dotenv()
+import pandas as pd
+from langchain.tools import ToolRuntime, tool
+
 from .schemas import RecommendCoursesContext
 
 knowledge_base_csv_path = environ.get("KNOWLEDGE_BASE_CSV_PATH")
@@ -37,4 +36,4 @@ def get_available_courses(runtime: ToolRuntime[RecommendCoursesContext]) -> list
         in_department & not_completed & (no_prerequisite | prerequisite_completed)
     ]
 
-    return str(available_courses["course_name"].tolist())
+    return available_courses["course_name"].tolist()

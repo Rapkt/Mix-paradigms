@@ -5,10 +5,7 @@
 from os import environ
 
 from pyswip import Prolog
-from os import environ
-from dotenv import load_dotenv
 
-load_dotenv()
 knowledge_base_pl_path = environ.get("KNOWLEDGE_BASE_PL_PATH")
 if knowledge_base_pl_path is None:
     raise ValueError("KNOWLEDGE_BASE_PL_PATH environment variable is not set.")

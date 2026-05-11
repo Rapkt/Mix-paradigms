@@ -412,7 +412,7 @@ for c in core_courses:
             "department": c["department"],
         }
     )
-    i+=1
+    i += 1
 
 # Procedurally generate the rest up to 400
 while len(generated_courses) < OUTPUT_COURSES_COUNT:

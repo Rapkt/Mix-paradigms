@@ -1,13 +1,9 @@
 from os import environ
 
 from pyswip import Prolog
-from os import environ
-from dotenv import load_dotenv
 
+from ..schemas import Course, RecommendCoursesRequest
 
-from api.schemas import RecommendCoursesRequest, Course
-
-load_dotenv()
 knowledge_base_pl_path = environ.get("KNOWLEDGE_BASE_PL_PATH")
 if knowledge_base_pl_path is None:
     raise ValueError("KNOWLEDGE_BASE_PL_PATH environment variable is not set.")
@@ -122,21 +118,27 @@ def recommend_courses(
     easy = list(
         map(
             lambda e: e["X"],
-            Prolog.query(f"recommend_based_on_difficulty('{department}','Easy',{studiedCourses},X)"),
+            Prolog.query(
+                f"recommend_based_on_difficulty('{department}','Easy',{studiedCourses},X)"
+            ),
         )
     )
     easy = set(easy)
     med = list(
         map(
             lambda e: e["X"],
-            Prolog.query(f"recommend_based_on_difficulty('{department}','Medium',{studiedCourses},X)"),
+            Prolog.query(
+                f"recommend_based_on_difficulty('{department}','Medium',{studiedCourses},X)"
+            ),
         )
     )
     med = set(med)
     hard = list(
         map(
             lambda e: e["X"],
-            Prolog.query(f"recommend_based_on_difficulty('{department}','Hard',{studiedCourses},X)"),
+            Prolog.query(
+                f"recommend_based_on_difficulty('{department}','Hard',{studiedCourses},X)"
+            ),
         )
     )
     hard = set(hard)
@@ -177,7 +179,16 @@ def recommend_courses(
     }
 
 
-print(recommend_courses(RecommendCoursesRequest(department="CSE", academic_year=2, completed_courses=["Advanced Programming", "Data Structures"], preferences=["Programming", "Math"])))
+print(
+    recommend_courses(
+        RecommendCoursesRequest(
+            department="CSE",
+            academic_year=2,
+            completed_courses=["Advanced Programming", "Data Structures"],
+            preferences=["Programming", "Math"],
+        )
+    )
+)
 
 
 """ 
