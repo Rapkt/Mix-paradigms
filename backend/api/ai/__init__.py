@@ -1,3 +1,5 @@
+import logging
+
 from ..schemas import (
     RecommendCoursesRequest,
     RecommendCoursesResponse,
@@ -7,6 +9,8 @@ from .schemas import (
     RecommendCoursesContext,
 )
 from .tools import get_available_courses
+
+logger = logging.getLogger(__name__)
 
 
 def recommend_courses(request: RecommendCoursesRequest) -> RecommendCoursesResponse:
@@ -30,6 +34,6 @@ def recommend_courses(request: RecommendCoursesRequest) -> RecommendCoursesRespo
         context=context,
     )
 
-    print(response)
+    logger.debug("Agent response: %s", response)
 
     return response["structured_response"]

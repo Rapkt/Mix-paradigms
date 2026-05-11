@@ -4,6 +4,9 @@ import pandas as pd
 from langchain.tools import ToolRuntime, tool
 
 from .schemas import RecommendCoursesContext
+import logging
+
+logger = logging.getLogger(__name__)
 
 knowledge_base_csv_path = environ.get("KNOWLEDGE_BASE_CSV_PATH")
 if knowledge_base_csv_path is None:
@@ -36,4 +39,8 @@ def get_available_courses(runtime: ToolRuntime[RecommendCoursesContext]) -> list
         in_department & not_completed & (no_prerequisite | prerequisite_completed)
     ]
 
-    return available_courses["course_name"].tolist()
+    available_courses_names = available_courses["course_name"].tolist()
+
+    logger.debug("Available courses: %s", available_courses_names)
+
+    return available_courses_names

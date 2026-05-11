@@ -1,8 +1,11 @@
+import logging
 from os import environ
 
 from pyswip import Prolog
 
 from ..schemas import Course, RecommendCoursesRequest
+
+logger = logging.getLogger(__name__)
 
 knowledge_base_pl_path = environ.get("KNOWLEDGE_BASE_PL_PATH")
 if knowledge_base_pl_path is None:
@@ -90,9 +93,10 @@ def recommend_courses(
             ),
         )
     )
+
     based_on_prefenrence = set(based_on_prefenrence)
-    print(based_on_prefenrence)
-    print(studiedCourses)
+    logger.debug("Recommendation based on preference: %s", based_on_prefenrence)
+
     based_on_prerequisites = list(
         map(
             lambda e: e["X"],
@@ -102,7 +106,7 @@ def recommend_courses(
         )
     )
     based_on_prerequisites = set(based_on_prerequisites)
-    print(based_on_prerequisites)
+    logger.debug("Recommendation based on prerequisites: %s", based_on_prerequisites)
 
     based_on_year_of_study = list(
         map(
@@ -113,7 +117,8 @@ def recommend_courses(
         )
     )
     based_on_year_of_study = set(based_on_year_of_study)
-    print(based_on_year_of_study)
+
+    logger.debug("Recommendation based on year of study: %s", based_on_year_of_study)
 
     easy = list(
         map(
@@ -177,18 +182,6 @@ def recommend_courses(
         "not_prefered_med": not_prefered_but_med_courses,
         "not_prefered_hard": not_prefered_but_hard_courses,
     }
-
-
-print(
-    recommend_courses(
-        RecommendCoursesRequest(
-            department="CSE",
-            academic_year=2,
-            completed_courses=["Advanced Programming", "Data Structures"],
-            preferences=["Programming", "Math"],
-        )
-    )
-)
 
 
 """ 
