@@ -30,10 +30,11 @@ return
 """
 
 
-Prolog.assertz("""recommend_based_on_preference(User_department,User_preferences,Course) :-
+Prolog.assertz("""recommend_based_on_preference(User_department,User_preferences,User_courses,Course) :-
     department(Course,User_department),
     preference(Course,Preference),
-    member(Preference,User_preferences)""")
+    member(Preference,User_preferences),
+    \+member(Course,User_courses)""")
 Prolog.asserta("""recommend_based_on_prerequisite(User_department,User_prerequisites,Course):-
     department(Course,User_department),
     (
@@ -43,17 +44,19 @@ Prolog.asserta("""recommend_based_on_prerequisite(User_department,User_prerequis
             ( prerequisite(Course,Y), member(Y,User_prerequisites) )
         )
         ; prerequisite(Course,'None')
-    ) 
+    ),\+member(Course,User_courses) 
     """)
 
 
-Prolog.asserta("""recommend_based_on_year_of_study(User_department,User_year_of_study,Course):-
+Prolog.asserta("""recommend_based_on_year_of_study(User_department,User_year_of_study,User_courses,Course):-
         department(Course,User_department),
-        year_of_study(Course,User_year_of_study)""")
+        year_of_study(Course,User_year_of_study),
+        \+member(Course,User_courses)""")
 
-Prolog.asserta("""recommend_based_on_difficulty(User_department,User_difficulty,Course):-
+Prolog.asserta("""recommend_based_on_difficulty(User_department,User_difficulty,User_courses,Course):-
     department(Course,User_department),
-    difficulty(Course,User_difficulty)""")
+    difficulty(Course,User_difficulty),
+    \+member(Course,User_courses)""")
 
 Prolog.asserta("""course_data(Id,Name,Dept,Difficulty,Year, Pre):-
     department(Name,Dept),
@@ -86,7 +89,7 @@ def recommend_courses(
             lambda e: e["X"],
             list(
                 Prolog.query(
-                    f"recommend_based_on_preference('{department}',{preferences},X)"
+                    f"recommend_based_on_preference('{department}',{preferences},{studiedCourses},X)"
                 )
             ),
         )
@@ -106,7 +109,7 @@ def recommend_courses(
         map(
             lambda e: e["X"],
             Prolog.query(
-                f"recommend_based_on_year_of_study('{department}','{currentYear}',X)"
+                f"recommend_based_on_year_of_study('{department}','{currentYear}',{studiedCourses},X)"
             ),
         )
     )
@@ -116,21 +119,21 @@ def recommend_courses(
     easy = list(
         map(
             lambda e: e["X"],
-            Prolog.query(f"recommend_based_on_difficulty('{department}','Easy',X)"),
+            Prolog.query(f"recommend_based_on_difficulty('{department}','Easy',{studiedCourses},X)"),
         )
     )
     easy = set(easy)
     med = list(
         map(
             lambda e: e["X"],
-            Prolog.query(f"recommend_based_on_difficulty('{department}','Medium',X)"),
+            Prolog.query(f"recommend_based_on_difficulty('{department}','Medium',{studiedCourses},X)"),
         )
     )
     med = set(med)
     hard = list(
         map(
             lambda e: e["X"],
-            Prolog.query(f"recommend_based_on_difficulty('{department}','Hard',X)"),
+            Prolog.query(f"recommend_based_on_difficulty('{department}','Hard',{studiedCourses},X)"),
         )
     )
     hard = set(hard)
