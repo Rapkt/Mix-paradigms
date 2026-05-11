@@ -146,21 +146,22 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff" },
+  container: { flex: 1, backgroundColor: "#faf7f2" },
   header: {
-    padding: 20,
-    backgroundColor: "#f8f9fa",
+    padding: 22,
+    backgroundColor: "#111827",
     borderBottomWidth: 1,
-    borderColor: "#eee",
+    borderColor: "#0f172a",
   },
-  title: { fontSize: 24, fontWeight: "bold" },
-  content: { flex: 1, padding: 20 },
+  title: { fontSize: 24, fontWeight: "bold", color: "#f9fafb" },
+  content: { flex: 1, padding: 22 },
   footer: {
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 20,
+    backgroundColor: "#fff",
     borderTopWidth: 1,
-    borderColor: "#eee",
+    borderColor: "#e7e5e4",
   },
   navButton: {
     paddingVertical: 12,

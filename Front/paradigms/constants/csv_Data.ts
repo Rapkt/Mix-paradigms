@@ -1,401 +1,357 @@
 export const Data = `id,course_name,difficulty,prerequisite,preference,year_of_study,department
-0,Mathematics 1 (Calculus),Hard,None,Math,1,Preparatory
-1,Mathematics 2 (Integration),Hard,Mathematics 1 (Calculus),Math,1,Preparatory
-2,Physics 1 (Mechanics),Medium,None,Physics,1,Preparatory
-3,Physics 2 (Electricity),Medium,None,Physics,1,Preparatory
-4,Mechanics 1 (Statics),Medium,None,Physics,1,Preparatory
-5,Mechanics 2 (Dynamics),Hard,Mechanics 1 (Statics),Physics,1,Preparatory
-6,Engineering Chemistry 1,Easy,None,Chemistry,1,Preparatory
-7,Engineering Drawing 1,Medium,None,Design,1,Preparatory
-8,Introduction to Programming,Easy,None,Programming,1,Preparatory
-9,Basics of Production Engineering,Medium,None,Manufacturing,1,Preparatory
-10,Technical Report Writing,Easy,None,Humanities,1,Preparatory
-11,Engineering Ethics,Easy,None,Humanities,1,Preparatory
-12,Engineering Drawing 2,Medium,Engineering Drawing 1,Design,1,Preparatory
-13,Computer Skills & Applications,Easy,None,Programming,1,Preparatory
-14,Mathematics 3 (Differential Equations),Hard,Mathematics 2 (Integration),Math,2,Basic Sciences
-15,Mathematics 4 (Complex Variables),Hard,Mathematics 3 (Differential Equations),Math,2,Basic Sciences
-16,Mathematics 5 (Numerical Analysis),Medium,Mathematics 4 (Complex Variables),Math,3,Basic Sciences
-17,Mathematics 6 (Probability & Statistics),Medium,Mathematics 2 (Integration),Math,3,Basic Sciences
-18,Mathematics 7 (Linear Algebra),Medium,Mathematics 1 (Calculus),Math,2,Basic Sciences
-19,Mathematics 8 (Discrete Math),Medium,Mathematics 7 (Linear Algebra),Math,2,Basic Sciences
-20,Physics 3 (Optics & Waves),Medium,Physics 2 (Electricity),Physics,2,Basic Sciences
-21,Physics 4 (Modern Physics),Hard,Physics 3 (Optics & Waves),Physics,2,Basic Sciences
-22,Physics 5 (Solid State),Hard,Physics 4 (Modern Physics),Physics,3,Basic Sciences
-23,Mechanics 3 (Kinematics),Hard,Mechanics 2 (Dynamics),Physics,2,Basic Sciences
-24,Mechanics 4 (Vibrations Basics),Hard,Mechanics 3 (Kinematics),Physics,3,Basic Sciences
-25,Engineering Chemistry 2,Medium,Engineering Chemistry 1,Chemistry,2,Basic Sciences
-26,Material Chemistry,Hard,Engineering Chemistry 2,Chemistry,3,Basic Sciences
-27,Engineering Materials,Medium,Engineering Chemistry 1,Materials,2,Basic Sciences
-28,Advanced Programming,Hard,Introduction to Programming,Programming,2,Basic Sciences
-29,Operations Research Basics,Hard,Mathematics 1 (Calculus),Math,3,Basic Sciences
-30,Economics for Engineers,Medium,None,Management,3,Basic Sciences
-31,Project Management Fundamentals,Medium,None,Management,3,Basic Sciences
-32,Business Administration,Easy,None,Management,3,Basic Sciences
-33,Industrial Psychology,Easy,None,Humanities,2,Basic Sciences
-34,Sociology & Technology,Easy,None,Humanities,2,Basic Sciences
-35,Environmental Science,Medium,Engineering Chemistry 1,Environment,2,Basic Sciences
-36,Communication Skills,Easy,Technical Report Writing,Humanities,2,Basic Sciences
-37,Engineering Law and Contracts,Medium,Engineering Ethics,Humanities,4,Basic Sciences
-38,History of Engineering,Easy,None,Humanities,2,Basic Sciences
-39,Innovation and Entrepreneurship,Medium,None,Management,4,Basic Sciences
-40,Logic Design,Medium,Physics 2 (Electricity),Hardware,2,CSE
-41,Logic Design Lab,Easy,Logic Design,Hardware,2,CSE
-42,Data Structures,Hard,Advanced Programming,Programming,2,CSE
-43,Data Structures Lab,Easy,Data Structures,Programming,2,CSE
-44,Object-Oriented Programming,Medium,Advanced Programming,Programming,2,CSE
-45,Electric Circuits (CSE),Medium,Physics 2 (Electricity),Circuits,2,CSE
-46,Electronic Devices,Hard,Electric Circuits (CSE),Electronics,2,CSE
-47,Signals and Systems,Hard,Mathematics 3 (Differential Equations),Math,2,CSE
-48,Computer Architecture,Hard,Logic Design,Hardware,3,CSE
-49,Computer Architecture Lab,Medium,Computer Architecture,Hardware,3,CSE
-50,Design and Analysis of Algorithms,Hard,Data Structures,Programming,3,CSE
-51,Microprocessors,Hard,Logic Design,Hardware,3,CSE
-52,Microprocessors Lab,Medium,Microprocessors,Hardware,3,CSE
-53,Database Systems,Medium,Data Structures,Software,3,CSE
-54,Database Systems Lab,Easy,Database Systems,Software,3,CSE
-55,Analog Communications,Medium,Signals and Systems,Communications,3,CSE
-56,Electromagnetic Fields,Hard,Physics 2 (Electricity),Physics,3,CSE
-57,Software Engineering,Medium,Object-Oriented Programming,Software,3,CSE
-58,Digital Signal Processing,Hard,Signals and Systems,Math,3,CSE
-59,DSP Lab,Medium,Digital Signal Processing,Math,3,CSE
-60,Operating Systems,Hard,Computer Architecture,Software,4,CSE
-61,Computer Networks,Medium,Operating Systems,Networking,4,CSE
-62,Networks Lab,Medium,Computer Networks,Networking,4,CSE
-63,Digital Communications,Hard,Analog Communications,Communications,4,CSE
-64,Control Systems,Hard,Signals and Systems,Systems,4,CSE
-65,VLSI Design,Hard,Electronic Devices,Hardware,4,CSE
-66,Information Theory,Medium,Mathematics 6 (Probability & Statistics),Math,4,CSE
-67,Microwave Engineering,Hard,Electromagnetic Fields,Physics,4,CSE
-68,Microwave Lab,Medium,Microwave Engineering,Physics,4,CSE
-69,Artificial Intelligence,Hard,Design and Analysis of Algorithms,AI,4,CSE
-70,AI Lab,Medium,Artificial Intelligence,AI,4,CSE
-71,Network Security,Medium,Computer Networks,Security,5,CSE
-72,Mobile Communications,Medium,Digital Communications,Communications,5,CSE
-73,Embedded Systems,Hard,Microprocessors,Hardware,5,CSE
-74,Embedded Systems Lab,Medium,Embedded Systems,Hardware,5,CSE
-75,Machine Learning,Hard,Artificial Intelligence,AI,5,CSE
-76,Optical Communications,Hard,Microwave Engineering,Communications,5,CSE
-77,Computer Vision,Hard,Digital Signal Processing,AI,5,CSE
-78,Cloud Computing,Medium,Computer Networks,Networking,5,CSE
-79,Internet of Things (IoT),Medium,Embedded Systems,Networking,5,CSE
-80,Cryptography,Hard,Network Security,Security,5,CSE
-81,Compiler Design,Hard,Data Structures,Software,4,CSE
-82,Distributed Systems,Hard,Operating Systems,Software,5,CSE
-83,Web Development,Medium,Database Systems,Software,4,CSE
-84,Natural Language Processing,Hard,Artificial Intelligence,AI,5,CSE
-85,Big Data Analytics,Medium,Database Systems,Software,5,CSE
-86,Wireless Sensor Networks,Hard,Computer Networks,Networking,5,CSE
-87,Satellite Communications,Hard,Analog Communications,Communications,5,CSE
-88,Radar Systems,Hard,Microwave Engineering,Physics,5,CSE
-89,Antenna Design,Hard,Electromagnetic Fields,Physics,4,CSE
-90,Digital IC Design,Hard,VLSI Design,Hardware,5,CSE
-91,Mixed Signal IC Design,Hard,VLSI Design,Hardware,5,CSE
-92,Hardware Verification,Hard,Computer Architecture,Hardware,5,CSE
-93,Bio-informatics,Medium,Design and Analysis of Algorithms,AI,5,CSE
-94,Human-Computer Interaction,Easy,Software Engineering,Software,4,CSE
-95,Quantum Computing Basics,Hard,Mathematics 7 (Linear Algebra),Hardware,5,CSE
-96,Advanced Software Engineering,Hard,Software Engineering,Software,5,CSE
-97,Blockchain Technologies,Medium,Cryptography,Security,5,CSE
-98,Graduation Project 1 (CSE),Hard,Software Engineering,Research,5,CSE
-99,Graduation Project 2 (CSE),Hard,Graduation Project 1 (CSE),Research,5,CSE
-100,Electrical Circuits 1,Medium,Physics 2 (Electricity),Circuits,2,EE
-101,Electrical Circuits 2,Hard,Electrical Circuits 1,Circuits,2,EE
-102,Circuits Lab,Easy,Electrical Circuits 2,Circuits,2,EE
-103,Electrical Measurements,Medium,Electrical Circuits 1,Circuits,2,EE
-104,Measurements Lab,Easy,Electrical Measurements,Circuits,2,EE
-105,Electromagnetics 1,Hard,Physics 2 (Electricity),Physics,2,EE
-106,Logic Systems for EE,Medium,Advanced Programming,Hardware,2,EE
-107,Digital Electronics EE,Medium,Logic Systems for EE,Electronics,2,EE
-108,Power Systems 1,Medium,Electrical Circuits 2,Power,3,EE
-109,Electrical Machines 1,Hard,Electromagnetics 1,Machines,3,EE
-110,Machines Lab 1,Medium,Electrical Machines 1,Machines,3,EE
-111,Power Electronics 1,Hard,Electrical Circuits 2,Electronics,3,EE
-112,Control Engineering 1,Medium,Mathematics 3 (Differential Equations),Systems,3,EE
-113,Control Lab 1,Medium,Control Engineering 1,Systems,3,EE
-114,Electromagnetics 2,Hard,Electromagnetics 1,Physics,3,EE
-115,High Voltage Engineering 1,Hard,Electromagnetics 2,Power,4,EE
-116,Power Systems 2,Hard,Power Systems 1,Power,4,EE
-117,Power Systems Lab,Medium,Power Systems 2,Power,4,EE
-118,Electrical Machines 2,Hard,Electrical Machines 1,Machines,4,EE
-119,Machines Lab 2,Medium,Electrical Machines 2,Machines,4,EE
-120,Power Electronics 2,Hard,Power Electronics 1,Electronics,4,EE
-121,Power Electronics Lab,Medium,Power Electronics 2,Electronics,4,EE
-122,Control Engineering 2,Hard,Control Engineering 1,Systems,4,EE
-123,Protection Systems,Hard,Power Systems 2,Power,4,EE
-124,Electrical Distribution,Medium,Power Systems 1,Power,4,EE
-125,Renewable Energy Systems,Medium,Power Electronics 2,Power,4,EE
-126,Electrical Drives,Hard,Electrical Machines 2,Machines,5,EE
-127,Smart Grid Technologies,Medium,Electrical Distribution,Power,5,EE
-128,High Voltage Engineering 2,Hard,High Voltage Engineering 1,Power,5,EE
-129,Power Quality,Hard,Power Systems 2,Power,5,EE
-130,Advanced Control Systems,Hard,Control Engineering 2,Systems,5,EE
-131,Industrial Automation,Medium,Control Engineering 1,Systems,5,EE
-132,PLC and SCADA Systems,Medium,Industrial Automation,Systems,5,EE
-133,Energy Conversion,Medium,Electrical Machines 1,Power,4,EE
-134,Special Electrical Machines,Hard,Electrical Machines 2,Machines,5,EE
-135,Illumination Engineering,Easy,Electrical Circuits 1,Design,4,EE
-136,Microcontrollers in EE,Medium,Logic Systems for EE,Hardware,4,EE
-137,Electric Vehicles,Medium,Electrical Drives,Machines,5,EE
-138,Energy Storage Systems,Medium,Renewable Energy Systems,Power,5,EE
-139,Advanced Electrical Drives,Hard,Electrical Drives,Machines,5,EE
-140,Power System Analysis,Hard,Power Systems 2,Power,5,EE
-141,Power System Stability,Hard,Power System Analysis,Power,5,EE
-142,Protective Relays,Hard,Protection Systems,Power,5,EE
-143,Wind Energy Engineering,Medium,Renewable Energy Systems,Power,5,EE
-144,Solar PV Systems,Medium,Renewable Energy Systems,Power,5,EE
-145,Nuclear Power Basics,Hard,Physics 4 (Modern Physics),Power,5,EE
-146,Building Wiring Design,Medium,Illumination Engineering,Design,4,EE
-147,Traction Systems,Medium,Electrical Drives,Power,5,EE
-148,Non-linear Control,Hard,Advanced Control Systems,Systems,5,EE
-149,Optimal Control,Hard,Control Engineering 2,Systems,5,EE
-150,Optimization Methods for EE,Medium,Mathematics 5 (Numerical Analysis),Math,4,EE
-151,Electromagnetic Compatibility,Hard,Electromagnetics 2,Physics,5,EE
-152,HVDC Transmission,Hard,High Voltage Engineering 2,Power,5,EE
-153,FACTS Devices,Hard,Power Electronics 2,Power,5,EE
-154,Signal Processing for EE,Medium,Mathematics 4 (Complex Variables),Math,4,EE
-155,Substation Design,Hard,Protection Systems,Power,5,EE
-156,Electric Market and Economics,Medium,Economics for Engineers,Management,5,EE
-157,Maintenance of Electrical Equip,Medium,Electrical Machines 2,Management,5,EE
-158,Graduation Project 1 (EE),Hard,Power Systems 2,Research,5,EE
-159,Graduation Project 2 (EE),Hard,Graduation Project 1 (EE),Research,5,EE
-160,Thermodynamics 1,Medium,Physics 1 (Mechanics),Thermal,2,ME
-161,Thermodynamics 2,Hard,Thermodynamics 1,Thermal,2,ME
-162,Fluid Mechanics 1,Medium,Mechanics 2 (Dynamics),Fluids,2,ME
-163,Fluid Mechanics 2,Hard,Fluid Mechanics 1,Fluids,2,ME
-164,Solid Mechanics,Hard,Mechanics 1 (Statics),Materials,2,ME
-165,Material Science (ME),Medium,Engineering Materials,Materials,2,ME
-166,Machine Design 1,Medium,Solid Mechanics,Design,3,ME
-167,Machine Design Lab,Easy,Machine Design 1,Design,3,ME
-168,Heat Transfer 1,Hard,Thermodynamics 2,Thermal,3,ME
-169,Dynamics of Machines,Hard,Mechanics 2 (Dynamics),Mechanics,3,ME
-170,Theory of Machines,Hard,Dynamics of Machines,Mechanics,3,ME
-171,Manufacturing Processes 1,Medium,Basics of Production Engineering,Manufacturing,3,ME
-172,Measurements and Instrumentation,Medium,Physics 2 (Electricity),Systems,3,ME
-173,Thermo-Fluids Lab,Medium,Heat Transfer 1,Thermal,3,ME
-174,Machine Design 2,Hard,Machine Design 1,Design,4,ME
-175,Heat Transfer 2,Hard,Heat Transfer 1,Thermal,4,ME
-176,Internal Combustion Engines,Hard,Thermodynamics 2,Thermal,4,ME
-177,HVAC Systems,Hard,Heat Transfer 1,Thermal,4,ME
-178,Hydraulic Machines,Hard,Fluid Mechanics 2,Fluids,4,ME
-179,System Dynamics and Control,Hard,Mathematics 3 (Differential Equations),Systems,4,ME
-180,Manufacturing Processes 2,Medium,Manufacturing Processes 1,Manufacturing,4,ME
-181,Gas Dynamics,Hard,Fluid Mechanics 2,Fluids,4,ME
-182,Robotics and Automation,Hard,System Dynamics and Control,Systems,5,ME
-183,Power Plants,Hard,Thermodynamics 2,Thermal,5,ME
-184,Automotive Engineering,Medium,Internal Combustion Engines,Mechanics,5,ME
-185,Aerodynamics,Hard,Fluid Mechanics 2,Fluids,5,ME
-186,Energy Management,Medium,Power Plants,Management,5,ME
-187,Mechatronics,Hard,System Dynamics and Control,Systems,5,ME
-188,Computational Fluid Dynamics,Hard,Heat Transfer 2,Fluids,5,ME
-189,Vibration Analysis,Hard,Dynamics of Machines,Mechanics,5,ME
-190,Advanced CAD,Medium,Engineering Drawing 2,Design,3,ME
-191,Finite Element Method,Hard,Solid Mechanics,Design,4,ME
-192,Advanced HVAC,Hard,HVAC Systems,Thermal,5,ME
-193,Refrigeration Systems,Medium,Thermodynamics 2,Thermal,4,ME
-194,Turbomachinery,Hard,Hydraulic Machines,Fluids,5,ME
-195,Gas Turbines,Hard,Gas Dynamics,Thermal,5,ME
-196,Propulsion Systems,Hard,Gas Dynamics,Thermal,5,ME
-197,Renewable Energy Tech (ME),Medium,Thermodynamics 2,Thermal,5,ME
-198,Nuclear Engineering,Hard,Heat Transfer 2,Thermal,5,ME
-199,Composite Materials,Hard,Material Science (ME),Materials,5,ME
-200,Fracture Mechanics,Hard,Solid Mechanics,Materials,5,ME
-201,Tribology,Medium,Fluid Mechanics 1,Mechanics,4,ME
-202,Mechanisms Design,Medium,Theory of Machines,Design,4,ME
-203,Acoustics and Noise Control,Medium,Vibration Analysis,Mechanics,5,ME
-204,Marine Engineering,Medium,Power Plants,Mechanics,5,ME
-205,Pipeline Engineering,Medium,Fluid Mechanics 2,Fluids,5,ME
-206,Industrial Automation (ME),Medium,Robotics and Automation,Systems,5,ME
-207,Mechatronic System Design,Hard,Mechatronics,Systems,5,ME
-208,MEMS Technology,Hard,Material Science (ME),Systems,5,ME
-209,Advanced Manufacturing,Medium,Manufacturing Processes 2,Manufacturing,5,ME
-210,3D Printing Tech,Medium,Advanced CAD,Manufacturing,4,ME
-211,Operations Research for ME,Hard,Operations Research Basics,Math,4,ME
-212,Maintenance Engineering,Medium,Machine Design 2,Management,5,ME
-213,Safety Engineering,Easy,Engineering Ethics,Management,4,ME
-214,Quality Control in ME,Medium,Mathematics 6 (Probability & Statistics),Management,4,ME
-215,Vehicle Dynamics,Hard,Automotive Engineering,Mechanics,5,ME
-216,Robotics Kinematics,Hard,Theory of Machines,Mechanics,4,ME
-217,Fluid Power Control,Hard,Hydraulic Machines,Fluids,5,ME
-218,Graduation Project 1 (ME),Hard,Machine Design 2,Research,5,ME
-219,Graduation Project 2 (ME),Hard,Graduation Project 1 (ME),Research,5,ME
-220,Structural Analysis 1,Medium,Mechanics 1 (Statics),Structures,2,CE
-221,Structural Analysis 2,Hard,Structural Analysis 1,Structures,2,CE
-222,Surveying 1,Medium,Mathematics 1 (Calculus),Surveying,2,CE
-223,Surveying 2,Hard,Surveying 1,Surveying,2,CE
-224,Civil Engineering Drawing,Medium,Engineering Drawing 1,Design,2,CE
-225,Building Materials,Medium,Engineering Materials,Materials,2,CE
-226,Structural Analysis 3,Hard,Structural Analysis 2,Structures,3,CE
-227,Reinforced Concrete Design 1,Hard,Structural Analysis 2,Structures,3,CE
-228,Steel Design 1,Hard,Structural Analysis 2,Structures,3,CE
-229,Soil Mechanics,Hard,Mechanics 1 (Statics),Geotechnical,3,CE
-230,Fluid Mechanics (CE),Medium,Mechanics 2 (Dynamics),Fluids,3,CE
-231,Highway Engineering,Medium,Surveying 2,Transportation,3,CE
-232,Materials Lab,Easy,Building Materials,Materials,3,CE
-233,Surveying Lab,Easy,Surveying 2,Surveying,3,CE
-234,Reinforced Concrete Design 2,Hard,Reinforced Concrete Design 1,Structures,4,CE
-235,Steel Design 2,Hard,Steel Design 1,Structures,4,CE
-236,Foundation Engineering,Hard,Soil Mechanics,Geotechnical,4,CE
-237,Sanitary Engineering,Medium,Fluid Mechanics (CE),Environmental,4,CE
-238,Hydraulics,Hard,Fluid Mechanics (CE),Fluids,4,CE
-239,Transportation Planning,Medium,Highway Engineering,Transportation,4,CE
-240,Project Management (CE),Medium,Project Management Fundamentals,Management,4,CE
-241,Railway Engineering,Medium,Surveying 2,Transportation,4,CE
-242,Soil Mechanics Lab,Medium,Soil Mechanics,Geotechnical,4,CE
-243,Hydraulics Lab,Medium,Hydraulics,Fluids,4,CE
-244,Earthquake Engineering,Hard,Structural Analysis 3,Structures,5,CE
-245,Bridge Engineering,Hard,Reinforced Concrete Design 2,Structures,5,CE
-246,Water Resources Engineering,Medium,Hydraulics,Environmental,5,CE
-247,Advanced Soil Mechanics,Hard,Foundation Engineering,Geotechnical,5,CE
-248,Construction Contracts,Easy,Project Management (CE),Management,5,CE
-249,Traffic Engineering,Medium,Transportation Planning,Transportation,5,CE
-250,Environmental Impact Assessment,Medium,Sanitary Engineering,Environmental,5,CE
-251,Harbor Engineering,Hard,Fluid Mechanics (CE),Structures,5,CE
-252,Advanced Structural Analysis,Hard,Structural Analysis 3,Structures,5,CE
-253,Dynamics of Structures,Hard,Structural Analysis 3,Structures,5,CE
-254,Prestressed Concrete,Hard,Reinforced Concrete Design 2,Structures,5,CE
-255,Advanced Steel Design,Hard,Steel Design 2,Structures,5,CE
-256,Tall Buildings Design,Hard,Reinforced Concrete Design 2,Structures,5,CE
-257,Construction Equipment,Medium,Project Management (CE),Management,4,CE
-258,Construction Estimating,Medium,Project Management (CE),Management,4,CE
-259,Coastal Engineering,Hard,Harbor Engineering,Environmental,5,CE
-260,Ground Improvement,Hard,Foundation Engineering,Geotechnical,5,CE
-261,Rock Mechanics,Hard,Soil Mechanics,Geotechnical,5,CE
-262,Pavement Design,Hard,Highway Engineering,Transportation,5,CE
-263,Airport Engineering,Medium,Highway Engineering,Transportation,5,CE
-264,GIS and Remote Sensing,Medium,Surveying 2,Surveying,4,CE
-265,Hydrology,Medium,Water Resources Engineering,Environmental,5,CE
-266,Wastewater Treatment,Hard,Sanitary Engineering,Environmental,5,CE
-267,Solid Waste Management,Medium,Sanitary Engineering,Environmental,5,CE
-268,Environmental Chemistry CE,Medium,Engineering Chemistry 1,Environmental,4,CE
-269,Irrigation Design,Hard,Hydraulics,Environmental,5,CE
-270,Dam Engineering,Hard,Water Resources Engineering,Structures,5,CE
-271,Deep Foundations,Hard,Foundation Engineering,Geotechnical,5,CE
-272,BIM (Building Info Modeling),Medium,Civil Engineering Drawing,Design,4,CE
-273,Urban Transport Systems,Medium,Transportation Planning,Transportation,5,CE
-274,Geomatics Engineering,Hard,GIS and Remote Sensing,Surveying,5,CE
-275,Sustainable Construction,Medium,Building Materials,Materials,5,CE
-276,Structural Health Monitoring,Hard,Dynamics of Structures,Structures,5,CE
-277,Repair and Retrofitting,Hard,Reinforced Concrete Design 2,Structures,5,CE
-278,Graduation Project 1 (CE),Hard,Reinforced Concrete Design 2,Research,5,CE
-279,Graduation Project 2 (CE),Hard,Graduation Project 1 (CE),Research,5,CE
-280,Architectural Design 1,Medium,Engineering Drawing 1,Design,2,Architecture
-281,Architectural Design 2,Hard,Architectural Design 1,Design,2,Architecture
-282,Building Construction 1,Medium,Engineering Drawing 1,Construction,2,Architecture
-283,History of Architecture 1,Easy,None,Humanities,2,Architecture
-284,Visual Arts,Easy,Engineering Drawing 1,Art,2,Architecture
-285,Theory of Architecture 1,Medium,None,Design,2,Architecture
-286,Architectural Design 3,Hard,Architectural Design 2,Design,3,Architecture
-287,Architectural Design 4,Hard,Architectural Design 3,Design,3,Architecture
-288,Building Construction 2,Hard,Building Construction 1,Construction,3,Architecture
-289,History of Architecture 2,Easy,History of Architecture 1,Humanities,3,Architecture
-290,Theory of Architecture 2,Medium,Theory of Architecture 1,Design,3,Architecture
-291,Working Drawings 1,Hard,Building Construction 1,Construction,3,Architecture
-292,Photography for Architects,Easy,Visual Arts,Art,2,Architecture
-293,Computer Aided Arch Design,Medium,Computer Skills & Applications,Design,2,Architecture
-294,Freehand Drawing,Easy,Visual Arts,Art,2,Architecture
-295,Architectural Design 5,Hard,Architectural Design 4,Design,4,Architecture
-296,Architectural Design 6,Hard,Architectural Design 5,Design,4,Architecture
-297,Working Drawings 2,Hard,Working Drawings 1,Construction,4,Architecture
-298,Urban Planning 1,Medium,Architectural Design 3,Urban,4,Architecture
-299,Environmental Control,Medium,Physics 1 (Mechanics),Environment,4,Architecture
-300,Interior Design,Medium,Architectural Design 4,Design,4,Architecture
-301,Acoustics and Illumination,Medium,Physics 3 (Optics & Waves),Environment,4,Architecture
-302,Landscape Architecture,Medium,Architectural Design 4,Design,4,Architecture
-303,Structural Basics for Arch,Medium,Mechanics 1 (Statics),Construction,3,Architecture
-304,3D Modeling & Rendering,Hard,Computer Aided Arch Design,Design,3,Architecture
-305,Architectural Design 7,Hard,Architectural Design 6,Design,5,Architecture
-306,Urban Planning 2,Hard,Urban Planning 1,Urban,5,Architecture
-307,Housing Strategies,Medium,Urban Planning 1,Urban,5,Architecture
-308,Building Regulations,Easy,Working Drawings 2,Management,5,Architecture
-309,Project Management (Arch),Medium,Project Management Fundamentals,Management,5,Architecture
-310,Conservation of Monuments,Medium,History of Architecture 2,Humanities,5,Architecture
-311,Advanced Construction Tech,Hard,Building Construction 2,Construction,5,Architecture
-312,Sustainable Architecture,Medium,Environmental Control,Environment,5,Architecture
-313,Digital Fabrication,Hard,3D Modeling & Rendering,Design,4,Architecture
-314,Parametric Design,Hard,3D Modeling & Rendering,Design,4,Architecture
-315,Modern Architecture History,Easy,History of Architecture 2,Humanities,4,Architecture
-316,Islamic Architecture,Medium,History of Architecture 1,Humanities,3,Architecture
-317,Urban Design,Hard,Urban Planning 1,Urban,4,Architecture
-318,Regional Planning,Hard,Urban Planning 2,Urban,5,Architecture
-319,Smart Cities Architecture,Medium,Urban Design,Urban,5,Architecture
-320,Real Estate Development,Medium,Economics for Engineers,Management,5,Architecture
-321,Energy Efficient Buildings,Hard,Environmental Control,Environment,5,Architecture
-322,Daylighting Strategies,Medium,Acoustics and Illumination,Environment,5,Architecture
-323,Building Sociology,Easy,Sociology & Technology,Humanities,4,Architecture
-324,Environmental Psychology,Medium,Industrial Psychology,Humanities,4,Architecture
-325,Furniture Design,Medium,Interior Design,Design,4,Architecture
-326,Vernacular Architecture,Medium,History of Architecture 2,Humanities,5,Architecture
-327,Restoration Techniques,Hard,Conservation of Monuments,Construction,5,Architecture
-328,Construction Economics,Medium,Project Management (Arch),Management,5,Architecture
-329,Professional Practice,Easy,Building Regulations,Management,5,Architecture
-330,Architectural Criticism,Medium,Theory of Architecture 2,Humanities,5,Architecture
-331,BIM for Architecture,Hard,Working Drawings 2,Design,5,Architecture
-332,City Demographics,Easy,Urban Planning 1,Urban,4,Architecture
-333,Transport Nodes Design,Medium,Architectural Design 5,Design,5,Architecture
-334,Healthcare Facility Design,Hard,Architectural Design 5,Design,5,Architecture
-335,Educational Spaces Design,Hard,Architectural Design 4,Design,4,Architecture
-336,Cultural Buildings,Hard,Architectural Design 6,Design,5,Architecture
-337,Thesis Preparation Seminars,Easy,Architectural Design 6,Research,5,Architecture
-338,Graduation Project 1 (Arch),Hard,Architectural Design 6,Research,5,Architecture
-339,Graduation Project 2 (Arch),Hard,Graduation Project 1 (Arch),Research,5,Architecture
-340,Production Technology 1,Medium,Basics of Production Engineering,Manufacturing,2,PE
-341,Production Technology 2,Hard,Production Technology 1,Manufacturing,2,PE
-342,Production Tech Lab,Easy,Production Technology 2,Manufacturing,2,PE
-343,Metrology,Medium,Physics 1 (Mechanics),Quality,2,PE
-344,Metrology Lab,Easy,Metrology,Quality,2,PE
-345,Material Science (PE),Medium,Engineering Materials,Materials,2,PE
-346,Industrial Organization,Medium,None,Management,2,PE
-347,Thermodynamics (PE),Medium,Physics 1 (Mechanics),Thermal,2,PE
-348,Machining Processes,Hard,Production Technology 2,Manufacturing,3,PE
-349,Metal Forming,Hard,Production Technology 2,Manufacturing,3,PE
-350,Casting and Welding,Medium,Production Technology 2,Manufacturing,3,PE
-351,Operations Research 1,Hard,Operations Research Basics,Math,3,PE
-352,Work Study,Medium,Industrial Organization,Management,3,PE
-353,Quality Control 1,Medium,Mathematics 6 (Probability & Statistics),Quality,3,PE
-354,Machining Lab,Medium,Machining Processes,Manufacturing,3,PE
-355,Operations Research 2,Hard,Operations Research 1,Math,4,PE
-356,Quality Control 2,Hard,Quality Control 1,Quality,4,PE
-357,CAD/CAM,Hard,Advanced Programming,Software,4,PE
-358,CNC Machining,Hard,Machining Processes,Manufacturing,4,PE
-359,Facility Planning,Medium,Work Study,Management,4,PE
-360,Production Planning,Hard,Operations Research 1,Management,4,PE
-361,Tool Design,Hard,Machining Processes,Design,4,PE
-362,Ergonomics,Medium,Work Study,Management,4,PE
-363,CNC Lab,Medium,CNC Machining,Manufacturing,4,PE
-364,Flexible Manufacturing Systems,Hard,CNC Machining,Manufacturing,5,PE
-365,Industrial Automation (PE),Hard,CAD/CAM,Systems,5,PE
-366,Supply Chain Management,Medium,Production Planning,Management,5,PE
-367,Maintenance Management,Medium,Production Planning,Management,5,PE
-368,Six Sigma,Hard,Quality Control 2,Quality,5,PE
-369,Engineering Economics,Medium,Industrial Organization,Management,5,PE
-370,Advanced Materials Processing,Hard,Material Science (PE),Materials,5,PE
-371,Robotics in Manufacturing,Hard,CNC Machining,Systems,5,PE
-372,Plant Layout,Medium,Facility Planning,Management,4,PE
-373,Inventory Control,Medium,Production Planning,Management,4,PE
-374,Lean Manufacturing,Medium,Production Planning,Management,5,PE
-375,Reliability Engineering,Hard,Mathematics 6 (Probability & Statistics),Quality,5,PE
-376,Project Scheduling,Medium,Operations Research 1,Management,4,PE
-377,Simulation of Industrial Systems,Hard,Operations Research 2,Systems,5,PE
-378,Data Analytics for IE,Hard,Quality Control 1,Quality,5,PE
-379,Human Factors Engineering,Medium,Ergonomics,Management,5,PE
-380,Systems Engineering Principles,Hard,Industrial Organization,Systems,5,PE
-381,Cost Accounting for Engineers,Medium,Engineering Economics,Management,5,PE
-382,Value Engineering,Medium,Engineering Economics,Management,5,PE
-383,Quality Management Systems,Easy,Quality Control 1,Quality,4,PE
-384,Advanced Welding Technology,Hard,Casting and Welding,Manufacturing,5,PE
-385,Polymers Processing,Medium,Material Science (PE),Manufacturing,5,PE
-386,Composites Processing,Hard,Polymers Processing,Manufacturing,5,PE
-387,Non-traditional Machining,Hard,Machining Processes,Manufacturing,5,PE
-388,Tool and Die Making,Hard,Tool Design,Manufacturing,5,PE
-389,Industrial Safety & Hygiene,Easy,Ergonomics,Management,4,PE
-390,Energy Management in Industry,Medium,Thermodynamics (PE),Management,5,PE
-391,Operations Strategy,Medium,Supply Chain Management,Management,5,PE
-392,Design of Experiments,Hard,Quality Control 2,Math,5,PE
-393,Product Design and Development,Medium,CAD/CAM,Design,5,PE
-394,Materials Handling Systems,Medium,Facility Planning,Manufacturing,4,PE
-395,Reverse Engineering,Hard,CAD/CAM,Manufacturing,5,PE
-396,Sustainable Manufacturing,Medium,Lean Manufacturing,Manufacturing,5,PE
-397,Automation Lab,Medium,Industrial Automation (PE),Systems,5,PE
-398,Graduation Project 1 (PE),Hard,Production Planning,Research,5,PE
-399,Graduation Project 2 (PE),Hard,Graduation Project 1 (PE),Research,5,PE`
+0,Mathematics 1 (Calculus),Medium,None,General,1,Preparatory
+1,Mathematics 2 (Integration),Medium,Mathematics 1 (Calculus),General,1,Preparatory
+2,Physics 1 (Mechanics),Medium,None,General,1,Preparatory
+3,Physics 2 (Electricity),Medium,None,General,1,Preparatory
+4,Mechanics 1 (Statics),Medium,None,General,1,Preparatory
+5,Mechanics 2 (Dynamics),Medium,Mechanics 1 (Statics),General,1,Preparatory
+6,Engineering Chemistry 1,Medium,None,General,1,Preparatory
+7,Engineering Chemistry 2,Medium,Engineering Chemistry 1,General,1,Preparatory
+8,Engineering Drawing 1,Medium,None,General,1,Preparatory
+9,Engineering Drawing 2,Medium,Engineering Drawing 1,General,1,Preparatory
+10,Introduction to Programming,Medium,None,General,1,Preparatory
+11,Advanced Programming,Medium,Introduction to Programming,General,1,Preparatory
+12,Basics of Production Engineering,Medium,None,General,1,Preparatory
+13,Engineering Ethics,Medium,None,General,1,Preparatory
+14,Technical Report Writing,Medium,None,General,1,Preparatory
+15,Management Fundamentals,Medium,None,General,1,Preparatory
+16,Environmental Science,Medium,Engineering Chemistry 1,General,1,Preparatory
+17,Economics for Engineers,Medium,None,General,1,Preparatory
+18,Business Administration,Medium,None,General,1,Preparatory
+19,Computer Skills & Applications,Medium,Introduction to Programming,General,1,Preparatory
+20,Data Structures,Hard,Advanced Programming,Core,2,CSE
+21,Logic Design,Hard,Physics 2 (Electricity),Core,2,CSE
+22,Object-Oriented Programming,Hard,Data Structures,Core,2,CSE
+23,Electric Circuits,Hard,Physics 2 (Electricity),Core,2,CSE
+24,Signals and Systems,Hard,Mathematics 2 (Integration),Core,2,CSE
+25,Electronic Devices,Hard,Electric Circuits,Core,2,CSE
+26,Data Structures Lab,Easy,Data Structures,Lab,2,CSE
+27,Logic Design Lab,Easy,Logic Design,Lab,2,CSE
+28,Object-Oriented Programming Lab,Easy,Object-Oriented Programming,Lab,2,CSE
+29,Electric Circuits Lab,Easy,Electric Circuits,Lab,2,CSE
+30,Applied Math 1 (CSE),Medium,Mathematics 2 (Integration),Math,2,CSE
+31,Applied Math 2 (CSE),Medium,Applied Math 1 (CSE),Math,2,CSE
+32,Technical Writing 2 (CSE),Easy,Technical Report Writing,Humanities,2,CSE
+33,Communication Skills (CSE),Easy,Technical Report Writing,Humanities,2,CSE
+34,Algorithms,Hard,Data Structures,Core,3,CSE
+35,Database Systems,Hard,Object-Oriented Programming,Core,3,CSE
+36,Computer Architecture,Hard,Logic Design,Core,3,CSE
+37,Microprocessors,Hard,Computer Architecture,Core,3,CSE
+38,Software Engineering,Hard,Database Systems,Core,3,CSE
+39,Digital Communications,Hard,Signals and Systems,Core,3,CSE
+40,Algorithms Lab,Easy,Algorithms,Lab,3,CSE
+41,Database Systems Lab,Easy,Database Systems,Lab,3,CSE
+42,Computer Architecture Lab,Easy,Computer Architecture,Lab,3,CSE
+43,Microprocessors Lab,Easy,Microprocessors,Lab,3,CSE
+44,Engineering Law (CSE),Medium,Engineering Ethics,Humanities,3,CSE
+45,Economics 2 (CSE),Medium,Economics for Engineers,Management,3,CSE
+46,Advanced Math 1 (CSE),Hard,Applied Math 2 (CSE),Math,3,CSE
+47,Advanced Math 2 (CSE),Hard,Advanced Math 1 (CSE),Math,3,CSE
+48,Operating Systems,Hard,Computer Architecture,Core,4,CSE
+49,Computer Networks,Hard,Operating Systems,Core,4,CSE
+50,Compiler Design,Hard,Algorithms,Core,4,CSE
+51,Artificial Intelligence,Hard,Algorithms,Core,4,CSE
+52,VLSI Design,Hard,Electronic Devices,Core,4,CSE
+53,Control Systems,Hard,Signals and Systems,Core,4,CSE
+54,Operating Systems Lab,Easy,Operating Systems,Lab,4,CSE
+55,Computer Networks Lab,Easy,Computer Networks,Lab,4,CSE
+56,Compiler Design Lab,Easy,Compiler Design,Lab,4,CSE
+57,Artificial Intelligence Lab,Easy,Artificial Intelligence,Lab,4,CSE
+58,Elective 1 (CSE),Medium,Operating Systems,Elective,4,CSE
+59,Elective 2 (CSE),Medium,Computer Networks,Elective,4,CSE
+60,Specialized Topic 1 (CSE),Hard,Compiler Design,Specialized,4,CSE
+61,Specialized Topic 2 (CSE),Hard,Artificial Intelligence,Specialized,4,CSE
+62,Machine Learning,Hard,Artificial Intelligence,Core,5,CSE
+63,Cloud Computing,Hard,Computer Networks,Core,5,CSE
+64,Cyber Security,Hard,Computer Networks,Core,5,CSE
+65,Internet of Things,Hard,Microprocessors,Core,5,CSE
+66,Machine Learning Lab,Easy,Machine Learning,Lab,5,CSE
+67,Cloud Computing Lab,Easy,Cloud Computing,Lab,5,CSE
+68,Elective 3 (CSE),Medium,Machine Learning,Elective,5,CSE
+69,Elective 4 (CSE),Medium,Cloud Computing,Elective,5,CSE
+70,Graduation Project 1 (CSE),Hard,VLSI Design,Research,5,CSE
+71,Graduation Project 2 (CSE),Hard,Graduation Project 1 (CSE),Research,5,CSE
+72,Seminar (CSE),Easy,Control Systems,Humanities,5,CSE
+73,Industrial Internship (CSE),Medium,Control Systems,Practical,5,CSE
+74,Specialized Topic 3 (CSE),Hard,Cyber Security,Specialized,5,CSE
+75,Specialized Topic 4 (CSE),Hard,Internet of Things,Specialized,5,CSE
+76,Electrical Circuits 1,Hard,Physics 2 (Electricity),Core,2,EE
+77,Electromagnetics 1,Hard,Physics 2 (Electricity),Core,2,EE
+78,Electrical Measurements,Hard,Electrical Circuits 1,Core,2,EE
+79,Logic Systems,Hard,Advanced Programming,Core,2,EE
+80,Digital Electronics,Hard,Logic Systems,Core,2,EE
+81,Power Systems 1,Hard,Electrical Circuits 1,Core,2,EE
+82,Electrical Circuits 1 Lab,Easy,Electrical Circuits 1,Lab,2,EE
+83,Electromagnetics 1 Lab,Easy,Electromagnetics 1,Lab,2,EE
+84,Electrical Measurements Lab,Easy,Electrical Measurements,Lab,2,EE
+85,Logic Systems Lab,Easy,Logic Systems,Lab,2,EE
+86,Applied Math 1 (EE),Medium,Mathematics 2 (Integration),Math,2,EE
+87,Applied Math 2 (EE),Medium,Applied Math 1 (EE),Math,2,EE
+88,Technical Writing 2 (EE),Easy,Technical Report Writing,Humanities,2,EE
+89,Communication Skills (EE),Easy,Technical Report Writing,Humanities,2,EE
+90,Electrical Machines 1,Hard,Electromagnetics 1,Core,3,EE
+91,Power Electronics 1,Hard,Electrical Circuits 1,Core,3,EE
+92,Control Engineering 1,Hard,Mathematics 2 (Integration),Core,3,EE
+93,Electromagnetics 2,Hard,Electromagnetics 1,Core,3,EE
+94,High Voltage Engineering 1,Hard,Electromagnetics 2,Core,3,EE
+95,Electrical Drives,Hard,Electrical Machines 1,Core,3,EE
+96,Electrical Machines 1 Lab,Easy,Electrical Machines 1,Lab,3,EE
+97,Power Electronics 1 Lab,Easy,Power Electronics 1,Lab,3,EE
+98,Control Engineering 1 Lab,Easy,Control Engineering 1,Lab,3,EE
+99,Electromagnetics 2 Lab,Easy,Electromagnetics 2,Lab,3,EE
+100,Engineering Law (EE),Medium,Engineering Ethics,Humanities,3,EE
+101,Economics 2 (EE),Medium,Economics for Engineers,Management,3,EE
+102,Advanced Math 1 (EE),Hard,Applied Math 2 (EE),Math,3,EE
+103,Advanced Math 2 (EE),Hard,Advanced Math 1 (EE),Math,3,EE
+104,Power Systems 2,Hard,Power Systems 1,Core,4,EE
+105,Electrical Machines 2,Hard,Electrical Machines 1,Core,4,EE
+106,Power Electronics 2,Hard,Power Electronics 1,Core,4,EE
+107,Control Engineering 2,Hard,Control Engineering 1,Core,4,EE
+108,Protection Systems,Hard,Power Systems 2,Core,4,EE
+109,Electrical Distribution,Hard,Power Systems 1,Core,4,EE
+110,Power Systems 2 Lab,Easy,Power Systems 2,Lab,4,EE
+111,Electrical Machines 2 Lab,Easy,Electrical Machines 2,Lab,4,EE
+112,Power Electronics 2 Lab,Easy,Power Electronics 2,Lab,4,EE
+113,Control Engineering 2 Lab,Easy,Control Engineering 2,Lab,4,EE
+114,Elective 1 (EE),Medium,Power Systems 2,Elective,4,EE
+115,Elective 2 (EE),Medium,Electrical Machines 2,Elective,4,EE
+116,Specialized Topic 1 (EE),Hard,Power Electronics 2,Specialized,4,EE
+117,Specialized Topic 2 (EE),Hard,Control Engineering 2,Specialized,4,EE
+118,Smart Grid Technologies,Hard,Electrical Distribution,Core,5,EE
+119,Renewable Energy Systems,Hard,Power Electronics 2,Core,5,EE
+120,Power Quality,Hard,Power Systems 2,Core,5,EE
+121,Industrial Automation,Hard,Control Engineering 2,Core,5,EE
+122,Smart Grid Technologies Lab,Easy,Smart Grid Technologies,Lab,5,EE
+123,Renewable Energy Systems Lab,Easy,Renewable Energy Systems,Lab,5,EE
+124,Elective 3 (EE),Medium,Smart Grid Technologies,Elective,5,EE
+125,Elective 4 (EE),Medium,Renewable Energy Systems,Elective,5,EE
+126,Graduation Project 1 (EE),Hard,Protection Systems,Research,5,EE
+127,Graduation Project 2 (EE),Hard,Graduation Project 1 (EE),Research,5,EE
+128,Seminar (EE),Easy,Electrical Distribution,Humanities,5,EE
+129,Industrial Internship (EE),Medium,Electrical Distribution,Practical,5,EE
+130,Specialized Topic 3 (EE),Hard,Power Quality,Specialized,5,EE
+131,Specialized Topic 4 (EE),Hard,Industrial Automation,Specialized,5,EE
+132,Thermodynamics 1,Hard,Physics 1 (Mechanics),Core,2,ME
+133,Fluid Mechanics 1,Hard,Mechanics 2 (Dynamics),Core,2,ME
+134,Solid Mechanics,Hard,Mechanics 1 (Statics),Core,2,ME
+135,Material Science,Hard,Engineering Chemistry 1,Core,2,ME
+136,Dynamics of Machines,Hard,Mechanics 2 (Dynamics),Core,2,ME
+137,Heat Transfer 1,Hard,Thermodynamics 1,Core,2,ME
+138,Thermodynamics 1 Lab,Easy,Thermodynamics 1,Lab,2,ME
+139,Fluid Mechanics 1 Lab,Easy,Fluid Mechanics 1,Lab,2,ME
+140,Solid Mechanics Lab,Easy,Solid Mechanics,Lab,2,ME
+141,Material Science Lab,Easy,Material Science,Lab,2,ME
+142,Applied Math 1 (ME),Medium,Mathematics 2 (Integration),Math,2,ME
+143,Applied Math 2 (ME),Medium,Applied Math 1 (ME),Math,2,ME
+144,Technical Writing 2 (ME),Easy,Technical Report Writing,Humanities,2,ME
+145,Communication Skills (ME),Easy,Technical Report Writing,Humanities,2,ME
+146,Machine Design 1,Hard,Solid Mechanics,Core,3,ME
+147,Manufacturing Processes 1,Hard,Basics of Production Engineering,Core,3,ME
+148,Measurements & Instrumentation,Hard,Physics 2 (Electricity),Core,3,ME
+149,Thermodynamics 2,Hard,Thermodynamics 1,Core,3,ME
+150,Fluid Mechanics 2,Hard,Fluid Mechanics 1,Core,3,ME
+151,Internal Combustion Engines,Hard,Thermodynamics 2,Core,3,ME
+152,Machine Design 1 Lab,Easy,Machine Design 1,Lab,3,ME
+153,Manufacturing Processes 1 Lab,Easy,Manufacturing Processes 1,Lab,3,ME
+154,Measurements & Instrumentation Lab,Easy,Measurements & Instrumentation,Lab,3,ME
+155,Thermodynamics 2 Lab,Easy,Thermodynamics 2,Lab,3,ME
+156,Engineering Law (ME),Medium,Engineering Ethics,Humanities,3,ME
+157,Economics 2 (ME),Medium,Economics for Engineers,Management,3,ME
+158,Advanced Math 1 (ME),Hard,Applied Math 2 (ME),Math,3,ME
+159,Advanced Math 2 (ME),Hard,Advanced Math 1 (ME),Math,3,ME
+160,HVAC Systems,Hard,Heat Transfer 1,Core,4,ME
+161,Machine Design 2,Hard,Machine Design 1,Core,4,ME
+162,Manufacturing Processes 2,Hard,Manufacturing Processes 1,Core,4,ME
+163,System Dynamics and Control,Hard,Dynamics of Machines,Core,4,ME
+164,Gas Dynamics,Hard,Fluid Mechanics 2,Core,4,ME
+165,Hydraulic Machines,Hard,Fluid Mechanics 2,Core,4,ME
+166,HVAC Systems Lab,Easy,HVAC Systems,Lab,4,ME
+167,Machine Design 2 Lab,Easy,Machine Design 2,Lab,4,ME
+168,Manufacturing Processes 2 Lab,Easy,Manufacturing Processes 2,Lab,4,ME
+169,System Dynamics and Control Lab,Easy,System Dynamics and Control,Lab,4,ME
+170,Elective 1 (ME),Medium,HVAC Systems,Elective,4,ME
+171,Elective 2 (ME),Medium,Machine Design 2,Elective,4,ME
+172,Specialized Topic 1 (ME),Hard,Manufacturing Processes 2,Specialized,4,ME
+173,Specialized Topic 2 (ME),Hard,System Dynamics and Control,Specialized,4,ME
+174,Robotics and Automation,Hard,System Dynamics and Control,Core,5,ME
+175,Power Plants,Hard,Thermodynamics 2,Core,5,ME
+176,Aerodynamics,Hard,Gas Dynamics,Core,5,ME
+177,Mechatronics,Hard,System Dynamics and Control,Core,5,ME
+178,Robotics and Automation Lab,Easy,Robotics and Automation,Lab,5,ME
+179,Power Plants Lab,Easy,Power Plants,Lab,5,ME
+180,Elective 3 (ME),Medium,Robotics and Automation,Elective,5,ME
+181,Elective 4 (ME),Medium,Power Plants,Elective,5,ME
+182,Graduation Project 1 (ME),Hard,Gas Dynamics,Research,5,ME
+183,Graduation Project 2 (ME),Hard,Graduation Project 1 (ME),Research,5,ME
+184,Seminar (ME),Easy,Hydraulic Machines,Humanities,5,ME
+185,Industrial Internship (ME),Medium,Hydraulic Machines,Practical,5,ME
+186,Specialized Topic 3 (ME),Hard,Aerodynamics,Specialized,5,ME
+187,Specialized Topic 4 (ME),Hard,Mechatronics,Specialized,5,ME
+188,Structural Analysis 1,Hard,Mechanics 1 (Statics),Core,2,CE
+189,Surveying 1,Hard,Mathematics 1 (Calculus),Core,2,CE
+190,Civil Engineering Drawing,Hard,Engineering Drawing 1,Core,2,CE
+191,Building Materials,Hard,Engineering Chemistry 1,Core,2,CE
+192,Soil Mechanics,Hard,Mechanics 1 (Statics),Core,2,CE
+193,Highway Engineering,Hard,Surveying 1,Core,2,CE
+194,Structural Analysis 1 Lab,Easy,Structural Analysis 1,Lab,2,CE
+195,Surveying 1 Lab,Easy,Surveying 1,Lab,2,CE
+196,Civil Engineering Drawing Lab,Easy,Civil Engineering Drawing,Lab,2,CE
+197,Building Materials Lab,Easy,Building Materials,Lab,2,CE
+198,Applied Math 1 (CE),Medium,Mathematics 2 (Integration),Math,2,CE
+199,Applied Math 2 (CE),Medium,Applied Math 1 (CE),Math,2,CE
+200,Technical Writing 2 (CE),Easy,Technical Report Writing,Humanities,2,CE
+201,Communication Skills (CE),Easy,Technical Report Writing,Humanities,2,CE
+202,Structural Analysis 2,Hard,Structural Analysis 1,Core,3,CE
+203,Reinforced Concrete Design 1,Hard,Structural Analysis 2,Core,3,CE
+204,Steel Design 1,Hard,Structural Analysis 2,Core,3,CE
+205,Fluid Mechanics CE,Hard,Mechanics 2 (Dynamics),Core,3,CE
+206,Advanced Surveying,Hard,Surveying 1,Core,3,CE
+207,Transportation Planning,Hard,Highway Engineering,Core,3,CE
+208,Structural Analysis 2 Lab,Easy,Structural Analysis 2,Lab,3,CE
+209,Reinforced Concrete Design 1 Lab,Easy,Reinforced Concrete Design 1,Lab,3,CE
+210,Steel Design 1 Lab,Easy,Steel Design 1,Lab,3,CE
+211,Fluid Mechanics CE Lab,Easy,Fluid Mechanics CE,Lab,3,CE
+212,Engineering Law (CE),Medium,Engineering Ethics,Humanities,3,CE
+213,Economics 2 (CE),Medium,Economics for Engineers,Management,3,CE
+214,Advanced Math 1 (CE),Hard,Applied Math 2 (CE),Math,3,CE
+215,Advanced Math 2 (CE),Hard,Advanced Math 1 (CE),Math,3,CE
+216,Reinforced Concrete Design 2,Hard,Reinforced Concrete Design 1,Core,4,CE
+217,Steel Design 2,Hard,Steel Design 1,Core,4,CE
+218,Foundation Engineering,Hard,Soil Mechanics,Core,4,CE
+219,Sanitary Engineering,Hard,Fluid Mechanics CE,Core,4,CE
+220,Hydraulics,Hard,Fluid Mechanics CE,Core,4,CE
+221,Project Management CE,Hard,Management Fundamentals,Core,4,CE
+222,Reinforced Concrete Design 2 Lab,Easy,Reinforced Concrete Design 2,Lab,4,CE
+223,Steel Design 2 Lab,Easy,Steel Design 2,Lab,4,CE
+224,Foundation Engineering Lab,Easy,Foundation Engineering,Lab,4,CE
+225,Sanitary Engineering Lab,Easy,Sanitary Engineering,Lab,4,CE
+226,Elective 1 (CE),Medium,Reinforced Concrete Design 2,Elective,4,CE
+227,Elective 2 (CE),Medium,Steel Design 2,Elective,4,CE
+228,Specialized Topic 1 (CE),Hard,Foundation Engineering,Specialized,4,CE
+229,Specialized Topic 2 (CE),Hard,Sanitary Engineering,Specialized,4,CE
+230,Earthquake Engineering,Hard,Structural Analysis 2,Core,5,CE
+231,Bridge Engineering,Hard,Reinforced Concrete Design 2,Core,5,CE
+232,Traffic Engineering,Hard,Transportation Planning,Core,5,CE
+233,Water Resources Engineering,Hard,Hydraulics,Core,5,CE
+234,Earthquake Engineering Lab,Easy,Earthquake Engineering,Lab,5,CE
+235,Bridge Engineering Lab,Easy,Bridge Engineering,Lab,5,CE
+236,Elective 3 (CE),Medium,Earthquake Engineering,Elective,5,CE
+237,Elective 4 (CE),Medium,Bridge Engineering,Elective,5,CE
+238,Graduation Project 1 (CE),Hard,Hydraulics,Research,5,CE
+239,Graduation Project 2 (CE),Hard,Graduation Project 1 (CE),Research,5,CE
+240,Seminar (CE),Easy,Project Management CE,Humanities,5,CE
+241,Industrial Internship (CE),Medium,Project Management CE,Practical,5,CE
+242,Specialized Topic 3 (CE),Hard,Traffic Engineering,Specialized,5,CE
+243,Specialized Topic 4 (CE),Hard,Water Resources Engineering,Specialized,5,CE
+244,Architectural Design 1,Hard,Engineering Drawing 1,Core,2,Architecture
+245,Building Construction 1,Hard,Engineering Drawing 1,Core,2,Architecture
+246,History of Architecture 1,Hard,Engineering Ethics,Core,2,Architecture
+247,Visual Arts,Hard,Engineering Drawing 1,Core,2,Architecture
+248,Theory of Architecture 1,Hard,Engineering Ethics,Core,2,Architecture
+249,Freehand Drawing,Hard,Visual Arts,Core,2,Architecture
+250,Architectural Design 1 Lab,Easy,Architectural Design 1,Lab,2,Architecture
+251,Building Construction 1 Lab,Easy,Building Construction 1,Lab,2,Architecture
+252,History of Architecture 1 Lab,Easy,History of Architecture 1,Lab,2,Architecture
+253,Visual Arts Lab,Easy,Visual Arts,Lab,2,Architecture
+254,Applied Math 1 (Architecture),Medium,Mathematics 2 (Integration),Math,2,Architecture
+255,Applied Math 2 (Architecture),Medium,Applied Math 1 (Architecture),Math,2,Architecture
+256,Technical Writing 2 (Architecture),Easy,Technical Report Writing,Humanities,2,Architecture
+257,Communication Skills (Architecture),Easy,Technical Report Writing,Humanities,2,Architecture
+258,Architectural Design 2,Hard,Architectural Design 1,Core,3,Architecture
+259,Building Construction 2,Hard,Building Construction 1,Core,3,Architecture
+260,History of Architecture 2,Hard,History of Architecture 1,Core,3,Architecture
+261,Theory of Architecture 2,Hard,Theory of Architecture 1,Core,3,Architecture
+262,Working Drawings 1,Hard,Building Construction 2,Core,3,Architecture
+263,Urban Planning 1,Hard,Architectural Design 2,Core,3,Architecture
+264,Architectural Design 2 Lab,Easy,Architectural Design 2,Lab,3,Architecture
+265,Building Construction 2 Lab,Easy,Building Construction 2,Lab,3,Architecture
+266,History of Architecture 2 Lab,Easy,History of Architecture 2,Lab,3,Architecture
+267,Theory of Architecture 2 Lab,Easy,Theory of Architecture 2,Lab,3,Architecture
+268,Engineering Law (Architecture),Medium,Engineering Ethics,Humanities,3,Architecture
+269,Economics 2 (Architecture),Medium,Economics for Engineers,Management,3,Architecture
+270,Advanced Math 1 (Architecture),Hard,Applied Math 2 (Architecture),Math,3,Architecture
+271,Advanced Math 2 (Architecture),Hard,Advanced Math 1 (Architecture),Math,3,Architecture
+272,Architectural Design 3,Hard,Architectural Design 2,Core,4,Architecture
+273,Working Drawings 2,Hard,Working Drawings 1,Core,4,Architecture
+274,Interior Design,Hard,Architectural Design 3,Core,4,Architecture
+275,Landscape Architecture,Hard,Architectural Design 3,Core,4,Architecture
+276,Environmental Control,Hard,Environmental Science,Core,4,Architecture
+277,Urban Design,Hard,Urban Planning 1,Core,4,Architecture
+278,Architectural Design 3 Lab,Easy,Architectural Design 3,Lab,4,Architecture
+279,Working Drawings 2 Lab,Easy,Working Drawings 2,Lab,4,Architecture
+280,Interior Design Lab,Easy,Interior Design,Lab,4,Architecture
+281,Landscape Architecture Lab,Easy,Landscape Architecture,Lab,4,Architecture
+282,Elective 1 (Architecture),Medium,Architectural Design 3,Elective,4,Architecture
+283,Elective 2 (Architecture),Medium,Working Drawings 2,Elective,4,Architecture
+284,Specialized Topic 1 (Architecture),Hard,Interior Design,Specialized,4,Architecture
+285,Specialized Topic 2 (Architecture),Hard,Landscape Architecture,Specialized,4,Architecture
+286,Architectural Design 4,Hard,Architectural Design 3,Core,5,Architecture
+287,Housing Strategies,Hard,Urban Planning 1,Core,5,Architecture
+288,Sustainable Architecture,Hard,Environmental Control,Core,5,Architecture
+289,Conservation of Monuments,Hard,History of Architecture 2,Core,5,Architecture
+290,Architectural Design 4 Lab,Easy,Architectural Design 4,Lab,5,Architecture
+291,Housing Strategies Lab,Easy,Housing Strategies,Lab,5,Architecture
+292,Elective 3 (Architecture),Medium,Architectural Design 4,Elective,5,Architecture
+293,Elective 4 (Architecture),Medium,Housing Strategies,Elective,5,Architecture
+294,Graduation Project 1 (Architecture),Hard,Environmental Control,Research,5,Architecture
+295,Graduation Project 2 (Architecture),Hard,Graduation Project 1 (Architecture),Research,5,Architecture
+296,Seminar (Architecture),Easy,Urban Design,Humanities,5,Architecture
+297,Industrial Internship (Architecture),Medium,Urban Design,Practical,5,Architecture
+298,Specialized Topic 3 (Architecture),Hard,Sustainable Architecture,Specialized,5,Architecture
+299,Specialized Topic 4 (Architecture),Hard,Conservation of Monuments,Specialized,5,Architecture
+300,Production Technology 1,Hard,Basics of Production Engineering,Core,2,PE
+301,Metrology,Hard,Physics 1 (Mechanics),Core,2,PE
+302,Material Science PE,Hard,Engineering Chemistry 1,Core,2,PE
+303,Industrial Organization,Hard,Management Fundamentals,Core,2,PE
+304,Thermodynamics PE,Hard,Physics 1 (Mechanics),Core,2,PE
+305,Work Study,Hard,Industrial Organization,Core,2,PE
+306,Production Technology 1 Lab,Easy,Production Technology 1,Lab,2,PE
+307,Metrology Lab,Easy,Metrology,Lab,2,PE
+308,Material Science PE Lab,Easy,Material Science PE,Lab,2,PE
+309,Industrial Organization Lab,Easy,Industrial Organization,Lab,2,PE
+310,Applied Math 1 (PE),Medium,Mathematics 2 (Integration),Math,2,PE
+311,Applied Math 2 (PE),Medium,Applied Math 1 (PE),Math,2,PE
+312,Technical Writing 2 (PE),Easy,Technical Report Writing,Humanities,2,PE
+313,Communication Skills (PE),Easy,Technical Report Writing,Humanities,2,PE
+314,Production Technology 2,Hard,Production Technology 1,Core,3,PE
+315,Machining Processes,Hard,Production Technology 2,Core,3,PE
+316,Metal Forming,Hard,Production Technology 2,Core,3,PE
+317,Casting and Welding,Hard,Production Technology 2,Core,3,PE
+318,Quality Control 1,Hard,Mathematics 2 (Integration),Core,3,PE
+319,Operations Research 1,Hard,Mathematics 1 (Calculus),Core,3,PE
+320,Production Technology 2 Lab,Easy,Production Technology 2,Lab,3,PE
+321,Machining Processes Lab,Easy,Machining Processes,Lab,3,PE
+322,Metal Forming Lab,Easy,Metal Forming,Lab,3,PE
+323,Casting and Welding Lab,Easy,Casting and Welding,Lab,3,PE
+324,Engineering Law (PE),Medium,Engineering Ethics,Humanities,3,PE
+325,Economics 2 (PE),Medium,Economics for Engineers,Management,3,PE
+326,Advanced Math 1 (PE),Hard,Applied Math 2 (PE),Math,3,PE
+327,Advanced Math 2 (PE),Hard,Advanced Math 1 (PE),Math,3,PE
+328,CAD/CAM,Hard,Advanced Programming,Core,4,PE
+329,CNC Machining,Hard,Machining Processes,Core,4,PE
+330,Production Planning,Hard,Operations Research 1,Core,4,PE
+331,Facility Planning,Hard,Work Study,Core,4,PE
+332,Quality Control 2,Hard,Quality Control 1,Core,4,PE
+333,Ergonomics,Hard,Work Study,Core,4,PE
+334,CAD/CAM Lab,Easy,CAD/CAM,Lab,4,PE
+335,CNC Machining Lab,Easy,CNC Machining,Lab,4,PE
+336,Production Planning Lab,Easy,Production Planning,Lab,4,PE
+337,Facility Planning Lab,Easy,Facility Planning,Lab,4,PE
+338,Elective 1 (PE),Medium,CAD/CAM,Elective,4,PE
+339,Elective 2 (PE),Medium,CNC Machining,Elective,4,PE
+340,Specialized Topic 1 (PE),Hard,Production Planning,Specialized,4,PE
+341,Specialized Topic 2 (PE),Hard,Facility Planning,Specialized,4,PE
+342,Flexible Manufacturing Systems,Hard,CNC Machining,Core,5,PE
+343,Supply Chain Management,Hard,Production Planning,Core,5,PE
+344,Maintenance Management,Hard,Production Planning,Core,5,PE
+345,Six Sigma,Hard,Quality Control 2,Core,5,PE
+346,Flexible Manufacturing Systems Lab,Easy,Flexible Manufacturing Systems,Lab,5,PE
+347,Supply Chain Management Lab,Easy,Supply Chain Management,Lab,5,PE
+348,Elective 3 (PE),Medium,Flexible Manufacturing Systems,Elective,5,PE
+349,Elective 4 (PE),Medium,Supply Chain Management,Elective,5,PE
+350,Graduation Project 1 (PE),Hard,Quality Control 2,Research,5,PE
+351,Graduation Project 2 (PE),Hard,Graduation Project 1 (PE),Research,5,PE
+352,Seminar (PE),Easy,Ergonomics,Humanities,5,PE
+353,Industrial Internship (PE),Medium,Ergonomics,Practical,5,PE
+354,Specialized Topic 3 (PE),Hard,Maintenance Management,Specialized,5,PE
+355,Specialized Topic 4 (PE),Hard,Six Sigma,Specialized,5,PE`

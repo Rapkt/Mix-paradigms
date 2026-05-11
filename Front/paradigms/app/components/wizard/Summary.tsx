@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
-import { DUMMY_COURSES } from "../../../constants/courses";
+import { COURSES } from "../../../constants/courses";
 
 interface Step5Props {
   major: string;
@@ -22,7 +22,7 @@ export default function Summary({
   const router = useRouter();
 
   const getCourseName = (id: string) => {
-    const course = DUMMY_COURSES.find((c) => c.id === id);
+    const course = COURSES.find((c) => c.id === id || c.name === id);
     return course ? `${course.id}: ${course.name}` : id;
   };
 

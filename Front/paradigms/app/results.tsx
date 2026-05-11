@@ -17,12 +17,16 @@ export default function ResultsScreen() {
 
   const [loading, setLoading] = useState(true);
   const [resultData, setResultData] = useState<any>(null);
+  const [studentYear, setStudentYear] = useState<number>(1);
 
   useEffect(() => {
     const fetchResults = async () => {
       if (requestData && isAI) {
         const payload = JSON.parse(requestData as string);
         const isAIEngine = isAI === "true";
+        
+        // Extract student's academic year
+        setStudentYear(payload.academic_year || 1);
 
         const results = await getRecommendations(payload, isAIEngine);
 
@@ -35,20 +39,29 @@ export default function ResultsScreen() {
   }, [requestData, isAI]);
 
   // Reusable helper component to render a course card
-  const CourseCard = ({ course }: { course: any }) => (
-    <View style={styles.courseCard}>
-      <View style={{ flex: 1 }}>
-        <Text style={styles.courseId}>{course.id}</Text>
-        {/* FIX #1: Tell it to use either the Django key (course_name) OR the mock key (name) */}
-        <Text style={styles.courseName}>
-          {course.course_name || course.name}
-        </Text>
+  const CourseCard = ({ course }: { course: any }) => {
+    const isCurrentYear = course.year === studentYear;
+    return (
+      <View style={[styles.courseCard, isCurrentYear && styles.courseCardCurrentYear]}>
+        <View style={{ flex: 1 }}>
+          <Text style={[styles.courseId, isCurrentYear && styles.courseIdCurrentYear]}>{course.id}</Text>
+          {/* FIX #1: Tell it to use either the Django key (course_name) OR the mock key (name) */}
+          <Text style={[styles.courseName, isCurrentYear && styles.courseNameCurrentYear]}>
+            {course.course_name || course.name}
+          </Text>
+          <Text style={[styles.courseMeta, isCurrentYear && styles.courseMetaCurrentYear]}>
+            {course.department ? `Department: ${course.department}` : "Department: N/A"}
+          </Text>
+          <Text style={[styles.courseMeta, isCurrentYear && styles.courseMetaCurrentYear]}>
+            {course.year ? `Year: ${course.year}` : "Year: N/A"}
+          </Text>
+        </View>
+        <View style={[styles.badge, isCurrentYear && styles.badgeCurrentYear]}>
+          <Text style={[styles.badgeText, isCurrentYear && styles.badgeTextCurrentYear]}>{course.difficulty}</Text>
+        </View>
       </View>
-      <View style={styles.badge}>
-        <Text style={styles.badgeText}>{course.difficulty}</Text>
-      </View>
-    </View>
-  );
+    );
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -233,6 +246,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   courseName: { fontSize: 18, fontWeight: "600", color: "#333" },
+  courseMeta: { fontSize: 13, color: "#888", marginTop: 4 },
   courseFocus: { fontSize: 13, color: "#888", marginTop: 4 },
   badge: {
     backgroundColor: "#e0e0e0",
@@ -242,6 +256,17 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   badgeText: { fontSize: 12, fontWeight: "bold", color: "#555" },
+
+  courseCardCurrentYear: {
+    backgroundColor: "#fef3c7",
+    borderColor: "#fbbf24",
+    borderWidth: 2,
+  },
+  courseIdCurrentYear: { color: "#b45309" },
+  courseNameCurrentYear: { color: "#78350f" },
+  courseMetaCurrentYear: { color: "#92400e" },
+  badgeCurrentYear: { backgroundColor: "#fbbf24" },
+  badgeTextCurrentYear: { color: "#78350f" },
 
   homeButton: {
     marginTop: 20,

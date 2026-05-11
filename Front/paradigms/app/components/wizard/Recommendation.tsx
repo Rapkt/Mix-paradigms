@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
-import { DUMMY_COURSES } from "../../../constants/courses";
+import { COURSES } from "../../../constants/courses";
 import { useRouter } from "expo-router";
 
 interface Step4Props {
@@ -19,7 +19,7 @@ export default function Recommendation({
 }: Step4Props) {
   // Helper to get the full course name from an ID
   const getCourseName = (id: string) => {
-    const course = DUMMY_COURSES.find((c) => c.id === id);
+    const course = COURSES.find((c) => c.id === id || c.name === id);
     return course ? `${course.id}: ${course.name}` : id;
   };
   const router = useRouter();

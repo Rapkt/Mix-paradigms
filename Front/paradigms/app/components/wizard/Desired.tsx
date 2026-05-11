@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { View, Text, ScrollView, Pressable, StyleSheet } from "react-native";
-import { DUMMY_COURSES } from "../../../constants/courses";
+import { COURSES } from "../../../constants/courses";
 
 interface Step3Props {
   major: string;
@@ -20,8 +20,8 @@ export default function DesiredCourses({
   const [activeTab, setActiveTab] = useState<number>(currentYear);
 
   // 1. Get courses for the major AND filter out ones they already took
-  const availableMajorCourses = DUMMY_COURSES.filter(
-    (c) => c.major === major && !takenCourses.includes(c.id),
+  const availableMajorCourses = COURSES.filter(
+    (c) => c.major === major && !takenCourses.includes(c.name),
   );
 
   // 2. Find out which years are left

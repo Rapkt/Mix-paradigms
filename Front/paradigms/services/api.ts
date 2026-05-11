@@ -7,6 +7,7 @@ export const getRecommendations = async (payload: any, isAI: boolean) => {
     const URL = isAI
       ? `http://${api_url}:8000/api/ai/recommend/`
       : `http://${api_url}:8000/api/prolog/recommend/`;
+    console.log(URL);  
     console.log(payload);
     const response = await fetch(URL, {
       method: "POST",

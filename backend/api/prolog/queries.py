@@ -109,7 +109,7 @@ def recommend_courses(
     based_on_prerequisites = set(based_on_prerequisites)
     logger.debug("Recommendation based on prerequisites: %s", based_on_prerequisites)
 
-    based_on_year_of_study = list(
+    """ based_on_year_of_study = list(
         map(
             lambda e: e["X"],
             Prolog.query(
@@ -119,7 +119,7 @@ def recommend_courses(
     )
     based_on_year_of_study = set(based_on_year_of_study)
 
-    logger.debug("Recommendation based on year of study: %s", based_on_year_of_study)
+    logger.debug("Recommendation based on year of study: %s", based_on_year_of_study) """
 
     easy = list(
         map(

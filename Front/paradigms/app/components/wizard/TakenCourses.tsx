@@ -1,6 +1,9 @@
 import { View, Text, ScrollView, Pressable, StyleSheet } from "react-native";
 import { useState } from "react";
-import { DUMMY_COURSES } from "../../../constants/courses";
+import {
+  COURSES,
+  PREPARATORY_DEPARTMENT,
+} from "../../../constants/courses";
 interface Step2 {
   major: string;
   takenCourses: string[];
@@ -16,8 +19,10 @@ export default function TakenCourses({
 }: Step2) {
   const [activeTab, setActiveTab] = useState<number>(currentYear);
 
-  // 1. Get ONLY the courses for the selected major
-  const majorCourses = DUMMY_COURSES.filter((c) => c.major === major);
+  // 1. Get courses for the major, plus preparatory year courses if available
+  const majorCourses = COURSES.filter(
+    (c) => c.major === major || c.major === PREPARATORY_DEPARTMENT,
+  );
 
   // 2. Dynamically figure out what years actually exist for this major (e.g., [1, 2, 3, 4, 5])
   const availableYears = Array.from(
@@ -27,12 +32,31 @@ export default function TakenCourses({
   // 3. Get ONLY the courses that match the currently clicked tab
   const displayedCourses = majorCourses.filter((c) => c.year === activeTab);
 
+  const displayedCourseNames = displayedCourses.map((course) => course.name);
+  const allDisplayedSelected =
+    displayedCourseNames.length > 0 &&
+    displayedCourseNames.every((name) => takenCourses.includes(name));
+
   const toggleCourse = (courseId: string) => {
     if (takenCourses.includes(courseId)) {
       setTakenCourses(takenCourses.filter((id) => id !== courseId));
     } else {
       setTakenCourses([...takenCourses, courseId]);
     }
+  };
+
+  const toggleAllDisplayed = () => {
+    if (displayedCourseNames.length === 0) return;
+
+    if (allDisplayedSelected) {
+      setTakenCourses(
+        takenCourses.filter((name) => !displayedCourseNames.includes(name)),
+      );
+      return;
+    }
+
+    const combined = new Set([...takenCourses, ...displayedCourseNames]);
+    setTakenCourses(Array.from(combined));
   };
 
   return (
@@ -62,6 +86,27 @@ export default function TakenCourses({
             </Text>
           </Pressable>
         ))}
+      </View>
+
+      <View style={styles.actionsRow}>
+        <Text style={styles.actionsLabel}>Courses in Year {activeTab}</Text>
+        <Pressable
+          style={[
+            styles.selectAllButton,
+            allDisplayedSelected && styles.selectAllButtonActive,
+            displayedCourseNames.length === 0 && styles.selectAllButtonDisabled,
+          ]}
+          onPress={toggleAllDisplayed}
+        >
+          <Text
+            style={[
+              styles.selectAllText,
+              allDisplayedSelected && styles.selectAllTextActive,
+            ]}
+          >
+            {allDisplayedSelected ? "Clear all" : "Select all"}
+          </Text>
+        </Pressable>
       </View>
 
       {/* THE FILTERED COURSE LIST */}
@@ -121,6 +166,26 @@ const styles = StyleSheet.create({
   activeTab: { backgroundColor: "#333" }, // Dark gray to distinguish tabs from courses
   tabText: { fontSize: 14, fontWeight: "bold", color: "#666" },
   activeTabText: { color: "#fff" },
+
+  actionsRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 12,
+  },
+  actionsLabel: { fontSize: 14, color: "#666", fontWeight: "600" },
+  selectAllButton: {
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: "#007AFF",
+    backgroundColor: "#fff",
+  },
+  selectAllButtonActive: { backgroundColor: "#007AFF" },
+  selectAllButtonDisabled: { opacity: 0.5 },
+  selectAllText: { fontSize: 13, fontWeight: "600", color: "#007AFF" },
+  selectAllTextActive: { color: "#fff" },
 
   // Course Card Styles
   courseCard: {
