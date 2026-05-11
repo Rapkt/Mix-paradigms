@@ -83,17 +83,26 @@ export default function Majors({
 }
 
 const styles = StyleSheet.create({
-  stepTitle: { fontSize: 20, fontWeight: "600", marginBottom: 10 },
+  stepTitle: {
+    fontSize: 20,
+    fontWeight: "600",
+    marginBottom: 10,
+    color: "#1f2933",
+    fontFamily: "Georgia",
+  },
   optionsContainer: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
   optionButton: {
     paddingVertical: 12,
     paddingHorizontal: 20,
-    backgroundColor: "#f0f0f0",
-    borderRadius: 8,
+    backgroundColor: "#fff",
+    borderRadius: 12,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
+    borderColor: "#e6ddd2",
   },
-  optionButtonSelected: { backgroundColor: "#007AFF", borderColor: "#007AFF" },
-  optionText: { fontSize: 16, color: "#333", fontWeight: "500" },
+  optionButtonSelected: {
+    backgroundColor: "#1f2933",
+    borderColor: "#1f2933",
+  },
+  optionText: { fontSize: 16, color: "#433a31", fontWeight: "500" },
   optionTextSelected: { color: "#fff" },
 });

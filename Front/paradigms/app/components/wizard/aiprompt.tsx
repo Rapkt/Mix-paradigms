@@ -51,16 +51,27 @@ export default function AIPrompt({ aiPrompt, setAiPrompt }: AIPromptProps) {
 }
 
 const styles = StyleSheet.create({
-  stepTitle: { fontSize: 20, fontWeight: "600", marginBottom: 5 },
-  subtitle: { fontSize: 14, color: "#666", marginBottom: 20, lineHeight: 20 },
+  stepTitle: {
+    fontSize: 20,
+    fontWeight: "600",
+    marginBottom: 5,
+    color: "#1f2933",
+    fontFamily: "Georgia",
+  },
+  subtitle: { fontSize: 14, color: "#6b5e53", marginBottom: 20, lineHeight: 20 },
   textInput: {
-    backgroundColor: "#f8f9fa",
+    backgroundColor: "#fff",
     borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 12,
+    borderColor: "#e6ddd2",
+    borderRadius: 16,
     padding: 15,
     fontSize: 16,
-    color: "#333",
+    color: "#2f241c",
     minHeight: 200,
+    shadowColor: "#1f2933",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    elevation: 2,
   },
 });

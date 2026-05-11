@@ -8,12 +8,14 @@ import {
   ScrollView,
   Pressable,
 } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { getRecommendations } from "../services/api";
 
 export default function ResultsScreen() {
   const router = useRouter();
   const { requestData, isAI } = useLocalSearchParams();
+  const insets = useSafeAreaInsets();
 
   const [loading, setLoading] = useState(true);
   const [resultData, setResultData] = useState<any>(null);
@@ -65,7 +67,8 @@ export default function ResultsScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
+      <View style={[styles.header, { paddingTop: insets.top + 20 }]}>
+        <View style={styles.headerAccent} />
         <Text style={styles.title}>Your Study Plan</Text>
         <Text style={styles.subtitle}>
           Powered by {isAI === "true" ? "AI Advisor 🤖" : "Prolog Engine ⚙️"}
@@ -185,14 +188,31 @@ export default function ResultsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff" },
+  container: { flex: 1, backgroundColor: "#f7f4ef" },
   header: {
     padding: 20,
-    backgroundColor: "#111",
+    backgroundColor: "#1f2933",
     borderBottomWidth: 1,
-    borderColor: "#eee",
+    borderColor: "#111827",
+    position: "relative",
+    overflow: "hidden",
   },
-  title: { fontSize: 24, fontWeight: "bold", color: "#fff" },
+  headerAccent: {
+    position: "absolute",
+    left: -30,
+    top: -20,
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    backgroundColor: "#c97b45",
+    opacity: 0.18,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#fff",
+    fontFamily: "Georgia",
+  },
   subtitle: { fontSize: 16, color: "rgba(255,255,255,0.8)", marginTop: 5 },
   content: { flex: 1, padding: 20 },
 
@@ -201,7 +221,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "600",
     marginTop: 20,
-    color: "#333",
+    color: "#2f241c",
   },
 
   section: { marginBottom: 20 },
@@ -209,53 +229,63 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 15,
-    color: "#333",
+    color: "#2f241c",
   },
 
   aiReasoningBox: {
-    backgroundColor: "#f0f0ff",
+    backgroundColor: "#fff",
     padding: 15,
-    borderRadius: 12,
+    borderRadius: 14,
     marginBottom: 25,
     borderWidth: 1,
-    borderColor: "#d0d0ff",
+    borderColor: "#e6ddd2",
+    shadowColor: "#1f2933",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    elevation: 2,
   },
   aiReasoningTitle: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#5856D6",
+    color: "#304c89",
     marginBottom: 8,
   },
-  aiReasoningText: { fontSize: 15, color: "#333", lineHeight: 22 },
+  aiReasoningText: { fontSize: 15, color: "#2f241c", lineHeight: 22 },
 
   courseCard: {
     padding: 15,
-    backgroundColor: "#f8f9fa",
-    borderRadius: 12,
+    backgroundColor: "#fff",
+    borderRadius: 14,
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
+    borderColor: "#e6ddd2",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    shadowColor: "#1f2933",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    elevation: 2,
   },
   courseId: {
     fontSize: 14,
-    color: "#666",
+    color: "#6b5e53",
     fontWeight: "bold",
     marginBottom: 4,
   },
-  courseName: { fontSize: 18, fontWeight: "600", color: "#333" },
-  courseMeta: { fontSize: 13, color: "#888", marginTop: 4 },
-  courseFocus: { fontSize: 13, color: "#888", marginTop: 4 },
+  courseName: { fontSize: 18, fontWeight: "600", color: "#2f241c" },
+  courseMeta: { fontSize: 13, color: "#8a796a", marginTop: 4 },
+  courseFocus: { fontSize: 13, color: "#8a796a", marginTop: 4 },
   badge: {
-    backgroundColor: "#e0e0e0",
+    backgroundColor: "#efe6dc",
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 15,
     marginLeft: 10,
   },
-  badgeText: { fontSize: 12, fontWeight: "bold", color: "#555" },
+  badgeText: { fontSize: 12, fontWeight: "bold", color: "#4b3f35" },
 
   courseCardCurrentYear: {
     backgroundColor: "#fef3c7",
@@ -271,10 +301,10 @@ const styles = StyleSheet.create({
   homeButton: {
     marginTop: 20,
     marginBottom: 40,
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#efe6dc",
     paddingVertical: 15,
-    borderRadius: 10,
+    borderRadius: 12,
     alignItems: "center",
   },
-  homeButtonText: { fontSize: 16, fontWeight: "bold", color: "#007AFF" },
+  homeButtonText: { fontSize: 16, fontWeight: "bold", color: "#c97b45" },
 });

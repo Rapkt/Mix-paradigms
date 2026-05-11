@@ -144,8 +144,14 @@ export default function TakenCourses({
 }
 
 const styles = StyleSheet.create({
-  stepTitle: { fontSize: 20, fontWeight: "600", marginBottom: 5 },
-  subtitle: { fontSize: 14, color: "#666", marginBottom: 15 },
+  stepTitle: {
+    fontSize: 20,
+    fontWeight: "600",
+    marginBottom: 5,
+    color: "#1f2933",
+    fontFamily: "Georgia",
+  },
+  subtitle: { fontSize: 14, color: "#6b5e53", marginBottom: 15 },
 
   // Tab Styles
   tabContainer: {
@@ -154,17 +160,17 @@ const styles = StyleSheet.create({
     gap: 10,
     marginBottom: 20,
     borderBottomWidth: 1,
-    borderColor: "#eee",
+    borderColor: "#e6ddd2",
     paddingBottom: 10,
   },
   tab: {
     paddingVertical: 8,
     paddingHorizontal: 16,
     borderRadius: 20,
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#f3eee7",
   },
-  activeTab: { backgroundColor: "#333" }, // Dark gray to distinguish tabs from courses
-  tabText: { fontSize: 14, fontWeight: "bold", color: "#666" },
+  activeTab: { backgroundColor: "#1f2933" },
+  tabText: { fontSize: 14, fontWeight: "bold", color: "#6b5e53" },
   activeTabText: { color: "#fff" },
 
   actionsRow: {
@@ -173,34 +179,44 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 12,
   },
-  actionsLabel: { fontSize: 14, color: "#666", fontWeight: "600" },
+  actionsLabel: { fontSize: 14, color: "#6b5e53", fontWeight: "600" },
   selectAllButton: {
     paddingVertical: 6,
     paddingHorizontal: 12,
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: "#007AFF",
+    borderColor: "#c97b45",
     backgroundColor: "#fff",
   },
-  selectAllButtonActive: { backgroundColor: "#007AFF" },
+  selectAllButtonActive: { backgroundColor: "#c97b45" },
   selectAllButtonDisabled: { opacity: 0.5 },
-  selectAllText: { fontSize: 13, fontWeight: "600", color: "#007AFF" },
+  selectAllText: { fontSize: 13, fontWeight: "600", color: "#c97b45" },
   selectAllTextActive: { color: "#fff" },
 
   // Course Card Styles
   courseCard: {
     padding: 15,
-    backgroundColor: "#f8f9fa",
-    borderRadius: 10,
+    backgroundColor: "#fff",
+    borderRadius: 12,
     marginBottom: 10,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
+    borderColor: "#e6ddd2",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    shadowColor: "#1f2933",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    elevation: 2,
   },
-  courseCardSelected: { backgroundColor: "#34C759", borderColor: "#34C759" },
-  courseName: { fontSize: 16, fontWeight: "500", color: "#333", flex: 1 },
-  courseDifficulty: { fontSize: 14, color: "#666", marginLeft: 10 },
+  courseCardSelected: { backgroundColor: "#1f8a70", borderColor: "#1f8a70" },
+  courseName: {
+    fontSize: 16,
+    fontWeight: "500",
+    color: "#2f241c",
+    flex: 1,
+  },
+  courseDifficulty: { fontSize: 14, color: "#6b5e53", marginLeft: 10 },
   courseTextSelected: { color: "#fff" },
 });

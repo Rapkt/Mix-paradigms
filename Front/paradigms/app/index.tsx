@@ -1,5 +1,14 @@
-import { Text, Pressable, View, StyleSheet, SafeAreaView } from "react-native";
+import {
+  Text,
+  Pressable,
+  View,
+  StyleSheet,
+  SafeAreaView,
+  Image,
+  ImageSourcePropType,
+} from "react-native";
 import { useState } from "react";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Majors from "./components/wizard/Majors";
 import Summary from "./components/wizard/Summary";
 import TakenCourses from "./components/wizard/TakenCourses";
@@ -8,6 +17,8 @@ import EngineChoice from "./components/wizard/EngineChoice";
 import AIPrompt from "./components/wizard/aiprompt"; // Make sure the casing matches your file!
 
 export default function Index() {
+  const insets = useSafeAreaInsets();
+  const logoSource: ImageSourcePropType | null = require("./assets/uni_logo.jpeg")
   const [step, setStep] = useState<number>(1);
   const [major, setMajor] = useState<string>("");
   const [takenCourses, setTakenCourses] = useState<string[]>([]);
@@ -35,11 +46,29 @@ export default function Index() {
   return (
     <SafeAreaView style={styles.container}>
       <View
-        style={[{ justifyContent: "center", display: "flex" }, styles.header]}
+        style={[
+          {
+            justifyContent: "center",
+            display: "flex",
+            paddingTop: insets.top + 24,
+          },
+          styles.header,
+        ]}
       >
-        <Text style={[styles.title, { textAlign: "center" }]}>
-          Smart Study Advisor
-        </Text>
+        <View style={styles.headerAccent} />
+        <View style={styles.brandRow}>
+          {logoSource ? (
+            <Image source={logoSource} style={styles.logo} resizeMode="contain" />
+          ) : (
+            <View style={styles.logoPlaceholder}>
+              <Text style={styles.logoPlaceholderText}>AU</Text>
+            </View>
+          )}
+          <View style={styles.brandText}>
+            <Text style={styles.title}>Smart Study Advisor</Text>
+            <Text style={styles.subtitle}>Alexandria University</Text>
+          </View>
+        </View>
       </View>
 
       <View style={styles.content}>
@@ -146,14 +175,64 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#faf7f2" },
+  container: { flex: 1, backgroundColor: "#f7f4ef" },
   header: {
-    padding: 22,
-    backgroundColor: "#111827",
+    padding: 24,
+    backgroundColor: "#1f2933",
     borderBottomWidth: 1,
-    borderColor: "#0f172a",
+    borderColor: "#111827",
+    position: "relative",
+    overflow: "hidden",
   },
-  title: { fontSize: 24, fontWeight: "bold", color: "#f9fafb" },
+  headerAccent: {
+    position: "absolute",
+    right: -40,
+    top: -30,
+    width: 140,
+    height: 140,
+    borderRadius: 70,
+    backgroundColor: "#c97b45",
+    opacity: 0.18,
+  },
+  brandRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 16,
+  },
+  brandText: { flex: 1 },
+  logo: {
+    width: 56,
+    height: 56,
+    borderRadius: 14,
+  },
+  logoPlaceholder: {
+    width: 56,
+    height: 56,
+    borderRadius: 14,
+    backgroundColor: "#f0e3d6",
+    borderWidth: 1,
+    borderColor: "#d6c7b8",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  logoPlaceholderText: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: "#7a4d2a",
+    letterSpacing: 1,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#f9fafb",
+    letterSpacing: 0.4,
+    fontFamily: "Georgia",
+  },
+  subtitle: {
+    fontSize: 13,
+    color: "rgba(255,255,255,0.7)",
+    marginTop: 4,
+  },
   content: { flex: 1, padding: 22 },
   footer: {
     flexDirection: "row",
@@ -161,20 +240,24 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#fff",
     borderTopWidth: 1,
-    borderColor: "#e7e5e4",
+    borderColor: "#e6ddd2",
   },
   navButton: {
     paddingVertical: 12,
     paddingHorizontal: 24,
-    borderRadius: 8,
+    borderRadius: 12,
     minWidth: 100,
     alignItems: "center",
   },
-  navButtonPrimary: { backgroundColor: "#007AFF" },
-  navButtonPrimaryHovered: { backgroundColor: "#0056b3" },
-  navButtonSecondary: { backgroundColor: "#f0f0f0" },
-  navButtonHovered: { backgroundColor: "#e0e0e0" },
+  navButtonPrimary: { backgroundColor: "#c97b45" },
+  navButtonPrimaryHovered: { backgroundColor: "#b86b36" },
+  navButtonSecondary: { backgroundColor: "#efe6dc" },
+  navButtonHovered: { backgroundColor: "#e5dbcf" },
   navButtonPressed: { opacity: 0.7 },
   navButtonTextPrimary: { color: "#fff", fontSize: 16, fontWeight: "600" },
-  navButtonTextSecondary: { color: "#333", fontSize: 16, fontWeight: "600" },
+  navButtonTextSecondary: {
+    color: "#4b3f35",
+    fontSize: 16,
+    fontWeight: "600",
+  },
 });

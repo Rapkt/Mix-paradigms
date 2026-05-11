@@ -86,31 +86,42 @@ export default function EngineChoice({
 }
 
 const styles = StyleSheet.create({
-  stepTitle: { fontSize: 20, fontWeight: "600", marginBottom: 5 },
-  subtitle: { fontSize: 14, color: "#666", marginBottom: 20 },
+  stepTitle: {
+    fontSize: 20,
+    fontWeight: "600",
+    marginBottom: 5,
+    color: "#1f2933",
+    fontFamily: "Georgia",
+  },
+  subtitle: { fontSize: 14, color: "#6b5e53", marginBottom: 20 },
   cardsContainer: { gap: 15, marginTop: 10 },
 
   engineCard: {
     padding: 20,
-    backgroundColor: "#f8f9fa",
-    borderRadius: 12,
+    backgroundColor: "#fff",
+    borderRadius: 16,
     borderWidth: 2,
-    borderColor: "#e0e0e0",
+    borderColor: "#e6ddd2",
     alignItems: "center",
+    shadowColor: "#1f2933",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.08,
+    shadowRadius: 10,
+    elevation: 3,
   },
-  prologSelected: { backgroundColor: "#34C759", borderColor: "#34C759" },
-  aiSelected: { backgroundColor: "#5856D6", borderColor: "#5856D6" },
+  prologSelected: { backgroundColor: "#1f8a70", borderColor: "#1f8a70" },
+  aiSelected: { backgroundColor: "#304c89", borderColor: "#304c89" },
 
   emoji: { fontSize: 40, marginBottom: 10 },
   cardTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#333",
+    color: "#2f241c",
     marginBottom: 8,
   },
   cardDesc: {
     fontSize: 14,
-    color: "#666",
+    color: "#6b5e53",
     textAlign: "center",
     lineHeight: 20,
   },
