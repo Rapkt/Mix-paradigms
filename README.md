@@ -110,4 +110,31 @@ npx expo start
 
 ### Backend
 
+The backend is built utilizing **Django** to serve as a robust HTTP API layer. It integrates multiple paradigms to formulate up appropriate course recommendations. The primary source code is located in the `backend/` directory with the following structure:
+
+- **`core/`**: Contains the core Django settings and root URL routing configurations.
+- **`api/`**: The main application that handles incoming HTTP requests.
+  - **`views.py`**: Exposes the REST endpoints (`/api/ai/recommend` and `/api/prolog/recommend`). It parses incoming JSON requests and routes them to the requested engine.
+  - **`schemas.py`**: Defines the data models using Pydantic, enforcing strict type validations for incoming request bodies to ensure the backend receives properly formatted parameters.
+  - **`ai/`**: Employs an LLM-based agent workflow (AI Agent paradigm).
+    - **`agent.py`**: Configures the LangChain agent using the `ChatGroq` model with fallback behaviors and strict prompt guidelines.
+    - **`tools.py`**: Connects the LLM to project data. It utilizes the **Data-centric paradigm** via the `pandas` library to fetch uncompleted, valid courses from the CSV dataset.
+  - **`prolog/`**: Uses **Logic Programming** to determine recommendations.
+    - **`queries.py` & `queries.pl`**: Interfaces with SWI-Prolog through the `pyswip` bridge. It declares rules for traversing prerequisites, user preferences, and course difficulty to formulate a strict, rule-based recommendation schedule.
+- **`data/`**: Acts as the shared data layer containing the knowledge base in `.csv` (for Pandas/AI) and `.pl` (for Prolog) formats.
+- **`scripts/`**: Contains utility scripts, such as `convert_csv_to_pl.py`, designed to automate the synchronization between the tabular CSV data and the logical Prolog facts.
+
 ### Frontend
+
+The frontend is a cross-platform mobile application built using **React Native** and the **Expo** framework. It leverages a **Declarative UI / Functional paradigm** through React components and hooks. The structure resides primarily in `Front/paradigms/`:
+
+- **`app/`**: Implements Expo Router for file-based routing.
+  - **`index.tsx`**: The main landing page orchestrating the step-by-step user onboarding flow (managing state for major, year, past courses, and engine choice).
+  - **`results.tsx`**: Responsible for interpreting the backend payloads and dynamically rendering the recommended schedule (e.g., categorizing by AI reasoning or Prolog's difficulty tiering).
+- **`app/components/wizard/`**: Encapsulates the multi-step form into isolated, modular React components.
+  - **`Majors.tsx`, `TakenCourses.tsx`, `EngineChoice.tsx`, `AIPrompt.tsx`**: Pure functional components handling distinct fragments of user input to keep the application organized.
+  - **`Summary.tsx` & `Recommendation.tsx`**: Compiles user input for a final review before dispatching the network request.
+- **`constants/`**: Houses static configurations arrays, like the structured list of all university courses (`courses.ts`), used to map IDs to readable display names.
+- **`services/`**: 
+  - **`api.ts`**: The dedicated communication layer. It abstracts the `fetch` logic, cleanly routing user payloads to either the Prolog or AI backend endpoints depending on user selection.
+- **`types/`**: Contains TypeScript interfaces enforcing type safety across the frontend ecosystem.
