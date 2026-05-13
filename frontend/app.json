@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "paradigms",
-    "slug": "paradigms",
+    "name": "smart-study-advisor",
+    "slug": "smart-study-advisor",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "paradigms",
+    "scheme": "smart-study-advisor",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
