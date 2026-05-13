@@ -3,8 +3,8 @@ from os import environ
 
 from pyswip import Prolog
 
-from ..schemas import RecommendCoursesRequest
-from .schemas import Course, PrologRecommendCoursesResponse
+from ..schemas import Course, RecommendCoursesRequest
+from .schemas import PrologRecommendCoursesResponse
 
 logger = logging.getLogger(__name__)
 
@@ -81,7 +81,7 @@ def recommend_courses(
 ) -> PrologRecommendCoursesResponse:
     department: str = request.department
     studiedCourses: list[str] = request.completed_courses
-    currentYear: int = request.academic_year
+    # currentYear: int = request.academic_year
     preferences: list[str] = request.preferences
     # difficulty: str = "_"
     based_on_prefenrence = list(

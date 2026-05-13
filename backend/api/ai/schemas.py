@@ -1,5 +1,7 @@
 from pydantic import BaseModel, Field
 
+from api.schemas import Course
+
 
 class AIRecommendCoursesContext(BaseModel):
     department: str = Field(
@@ -13,10 +15,19 @@ class AIRecommendCoursesContext(BaseModel):
     )
 
 
-class AIRecommendCoursesResponse(BaseModel):
+class AIRecommendCoursesInternalResponse(BaseModel):
     reasoning: str = Field(
         description="The reasoning on why these recommended courses were choosen."
     )
     recommened_courses: list[str] = Field(
+        description="The recommended courses for the user based on the input information.",
+    )
+
+
+class AIRecommendCoursesResponse(BaseModel):
+    reasoning: str = Field(
+        description="The reasoning on why these recommended courses were choosen."
+    )
+    recommened_courses: list[Course] = Field(
         description="The recommended courses for the user based on the input information.",
     )

@@ -9,7 +9,7 @@ from langchain_groq import ChatGroq
 
 from .schemas import (
     AIRecommendCoursesContext,
-    AIRecommendCoursesResponse,
+    AIRecommendCoursesInternalResponse,
 )
 
 SYSTEM_PROMPT = """You are a smart study advisor that recommend courses to take.
@@ -41,7 +41,7 @@ def initialize_agent(tools: list[BaseTool]):
         tools=tools,
         system_prompt=SYSTEM_PROMPT,
         middleware=middleware,
-        response_format=AIRecommendCoursesResponse,
+        response_format=AIRecommendCoursesInternalResponse,
         context_schema=AIRecommendCoursesContext,
     )
 

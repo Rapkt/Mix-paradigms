@@ -31,12 +31,15 @@ def get_available_courses(runtime: ToolRuntime[AIRecommendCoursesContext]) -> li
     completed_courses = runtime.context.completed_courses
 
     in_department = courses_df["department"] == department
+    in_preparatory = courses_df["department"] == "Preparatory"
     not_completed = ~courses_df["course_name"].isin(completed_courses)
     no_prerequisite = courses_df["prerequisite"] == "None"
     prerequisite_completed = courses_df["prerequisite"].isin(completed_courses)
 
     available_courses = courses_df[
-        in_department & not_completed & (no_prerequisite | prerequisite_completed)
+        (in_department | in_preparatory)
+        & not_completed
+        & (no_prerequisite | prerequisite_completed)
     ]
 
     available_courses_names = available_courses["course_name"].tolist()

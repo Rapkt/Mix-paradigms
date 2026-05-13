@@ -107,14 +107,9 @@ export default function ResultsScreen() {
                 {(
                   resultData.recommened_courses ||
                   resultData.recommended_courses
-                )?.map((courseName: string, idx: number) => {
-                  const formattedCourse = {
-                    id: `AI-${idx + 1}`,
-                    name: courseName,
-                    difficulty: "AI Pick",
-                  };
+                )?.map((course: any, idx: number) => {
                   return (
-                    <CourseCard key={`ai-${idx}`} course={formattedCourse} />
+                    <CourseCard key={`ai-${idx}`} course={course} />
                   );
                 })}
               </View>
