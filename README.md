@@ -54,7 +54,7 @@
       </ul>
     </td>
     <td width="260px" valign="top" >
-      <video src="https://github.com/Rapkt/Mix-paradigms/raw/main/.github/assets/demo.mp4" width="260" controls ></video>
+      <video src="https://github.com/user-attachments/assets/2937e73f-6fff-41e0-baa8-170f00fcd9fd" width="260" controls ></video>
     </td>
   </tr>
 </table>
