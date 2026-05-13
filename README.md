@@ -32,7 +32,6 @@
 <table width="100%">
   <tr>
     <td valign="top">
-      <h3>Overview</h3>
       <ul>
       <li>Supports both AI-based and non-AI recommendation.</li>
       <li>Personalize course recommendations based on your preferences.</li>
@@ -54,7 +53,7 @@
       </ul>
     </td>
     <td width="260px" valign="top" >
-      <video src="https://github.com/user-attachments/assets/2937e73f-6fff-41e0-baa8-170f00fcd9fd" width="260" controls ></video>
+      <video src="https://github.com/user-attachments/assets/2937e73f-6fff-41e0-baa8-170f00fcd9fd" width="280" controls ></video>
     </td>
   </tr>
 </table>
