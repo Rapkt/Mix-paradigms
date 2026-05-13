@@ -4,25 +4,25 @@
 
 <div align="center">
 
-<a href="https://github.com/Rapkt/Mix-paradigm/graphs/contributors">
+<a href="https://github.com/Rapkt/Mix-paradigms/graphs/contributors">
   <picture>
-    <source media="(prefers-color-scheme: dark)"  srcset="https://img.shields.io/github/contributors/Rapkt/Mix-paradigm?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
-    <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/contributors/Rapkt/Mix-paradigm?style=for-the-badge&labelColor=%23f6f8fa&color=%230969da">
-    <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/Rapkt/Mix-paradigm?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
+    <source media="(prefers-color-scheme: dark)"  srcset="https://img.shields.io/github/contributors/Rapkt/Mix-paradigms?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
+    <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/contributors/Rapkt/Mix-paradigms?style=for-the-badge&labelColor=%23f6f8fa&color=%230969da">
+    <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/Rapkt/Mix-paradigms?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
   </picture>
 </a>
-<a href="https://github.com/Rapkt/Mix-paradigm/pulse">
+<a href="https://github.com/Rapkt/Mix-paradigms/pulse">
   <picture>
-    <source media="(prefers-color-scheme: dark)"  srcset="https://img.shields.io/github/last-commit/Rapkt/Mix-paradigm?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
-    <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/last-commit/Rapkt/Mix-paradigm?style=for-the-badge&labelColor=%23f6f8fa&color=%230969da">
-    <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/Rapkt/Mix-paradigm?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
+    <source media="(prefers-color-scheme: dark)"  srcset="https://img.shields.io/github/last-commit/Rapkt/Mix-paradigms?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
+    <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/last-commit/Rapkt/Mix-paradigms?style=for-the-badge&labelColor=%23f6f8fa&color=%230969da">
+    <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/Rapkt/Mix-paradigms?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
   </picture>
 </a>
-<a href="https://github.com/Rapkt/Mix-paradigm/stargazers">
+<a href="https://github.com/Rapkt/Mix-paradigms/stargazers">
   <picture>
-    <source media="(prefers-color-scheme: dark)"  srcset="https://img.shields.io/github/stars/Rapkt/Mix-paradigm?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
-    <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/stars/Rapkt/Mix-paradigm?style=for-the-badge&labelColor=%23f6f8fa&color=%230969da">
-    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Rapkt/Mix-paradigm?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
+    <source media="(prefers-color-scheme: dark)"  srcset="https://img.shields.io/github/stars/Rapkt/Mix-paradigms?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
+    <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/stars/Rapkt/Mix-paradigms?style=for-the-badge&labelColor=%23f6f8fa&color=%230969da">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Rapkt/Mix-paradigms?style=for-the-badge&labelColor=%23151b23&color=%234493f8">
   </picture>
     </a>
 </div>
@@ -45,13 +45,13 @@
 Clone the repository:
 
 ```bash
-git clone https://github.com/Rapkt/Mix-paradigm.git
+git clone https://github.com/Rapkt/Mix-paradigms.git
 ```
 
 Navigate to the project directory:
 
 ```bash
-cd Mix-paradigm
+cd Mix-paradigms
 ```
 
 ### Building Backend
@@ -135,6 +135,6 @@ The frontend is a cross-platform mobile application built using **React Native**
   - **`Majors.tsx`, `TakenCourses.tsx`, `EngineChoice.tsx`, `AIPrompt.tsx`**: Pure functional components handling distinct fragments of user input to keep the application organized.
   - **`Summary.tsx` & `Recommendation.tsx`**: Compiles user input for a final review before dispatching the network request.
 - **`constants/`**: Houses static configurations arrays, like the structured list of all university courses (`courses.ts`), used to map IDs to readable display names.
-- **`services/`**: 
+- **`services/`**:
   - **`api.ts`**: The dedicated communication layer. It abstracts the `fetch` logic, cleanly routing user payloads to either the Prolog or AI backend endpoints depending on user selection.
 - **`types/`**: Contains TypeScript interfaces enforcing type safety across the frontend ecosystem.
